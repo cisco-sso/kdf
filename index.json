@@ -1,48 +1,48 @@
 [
 {
-	"uri": "https://cisco-sso.github.io/kdf/concepts/",
+	"uri": "https://kdf.csco.cloud/concepts/",
 	"title": "Concepts",
 	"tags": [],
 	"description": "",
 	"content": " Chapter 1 Concepts "
 },
 {
-	"uri": "https://cisco-sso.github.io/kdf/quickstart/install-the-kdk/",
+	"uri": "https://kdf.csco.cloud/quickstart/install-the-kdk/",
 	"title": "Install the KDK",
 	"tags": [],
 	"description": "",
 	"content": " The following steps are here to help you install the Kubernetes Development Kit (KDK)\nThe KDK is compatible with OSX, Windows10, and Linux. However, Linux is mostly untested.\n Prerequisites Install Package Management System and Basic Tools for\u0026nbsp;\u0026nbsp;osx\u0026nbsp;win10\u0026nbsp; # Open a Terminal \u0026lt;Spotlight_Search -\u0026gt; Terminal\u0026gt; # Install HomeBrew Package Management System for Mac # https://brew.sh/ /usr/bin/ruby -e \u0026#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)\u0026#34; # Install Utils brew install git brew cask install keybase # Install Docker for Mac open https://docs.docker.com/docker-for-mac/release-notes/  # Open Powershell Terminal as Administrator  # Install Chocolatey Package Management System for Windows # https://chocolatey.org/ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(\u0026#39;https://chocolatey.org/install.ps1\u0026#39;)) # Install required Utils choco.exe install -y openssh git curl sudo # Ensure choco.exe uninstall vagrant virtualbox # Install Docker start https://docs.docker.com/docker-for-windows/release-notes/ # Install Keybase start https://keybase.io/docs/the_app/install_windows     var items = [ \"osx\", \"win10\", ]; $(document).ready(toggleOnloadFunction); function toggleOnloadFunction() { for (i of items) { if (i == \"osx\") { $(\"[item='\"+i+\"']\").show(); $(\"[item='\"+i+\"-button']\").css(\"background-color\", \"PaleGreen\") } else { $(\"[item='\"+i+\"']\").hide(); $(\"[item='\"+i+\"-button']\").css(\"background-color\", \"\") } } } function toggleButtonFunction(itemName) { for (i of items) { if (i == itemName) { $(\"[item='\"+i+\"']\").show(); $(\"[item='\"+i+\"-button']\").css(\"background-color\", \"PaleGreen\") } else { $(\"[item='\"+i+\"']\").hide(); $(\"[item='\"+i+\"-button']\").css(\"background-color\", \"\") } } }  "
 },
 {
-	"uri": "https://cisco-sso.github.io/kdf/concepts/what-is-the-kdf/",
+	"uri": "https://kdf.csco.cloud/concepts/what-is-the-kdf/",
 	"title": "What Is the KDF?",
 	"tags": [],
 	"description": "",
 	"content": "The Kubernetes Development Framework (KDF) is a set of patterns, tools, and deployment packages. It is not a platform. It is a toolkit and a way of doing things.\nNew users of Kubernetes may use the KDF to quickly create a cluster with basic services (e.g. logging, monitoring, HTTPS ingress, LetsEncrypt SSL certs) by using vetted and tested deployment packages, all while conforming to what we perceive as healthy patterns.\nExperienced users of Kubernetes may use the KDF in order to make their lives easier and work more efficiently. For example:\n Members of a team often spend hours individually setting up and maintaining their development and operations environments. In order to work effectively, they should all work in a common environment, using the same list of tools, at the same versions. We provide a cross-platform, lightweight, immutable cli tool and docker image that serves as this development environment called the Kubernetes Development Kit (KDK).\n The platform-deploy code pattern allows a user to enter a \u0026ldquo;cluster\u0026rdquo; directory and automatically have all tools pre-configured for that specific enviroment. Thus, by opening multiple shells to different \u0026ldquo;cluster\u0026rdquo; directories the user may be configured to operate on several clusters simultaneously. This sounds simple, however it is not possible with \u0026ldquo;kubectl\u0026rdquo; today because only a single, global kube-context may be active at once. It is also difficult with with other tools (e.g. aws-cli if working across AWS accounts). Our \u0026ldquo;platform-deploy\u0026rdquo; code pattern relies on direnv which is pre-configured in the Kubernetes Development Kit (KDK), to auto-magically set enviroment variables upon entering a cluster directory and pull secrets from a keybase team to properly configure all of the cloud tools such as kubectl, helm, aws-cli, etc.\n  "
 },
 {
-	"uri": "https://cisco-sso.github.io/kdf/quickstart/",
+	"uri": "https://kdf.csco.cloud/quickstart/",
 	"title": "Quickstart",
 	"tags": [],
 	"description": "",
 	"content": " Chapter 2 Quickstart Create a local kubernetes cluster, operate it with tools in the (KDK), access it with the \u0026ldquo;platform-deploy\u0026rdquo; pattern, and finally install a set of basic services on the kubernetes cluster.\n"
 },
 {
-	"uri": "https://cisco-sso.github.io/kdf/categories/",
+	"uri": "https://kdf.csco.cloud/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://cisco-sso.github.io/kdf/",
+	"uri": "https://kdf.csco.cloud/",
 	"title": "KDF",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://cisco-sso.github.io/kdf/tags/",
+	"uri": "https://kdf.csco.cloud/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
