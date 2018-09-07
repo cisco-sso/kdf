@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://cisco-sso.github.io/kdf"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
