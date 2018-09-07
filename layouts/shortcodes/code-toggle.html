@@ -1,0 +1,48 @@
+{{- $title := .Get "title" }}
+{{- $itemDefault := .Get "item-default" }}
+{{- $itemList := split ( .Get "item-list" ) " " }}
+{{- $buttonClass := .Get "button-class" }}
+
+<div class="code-toggle">{{ $title }}&nbsp;&nbsp;
+  {{- range $itemList -}}
+    <button class="{{$buttonClass}}" item="{{.}}-button" onclick="toggleButtonFunction('{{ . }}')">{{ . }}</button>&nbsp;
+  {{- end }}
+  {{- $.Inner -}}
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+var items = [
+    {{range $itemList}}
+        {{.}},
+    {{- end}}
+];
+
+$(document).ready(toggleOnloadFunction);
+
+function toggleOnloadFunction() {
+    for (i of items) {
+      if (i == {{ $itemDefault }}) {
+        $("[item='"+i+"']").show();
+        $("[item='"+i+"-button']").css("background-color", "PaleGreen")
+      }
+      else {
+        $("[item='"+i+"']").hide();
+        $("[item='"+i+"-button']").css("background-color", "")
+      }
+    }
+}
+
+function toggleButtonFunction(itemName) {
+    for (i of items) {
+      if (i == itemName) {
+        $("[item='"+i+"']").show();
+        $("[item='"+i+"-button']").css("background-color", "PaleGreen")
+      }
+      else {
+        $("[item='"+i+"']").hide();
+        $("[item='"+i+"-button']").css("background-color", "")
+      }
+    }
+}
+</script>
