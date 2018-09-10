@@ -7,6 +7,10 @@
   </url>
   
   <url>
+    <loc>https://kdf.csco.cloud/</loc>
+  </url>
+  
+  <url>
     <loc>https://kdf.csco.cloud/quickstart/install-the-kdk/</loc>
   </url>
   
@@ -20,11 +24,6 @@
   
   <url>
     <loc>https://kdf.csco.cloud/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://kdf.csco.cloud/</loc>
     <priority>0</priority>
   </url>
   
