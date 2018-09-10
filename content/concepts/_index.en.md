@@ -8,3 +8,5 @@ chapter: true
 ### Chapter 1
 
 # Concepts
+
+Learn about the KDF
