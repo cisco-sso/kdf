@@ -1,45 +1,40 @@
+{{- $itemGroup := .Get "item-group" }}
 {{- $itemDefault := .Get "item-default" }}
 {{- $itemList := split ( .Get "item-list" ) " " }}
 {{- $buttonClass := .Get "button-class" }}
 
 <span class="snippet-selector">
   {{- range $itemList -}}
-    <button class="{{$buttonClass}}" item="{{.}}-button" onclick="toggleButtonFunction('{{ . }}')">{{ . }}</button>&nbsp;
+    <button class="{{$buttonClass}}" item-group="{{$itemGroup}}" item="{{.}}-button" onclick="toggleButtonFunction('{{$itemGroup}}', '{{.}}', {{$itemList}})">{{.}}</button>&nbsp;
   {{- end }}
 </span>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
-var items = [
-    {{range $itemList}}
-        {{.}},
-    {{- end}}
-];
+$(document).ready(toggleOnloadFunction({{$itemGroup}}, {{$itemList}}));
 
-$(document).ready(toggleOnloadFunction);
-
-function toggleOnloadFunction() {
-    for (i of items) {
+function toggleOnloadFunction(itemGroup, itemList) {
+    for (i of itemList) {
       if (i == {{ $itemDefault }}) {
-        $("[item='"+i+"']").show();
-        $("[item='"+i+"-button']").css("background-color", "PaleGreen")
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").show();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "PaleGreen")
       }
       else {
-        $("[item='"+i+"']").hide();
-        $("[item='"+i+"-button']").css("background-color", "")
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").hide();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "")
       }
     }
 }
 
-function toggleButtonFunction(itemName) {
-    for (i of items) {
+function toggleButtonFunction(itemGroup, itemName, itemList) {
+    for (i of itemList) {
       if (i == itemName) {
-        $("[item='"+i+"']").show();
-        $("[item='"+i+"-button']").css("background-color", "PaleGreen")
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").show();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "PaleGreen")
       }
       else {
-        $("[item='"+i+"']").hide();
-        $("[item='"+i+"-button']").css("background-color", "")
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").hide();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "")
       }
     }
 }

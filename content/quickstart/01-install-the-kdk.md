@@ -3,7 +3,7 @@ title: Install the KDK
 weight: 10
 ---
 
-*Select your Operating System:* {{<snippet-selector item-default="osx" item-list="osx win10" button-class="btn">}}
+*Select your Operating System:* {{<snippet-selector item-group="os" item-default="osx" item-list="osx win10" button-class="btn">}}
 
 The kdk repository may be used to create a docker container with all of the tools that one would typically use in order to develop and operate kubernetes clusters.
 
@@ -15,9 +15,9 @@ The KDK is compatible with OSX, Windows10, and Linux.  However, Linux is mostly 
 
 ## Install Prerequisites
 
-*Select your Operating System:* {{<snippet-selector item-default="osx" item-list="osx win10" button-class="btn">}}
+*Select your Operating System:* {{<snippet-selector item-group="os" item-default="osx" item-list="osx win10" button-class="btn">}}
 
-<div item="win10">
+<div item-group="os" item="win10">
 {{% notice warning %}}
 Windows10 Only: prerequisites installation requires the usage of Powershell as the adminstrative user.
 {{% /notice %}}
@@ -25,7 +25,7 @@ Windows10 Only: prerequisites installation requires the usage of Powershell as t
 
 
 Install package management system
-<div item="osx">
+<div item-group="os" item="osx">
 {{< highlight bash >}}
 # Open a Terminal
 #   Spotlight Search Command[⌘]-Space[" "] -> Terminal
@@ -35,7 +35,7 @@ Install package management system
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 {{</ highlight >}}
 </div>
-<div item="win10">
+<div item-group="os" item="win10">
 {{< highlight bash >}}
 # Open the Powershell Terminal as Administrator
 #   Windows Search -> Windows PowerShell (Right click "Run as Administrator")
@@ -47,7 +47,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 </div>
 
 Install utils
-<div item="osx">
+<div item-group="os" item="osx">
 {{< highlight bash >}}
 # Install utils
 brew install git
@@ -55,7 +55,7 @@ brew cask install keybase
 {{</ highlight >}}
 </div>
 
-<div item="win10">
+<div item-group="os" item="win10">
 {{< highlight bash >}}
 # Install utils
 choco.exe install -y openssh git curl sudo keybase
@@ -63,14 +63,14 @@ choco.exe install -y openssh git curl sudo keybase
 </div>
 
 Uninstall potentially conflicting packages
-<div item="osx">
+<div item-group="os" item="osx">
 {{< highlight bash >}}
 # Uninstall potentially conflicting packages
 brew uninstall vagrant virtualbox
 {{</ highlight >}}
 </div>
 
-<div item="win10">
+<div item-group="os" item="win10">
 {{< highlight bash >}}
 # Uninstall potentially conflicting packages
 choco.exe uninstall vagrant virtualbox
@@ -79,14 +79,14 @@ choco.exe uninstall vagrant virtualbox
 
 
 Install Docker
-<div item="osx">
+<div item-group="os" item="osx">
 {{< highlight bash >}}
 # Install Docker for Mac
 open https://docs.docker.com/docker-for-mac/release-notes/
 {{</ highlight >}}
 </div>
 
-<div item="win10">
+<div item-group="os" item="win10">
 {{< highlight bash >}}
 # Install Docker for Windows
 start https://docs.docker.com/docker-for-windows/release-notes/
@@ -96,7 +96,7 @@ start https://docs.docker.com/docker-for-windows/release-notes/
 
 ## Configure Prerequisites
 
-*Select your Operating System:* {{<snippet-selector item-default="osx" item-list="osx win10" button-class="btn">}}
+*Select your Operating System:* {{<snippet-selector item-group="os" item-default="osx" item-list="osx win10" button-class="btn">}}
 
 ### Keybase
 
@@ -104,7 +104,7 @@ Keybase is optionally required to make sharing secrets with other people easier.
 
 
 Configure Keybase
-<div item="osx">
+<div item-group="os" item="osx">
 {{< highlight bash >}}
 # Open Keybase
 #   Spotlight Search Command[⌘]-Space[" "] -> keybase
@@ -117,7 +117,7 @@ ls /keybase
 {{</ highlight >}}
 </div>
 
-<div item="win10">
+<div item-group="os" item="win10">
 {{< highlight bash >}}
 # Open "Git Bash"
 #   Windows Search -> keybase
@@ -135,22 +135,22 @@ Be a good Keybase citizen, and ensure you are registered on keybase with your fu
 
 ## Install and Run the KDK
 
-*Select your Operating System:* {{<snippet-selector item-default="osx" item-list="osx win10" button-class="btn">}}
+*Select your Operating System:* {{<snippet-selector item-group="os" item-default="osx" item-list="osx win10" button-class="btn">}}
 
-<div item="win10">
+<div item-group="os" item="win10">
 {{% notice warning %}}
-Windows 10 Only: After prerequisites installation, all KDK operations must occur within the "Git Bash" shell.
+Windows 10 Only: After prerequisites installation, all KDK operations must occur within the "Git Bash" shell, instead of the PowerShell.
 {{% /notice %}}
 </div>
 
-<div item="osx">
+<div item-group="os" item="osx">
 {{< highlight bash >}}
 # Open a Terminal
 #   Spotlight Search Command[⌘]-Space[" "] -> Terminal
 {{</ highlight >}}
 </div>
 
-<div item="win10">
+<div item-group="os" item="win10">
 {{< highlight bash >}}
 # Open "Git Bash"
 #   Windows Search -> Git Bash
