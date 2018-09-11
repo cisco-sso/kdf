@@ -14,7 +14,7 @@
 	"content": " Kubernetes Development Framework (KDF) The Kubernetes Development Framework (KDF) is a set of patterns, tools, and deployment packages. It is not a platform. It is a toolkit and a way of doing things.\nVisit Concepts for more information, or skip to the Quickstart\n"
 },
 {
-	"uri": "https://kdf.csco.cloud/quickstart/01-install-the-kdk/",
+	"uri": "https://kdf.csco.cloud/quickstart/install-the-kdk/",
 	"title": "Install the KDK",
 	"tags": [],
 	"description": "",
