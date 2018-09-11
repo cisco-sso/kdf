@@ -3,6 +3,8 @@ title: Install the KDK
 weight: 10
 ---
 
+*Select your Operating System:* {{<snippet-selector item-default="osx" item-list="osx win10" button-class="btn">}}
+
 The kdk repository may be used to create a docker container with all of the tools that one would typically use in order to develop and operate kubernetes clusters.
 
 The following steps are here to help you install the [Kubernetes Development Kit (KDK)](https://github.com/cisco-sso/kdk)
@@ -13,13 +15,16 @@ The KDK is compatible with OSX, Windows10, and Linux.  However, Linux is mostly 
 
 ## Install Prerequisites
 
+*Select your Operating System:* {{<snippet-selector item-default="osx" item-list="osx win10" button-class="btn">}}
+
 <div item="win10">
 {{% notice warning %}}
 Windows10 Only: prerequisites installation requires the usage of Powershell as the adminstrative user.
 {{% /notice %}}
 </div>
 
-{{<code-toggle title="Install package management system for" item-default="osx" item-list="osx win10" button-class="btn">}}
+
+Install package management system
 <div item="osx">
 {{< highlight bash >}}
 # Open a Terminal
@@ -30,7 +35,6 @@ Windows10 Only: prerequisites installation requires the usage of Powershell as t
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 {{</ highlight >}}
 </div>
-
 <div item="win10">
 {{< highlight bash >}}
 # Open the Powershell Terminal as Administrator
@@ -41,10 +45,8 @@ Windows10 Only: prerequisites installation requires the usage of Powershell as t
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 {{</ highlight >}}
 </div>
-{{</ code-toggle >}}
 
-
-{{<code-toggle title="Install utils for" item-default="osx" item-list="osx win10" button-class="btn">}}
+Install utils
 <div item="osx">
 {{< highlight bash >}}
 # Install utils
@@ -59,10 +61,8 @@ brew cask install keybase
 choco.exe install -y openssh git curl sudo keybase
 {{</ highlight >}}
 </div>
-{{</ code-toggle >}}
 
-
-{{<code-toggle title="Uninstall potentially conflicting packages for" item-default="osx" item-list="osx win10" button-class="btn">}}
+Uninstall potentially conflicting packages
 <div item="osx">
 {{< highlight bash >}}
 # Uninstall potentially conflicting packages
@@ -76,10 +76,9 @@ brew uninstall vagrant virtualbox
 choco.exe uninstall vagrant virtualbox
 {{</ highlight >}}
 </div>
-{{</ code-toggle >}}
 
 
-{{<code-toggle title="Install Docker for" item-default="osx" item-list="osx win10" button-class="btn">}}
+Install Docker
 <div item="osx">
 {{< highlight bash >}}
 # Install Docker for Mac
@@ -93,17 +92,18 @@ open https://docs.docker.com/docker-for-mac/release-notes/
 start https://docs.docker.com/docker-for-windows/release-notes/
 {{</ highlight >}}
 </div>
-{{</ code-toggle >}}
 
 
 ## Configure Prerequisites
+
+*Select your Operating System:* {{<snippet-selector item-default="osx" item-list="osx win10" button-class="btn">}}
 
 ### Keybase
 
 Keybase is optionally required to make sharing secrets with other people easier.  A user may be added to a keybase team, at which point the team's secret files are exposed under the local filesystem at <span item="osx">'/keybase'</span><span item="win10">'k:'</span>.  Scripts and automation may then locate secrets within the keybase filesystem, which is mounted at the same location on everyone's machine.  Upon `kdk init`, the KDK will prompt you to mount the host <span item="osx">'/keybase'</span><span item="win10">'k:'</span> directory within the kdk docker container at '/keybase'.
 
 
-{{<code-toggle title="Open keybase for" item-default="osx" item-list="osx win10" button-class="btn">}}
+Configure Keybase
 <div item="osx">
 {{< highlight bash >}}
 # Open Keybase
@@ -129,12 +129,13 @@ ls /keybase
 dir k:
 {{</ highlight >}}
 </div>
-{{</ code-toggle >}}
 
 Be a good Keybase citizen, and ensure you are registered on keybase with your full name and at least one verification.  Ask your team lead to add you to any relevant keybase teams to gain access to their files under <span item="osx">'/keybase/team/\<team-name\>'</span><span item="win10">'k:/team/\<team-name\>'</span>.
 
 
 ## Install and Run the KDK
+
+*Select your Operating System:* {{<snippet-selector item-default="osx" item-list="osx win10" button-class="btn">}}
 
 <div item="win10">
 {{% notice warning %}}
@@ -142,7 +143,6 @@ Windows 10 Only: After prerequisites installation, all KDK operations must occur
 {{% /notice %}}
 </div>
 
-{{<code-toggle title="Open a bash shell for" item-default="osx" item-list="osx win10" button-class="btn">}}
 <div item="osx">
 {{< highlight bash >}}
 # Open a Terminal
@@ -156,7 +156,6 @@ Windows 10 Only: After prerequisites installation, all KDK operations must occur
 #   Windows Search -> Git Bash
 {{</ highlight >}}
 </div>
-{{</ code-toggle >}}
 
 
 {{< highlight bash >}}
@@ -177,7 +176,6 @@ At this point, running 'kdk ssh' at any	time will connect you to the KDK.
 
 
 ## Post-Install Configuration
-
 
 ### Adding keys to source control
 

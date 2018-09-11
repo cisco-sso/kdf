@@ -1,14 +1,12 @@
-{{- $title := .Get "title" }}
 {{- $itemDefault := .Get "item-default" }}
 {{- $itemList := split ( .Get "item-list" ) " " }}
 {{- $buttonClass := .Get "button-class" }}
 
-<div class="code-toggle">{{ $title }}&nbsp;&nbsp;
+<span class="snippet-selector">
   {{- range $itemList -}}
     <button class="{{$buttonClass}}" item="{{.}}-button" onclick="toggleButtonFunction('{{ . }}')">{{ . }}</button>&nbsp;
   {{- end }}
-  {{- $.Inner -}}
-</div>
+</span>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
