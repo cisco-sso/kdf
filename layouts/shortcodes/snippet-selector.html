@@ -4,14 +4,16 @@
 {{- $buttonClass := .Get "button-class" }}
 
 <span class="snippet-selector">
-  {{- range $itemList -}}
+  {{ range $itemList -}}
     <button class="{{$buttonClass}}" item-group="{{$itemGroup}}" item="{{.}}-button" onclick="toggleButtonFunction('{{$itemGroup}}', '{{.}}', {{$itemList}})">{{.}}</button>&nbsp;
-  {{- end }}
+  {{ end -}}
 </span>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
-$(document).ready(toggleOnloadFunction({{$itemGroup}}, {{$itemList}}));
+$('document').ready(function(){
+    toggleOnloadFunction({{$itemGroup}}, {{$itemList}});
+});
 
 function toggleOnloadFunction(itemGroup, itemList) {
     for (i of itemList) {
