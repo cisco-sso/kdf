@@ -1,6 +1,6 @@
 ---
 title: Install the KDK
-weight: 10
+weight: 20
 ---
 
 *Select your Operating System:* {{<snippet-selector item-group="os" item-default="osx" item-list="osx win10" button-class="btn">}}
@@ -58,11 +58,11 @@ brew cask install keybase
 <div item-group="os" item="win10">
 {{< highlight bash >}}
 # Install utils
-choco.exe install -y openssh git curl sudo keybase
+choco.exe install -y git curl sudo keybase
 {{</ highlight >}}
 </div>
 
-Uninstall potentially conflicting packages
+Uninstall potentially conflicting packages (Optional)
 <div item-group="os" item="osx">
 {{< highlight bash >}}
 # Uninstall potentially conflicting packages

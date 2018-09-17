@@ -5,19 +5,19 @@
 
 <span class="snippet-selector">
   {{ range $itemList -}}
-    <button class="{{$buttonClass}}" item-group="{{$itemGroup}}" item="{{.}}-button" onclick="toggleButtonFunction('{{$itemGroup}}', '{{.}}', {{$itemList}})">{{.}}</button>&nbsp;
+    <button class="{{$buttonClass}}" item-group="{{$itemGroup}}" item="{{.}}-button" onclick="toggleButtonFunction('{{$itemGroup}}', '{{$itemDefault}}', {{$itemList}}, '{{.}}')">{{.}}</button>&nbsp;
   {{ end -}}
 </span>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
 $('document').ready(function(){
-    toggleOnloadFunction({{$itemGroup}}, {{$itemList}});
+    toggleOnloadFunction({{$itemGroup}}, {{$itemDefault}}, {{$itemList}});
 });
 
-function toggleOnloadFunction(itemGroup, itemList) {
+function toggleOnloadFunction(itemGroup, itemDefault, itemList) {
     for (i of itemList) {
-      if (i == {{ $itemDefault }}) {
+      if (i == itemDefault) {
         $("[item-group='"+itemGroup+"'][item='"+i+"']").show();
         $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "PaleGreen")
       }
@@ -28,7 +28,7 @@ function toggleOnloadFunction(itemGroup, itemList) {
     }
 }
 
-function toggleButtonFunction(itemGroup, itemName, itemList) {
+function toggleButtonFunction(itemGroup, itemDefault, itemList, itemName) {
     for (i of itemList) {
       if (i == itemName) {
         $("[item-group='"+itemGroup+"'][item='"+i+"']").show();
