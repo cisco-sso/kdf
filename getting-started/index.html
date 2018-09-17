@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>Getting Started - Kubernetes Development Framework (KDF)</title>
+    <meta name="generator" content="Hugo 0.48" />
+
+    
+    <meta name="description" content="Kubernetes Development Framework (KDF)">
+    
+    <link rel="canonical" href="https://kdf.csco.cloud/getting-started/">
+    
+    <meta name="author" content="SSO Arch Team">
+    
+
+    <meta property="og:url" content="https://kdf.csco.cloud/getting-started/">
+    <meta property="og:title" content="Kubernetes Development Framework (KDF)">
+    <meta property="og:image" content="https://kdf.csco.cloud/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="Kubernetes Development Framework (KDF)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://kdf.csco.cloud/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://kdf.csco.cloud/images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('https://kdf.csco.cloud/fonts/icon.eot');
+        src: url('https://kdf.csco.cloud/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('https://kdf.csco.cloud/fonts/icon.woff')
+               format('woff'),
+             url('https://kdf.csco.cloud/fonts/icon.ttf')
+               format('truetype'),
+             url('https://kdf.csco.cloud/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+
+    <link rel="stylesheet" href="https://kdf.csco.cloud/stylesheets/application.css">
+    <link rel="stylesheet" href="https://kdf.csco.cloud/stylesheets/temporary.css">
+    <link rel="stylesheet" href="https://kdf.csco.cloud/stylesheets/palettes.css">
+    <link rel="stylesheet" href="https://kdf.csco.cloud/stylesheets/highlight/highlight.css">
+
+    
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <script src="https://kdf.csco.cloud/javascripts/modernizr.js"></script>
+
+    
+
+  </head>
+  <body class="palette-primary-red palette-accent-teal">
+
+
+
+	
+	
+
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
+</div>
+
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        Getting Started
+      </div>
+    </div>
+
+    
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/cisco-sso" title="@cisco-sso on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/cisco-sso/kdf" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="https://kdf.csco.cloud/images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>Kubernetes Development Framework (KDF) <span class="version">0.1.0</span></strong>
+        
+          <br>
+          cisco-sso/kdf
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/cisco-sso/kdf/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/cisco-sso/kdf/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Concepts" href="https://kdf.csco.cloud/">
+	
+	Concepts
+</a>
+
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Getting Started" href="https://kdf.csco.cloud/getting-started/">
+	
+	Getting Started
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">The author</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/cisco-sso" target="_blank" title="@cisco-sso on GitHub">
+              @cisco-sso on GitHub
+            </a>
+          </li>
+          
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			<h1>Getting Started </h1>
+
+			
+
+<p><em>Select your Operating System:</em> 
+
+<span class="snippet-selector">
+  <button class="btn" item-group="os" item="osx-button" onclick="toggleButtonFunction('os', 'osx', [&#34;osx&#34;,&#34;win10&#34;], 'osx')">osx</button>&nbsp;
+  <button class="btn" item-group="os" item="win10-button" onclick="toggleButtonFunction('os', 'osx', [&#34;osx&#34;,&#34;win10&#34;], 'win10')">win10</button>&nbsp;
+  </span>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$('document').ready(function(){
+    toggleOnloadFunction("os", "osx", ["osx","win10"]);
+});
+
+function toggleOnloadFunction(itemGroup, itemDefault, itemList) {
+    for (i of itemList) {
+      if (i == itemDefault) {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").show();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "PaleGreen")
+      }
+      else {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").hide();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "")
+      }
+    }
+}
+
+function toggleButtonFunction(itemGroup, itemDefault, itemList, itemName) {
+    for (i of itemList) {
+      if (i == itemName) {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").show();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "PaleGreen")
+      }
+      else {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").hide();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "")
+      }
+    }
+}
+</script>
+</p>
+
+<p>The kdk repository may be used to create a docker container with all of the tools that one would typically use in order to develop and operate kubernetes clusters.</p>
+
+<p>The following steps are here to help you install the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a></p>
+
+<div class="alert alert-info" role="alert">
+The KDK is compatible with OSX, Windows10, and Linux.  However, Linux is mostly untested except when using the KDK to develop itself running 'docker-in-docker'.  The instructions for Linux are not yet included, but should be similar to that of OSX.
+</div>
+
+<h2 id="install-prerequisites">Install Prerequisites</h2>
+
+<p><em>Select your Operating System:</em> 
+
+<span class="snippet-selector">
+  <button class="btn" item-group="os" item="osx-button" onclick="toggleButtonFunction('os', 'osx', [&#34;osx&#34;,&#34;win10&#34;], 'osx')">osx</button>&nbsp;
+  <button class="btn" item-group="os" item="win10-button" onclick="toggleButtonFunction('os', 'osx', [&#34;osx&#34;,&#34;win10&#34;], 'win10')">win10</button>&nbsp;
+  </span>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$('document').ready(function(){
+    toggleOnloadFunction("os", "osx", ["osx","win10"]);
+});
+
+function toggleOnloadFunction(itemGroup, itemDefault, itemList) {
+    for (i of itemList) {
+      if (i == itemDefault) {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").show();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "PaleGreen")
+      }
+      else {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").hide();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "")
+      }
+    }
+}
+
+function toggleButtonFunction(itemGroup, itemDefault, itemList, itemName) {
+    for (i of itemList) {
+      if (i == itemName) {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").show();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "PaleGreen")
+      }
+      else {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").hide();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "")
+      }
+    }
+}
+</script>
+</p>
+
+<div item-group="os" item="win10">
+<div class="alert alert-warning" role="alert">
+Windows10 Only: prerequisites installation requires the usage of Powershell as the adminstrative user.
+</div>
+</div>
+
+<p>Install package management system
+<div item-group="os" item="osx"></p>
+
+<pre><code class="language-bash"># Open a Terminal
+#   Spotlight Search Command[⌘]-Space[&quot; &quot;] -&gt; Terminal
+
+# Install HomeBrew Package Management System
+#   https://brew.sh/
+/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;
+</code></pre>
+
+<p></div>
+<div item-group="os" item="win10"></p>
+
+<pre><code class="language-bash"># Open the Powershell Terminal as Administrator
+#   Windows Search -&gt; Windows PowerShell (Right click &quot;Run as Administrator&quot;)
+
+# Install Chocolatey Package Management System
+#   https://chocolatey.org/
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+</code></pre>
+
+<p></div></p>
+
+<p>Install utils
+<div item-group="os" item="osx"></p>
+
+<pre><code class="language-bash"># Install utils
+brew install git
+brew cask install keybase
+</code></pre>
+
+<p></div></p>
+
+<div item-group="os" item="win10">
+```bash
+# Install utils
+choco.exe install -y git curl sudo keybase
+```
+</div>
+
+<p>Uninstall potentially conflicting packages (Optional)
+<div item-group="os" item="osx"></p>
+
+<pre><code class="language-bash"># Uninstall potentially conflicting packages
+brew uninstall vagrant virtualbox
+</code></pre>
+
+<p></div></p>
+
+<div item-group="os" item="win10">
+```bash
+# Uninstall potentially conflicting packages
+choco.exe uninstall vagrant virtualbox
+```
+</div>
+
+<p>Install Docker
+<div item-group="os" item="osx"></p>
+
+<pre><code class="language-bash"># Install Docker for Mac
+open https://docs.docker.com/docker-for-mac/release-notes/
+</code></pre>
+
+<p></div></p>
+
+<div item-group="os" item="win10">
+```bash
+# Install Docker for Windows
+start https://docs.docker.com/docker-for-windows/release-notes/
+```
+</div>
+
+<h2 id="configure-prerequisites">Configure Prerequisites</h2>
+
+<p><em>Select your Operating System:</em> 
+
+<span class="snippet-selector">
+  <button class="btn" item-group="os" item="osx-button" onclick="toggleButtonFunction('os', 'osx', [&#34;osx&#34;,&#34;win10&#34;], 'osx')">osx</button>&nbsp;
+  <button class="btn" item-group="os" item="win10-button" onclick="toggleButtonFunction('os', 'osx', [&#34;osx&#34;,&#34;win10&#34;], 'win10')">win10</button>&nbsp;
+  </span>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$('document').ready(function(){
+    toggleOnloadFunction("os", "osx", ["osx","win10"]);
+});
+
+function toggleOnloadFunction(itemGroup, itemDefault, itemList) {
+    for (i of itemList) {
+      if (i == itemDefault) {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").show();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "PaleGreen")
+      }
+      else {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").hide();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "")
+      }
+    }
+}
+
+function toggleButtonFunction(itemGroup, itemDefault, itemList, itemName) {
+    for (i of itemList) {
+      if (i == itemName) {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").show();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "PaleGreen")
+      }
+      else {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").hide();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "")
+      }
+    }
+}
+</script>
+</p>
+
+<h3 id="keybase">Keybase</h3>
+
+<p>Keybase is optionally required to make sharing secrets with other people easier.  A user may be added to a keybase team, at which point the team&rsquo;s secret files are exposed under the local filesystem at <span item="osx">&rsquo;/keybase&rsquo;</span><span item="win10">&lsquo;k:&rsquo;</span>.  Scripts and automation may then locate secrets within the keybase filesystem, which is mounted at the same location on everyone&rsquo;s machine.  Upon <code>kdk init</code>, the KDK will prompt you to mount the host <span item="osx">&rsquo;/keybase&rsquo;</span><span item="win10">&lsquo;k:&rsquo;</span> directory within the kdk docker container at &lsquo;/keybase&rsquo;.</p>
+
+<p>Configure Keybase
+<div item-group="os" item="osx"></p>
+
+<pre><code class="language-bash"># Open Keybase
+#   Spotlight Search Command[⌘]-Space[&quot; &quot;] -&gt; keybase
+
+# Enable Keybase Files
+#   Settings -&gt; Files -&gt; Enable Keybase in Finder
+
+# Verify that KeybaseFS has been mounted on your system
+ls /keybase
+</code></pre>
+
+<p></div></p>
+
+<div item-group="os" item="win10">
+```bash
+# Open "Git Bash"
+#   Windows Search -> keybase
+
+# Enable Keybase Files
+#   Settings -> Files -> Enable Keybase in Explorer
+
+# Verify that KeybaseFS has been mounted on your system
+dir k:
+```
+</div>
+
+<p>Be a good Keybase citizen, and ensure you are registered on keybase with your full name and at least one verification.  Ask your team lead to add you to any relevant keybase teams to gain access to their files under <span item="osx">&rsquo;/keybase/team/&lt;team-name&gt;&lsquo;</span><span item="win10">&lsquo;k:/team/&lt;team-name&gt;&lsquo;</span>.</p>
+
+<h2 id="install-and-run-the-kdk">Install and Run the KDK</h2>
+
+<p><em>Select your Operating System:</em> 
+
+<span class="snippet-selector">
+  <button class="btn" item-group="os" item="osx-button" onclick="toggleButtonFunction('os', 'osx', [&#34;osx&#34;,&#34;win10&#34;], 'osx')">osx</button>&nbsp;
+  <button class="btn" item-group="os" item="win10-button" onclick="toggleButtonFunction('os', 'osx', [&#34;osx&#34;,&#34;win10&#34;], 'win10')">win10</button>&nbsp;
+  </span>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+$('document').ready(function(){
+    toggleOnloadFunction("os", "osx", ["osx","win10"]);
+});
+
+function toggleOnloadFunction(itemGroup, itemDefault, itemList) {
+    for (i of itemList) {
+      if (i == itemDefault) {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").show();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "PaleGreen")
+      }
+      else {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").hide();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "")
+      }
+    }
+}
+
+function toggleButtonFunction(itemGroup, itemDefault, itemList, itemName) {
+    for (i of itemList) {
+      if (i == itemName) {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").show();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "PaleGreen")
+      }
+      else {
+        $("[item-group='"+itemGroup+"'][item='"+i+"']").hide();
+        $("[item-group='"+itemGroup+"'][item='"+i+"-button']").css("background-color", "")
+      }
+    }
+}
+</script>
+</p>
+
+<div item-group="os" item="win10">
+<div class="alert alert-warning" role="alert">
+Windows 10 Only: After prerequisites installation, all KDK operations must occur within the "Git Bash" shell, instead of the PowerShell.
+</div>
+</div>
+
+<div item-group="os" item="osx">
+```bash
+# Open a Terminal
+#   Spotlight Search Command[⌘]-Space[" "] -> Terminal
+```
+</div>
+
+<div item-group="os" item="win10">
+```bash
+# Open "Git Bash"
+#   Windows Search -> Git Bash
+```
+</div>
+
+<pre><code class="language-bash"># Install the KDK
+curl -sSL https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install | bash
+
+# Print out the KDK Usage
+kdk
+
+# Configure the KDK
+kdk init
+
+# Run and Connect the KDK
+kdk ssh
+</code></pre>
+
+<p>At this point, running &lsquo;kdk ssh&rsquo; at any time will connect you to the KDK.</p>
+
+<h2 id="post-install-configuration">Post Install Configuration</h2>
+
+<h3 id="adding-keys-to-source-control">Adding keys to source control</h3>
+
+<p>This is optional if you are using <a href="https://developer.github.com/v3/guides/using-ssh-agent-forwarding/">ssh-agent</a>, which the KDK automatically forwards.  Otherwise, you may directly configure the pre-generated ssh key which is used to connect to the KDK, within each source control provider.</p>
+
+<p>Add content of ssh public key <code>~/.kdk/ssh/id_rsa.pub</code></p>
+
+<ul>
+<li>To your <a href="https://github.com/settings/keys">Github Account Keys</a></li>
+<li>To your Bitbucket Server https://<BITBUCKET-SERVER>/bitbucket/plugins/servlet/ssh/account/keys</li>
+</ul>
+
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2018 Released under the Apache-2.0 license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+
+
+
+
+			</footer>
+		</div>
+	</article>
+
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
+
+    <script>
+    
+      var base_url = 'https:\/\/kdf.csco.cloud\/';
+      var repo_id  = 'cisco-sso\/kdf';
+    
+    </script>
+
+    <script src="https://kdf.csco.cloud/javascripts/application.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
+

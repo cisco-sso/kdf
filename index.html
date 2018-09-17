@@ -1,376 +1,404 @@
 <!DOCTYPE html>
-<html lang="en" class="js csstransforms3d">
-  <head>
+  
+  
+  
+  
+   <html class="no-js"> 
+
+  <head lang="en-us">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=10" />
+    <title>What Is the KDF?</title>
     <meta name="generator" content="Hugo 0.48" />
+
+    
     <meta name="description" content="Kubernetes Development Framework (KDF)">
-<meta name="author" content="Arch Team">
-
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
-<link rel="icon" href="/images/favicon.png" type="image/x-icon" />
-    <title>Home :: KDF</title>
-
     
-    <link href="/css/nucleus.css?1536701359" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1536701359" rel="stylesheet">
-    <link href="/css/hybrid.css?1536701359" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1536701359" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1536701359" rel="stylesheet">
-    <link href="/css/auto-complete.css?1536701359" rel="stylesheet">
-    <link href="/css/theme.css?1536701359" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1536701359" rel="stylesheet">
+    <link rel="canonical" href="https://kdf.csco.cloud/">
+    
+    <meta name="author" content="SSO Arch Team">
     
 
-    <script src="/js/jquery-2.x.min.js?1536701359"></script>
+    <meta property="og:url" content="https://kdf.csco.cloud/">
+    <meta property="og:title" content="Kubernetes Development Framework (KDF)">
+    <meta property="og:image" content="https://kdf.csco.cloud/images/logo.png">
+    <meta name="apple-mobile-web-app-title" content="Kubernetes Development Framework (KDF)">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <style type="text/css">
-      :root #header + #content > #left > #rlblock_left{
-          display:none !important;
+    <link rel="shortcut icon" type="image/x-icon" href="https://kdf.csco.cloud/images/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://kdf.csco.cloud/images/favicon.ico">
+
+    <style>
+      @font-face {
+        font-family: 'Icon';
+        src: url('https://kdf.csco.cloud/fonts/icon.eot');
+        src: url('https://kdf.csco.cloud/fonts/icon.eot')
+               format('embedded-opentype'),
+             url('https://kdf.csco.cloud/fonts/icon.woff')
+               format('woff'),
+             url('https://kdf.csco.cloud/fonts/icon.ttf')
+               format('truetype'),
+             url('https://kdf.csco.cloud/fonts/icon.svg')
+               format('svg');
+        font-weight: normal;
+        font-style: normal;
       }
-      
     </style>
+
+    <link rel="stylesheet" href="https://kdf.csco.cloud/stylesheets/application.css">
+    <link rel="stylesheet" href="https://kdf.csco.cloud/stylesheets/temporary.css">
+    <link rel="stylesheet" href="https://kdf.csco.cloud/stylesheets/palettes.css">
+    <link rel="stylesheet" href="https://kdf.csco.cloud/stylesheets/highlight/highlight.css">
+
     
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu&#43;Mono">
+    <style>
+      body, input {
+        font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+      }
+      pre, code {
+        font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
+      }
+    </style>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <script src="https://kdf.csco.cloud/javascripts/modernizr.js"></script>
+
+    
+    <link href="https://kdf.csco.cloud/index.xml" rel="alternate" type="application/rss+xml" title="Kubernetes Development Framework (KDF)" />
+    <link href="https://kdf.csco.cloud/index.xml" rel="feed" type="application/rss+xml" title="Kubernetes Development Framework (KDF)" />
+    
+
   </head>
-  <body class="" data-url="/">
-    <nav id="sidebar" class="showVisitedLinks">
+  <body class="palette-primary-red palette-accent-teal">
 
 
 
-  <div id="header-wrapper">
-    <div id="header">
-      <a id="logo" href="https://kdf.csco.cloud">
-  <i class="fas fa-cube fa-2x">Kubernetes Development Framework</i>
-</a>
+	
+	
 
-    </div>
-    
-        <div class="searchbox">
-    <label for="search-by"><i class="fas fa-search"></i></label>
-    <input data-search-input id="search-by" type="text" placeholder="Search...">
-    <span data-search-clear=""><i class="fas fa-close"></i></span>
+
+<div class="backdrop">
+	<div class="backdrop-paper"></div>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1536701359"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1536701359"></script>
-<script type="text/javascript">
-    
-        var baseurl = '\/';
-    
-</script>
-<script type="text/javascript" src="/js/search.js?1536701359"></script>
+<input class="toggle" type="checkbox" id="toggle-drawer">
+<input class="toggle" type="checkbox" id="toggle-search">
+<label class="toggle-button overlay" for="toggle-drawer"></label>
+
+<header class="header">
+	<nav aria-label="Header">
+  <div class="bar default">
+    <div class="button button-menu" role="button" aria-label="Menu">
+      <label class="toggle-button icon icon-menu" for="toggle-drawer">
+        <span></span>
+      </label>
+    </div>
+    <div class="stretch">
+      <div class="title">
+        What Is the KDF?
+      </div>
+    </div>
 
     
+
+    
+    <div class="button button-github" role="button" aria-label="GitHub">
+      <a href="https://github.com/cisco-sso" title="@cisco-sso on GitHub" target="_blank" class="toggle-button icon icon-github"></a>
+    </div>
+    
+    
+        
+  </div>
+  <div class="bar search">
+    <div class="button button-close" role="button" aria-label="Close">
+      <label class="toggle-button icon icon-back" for="toggle-search"></label>
+    </div>
+    <div class="stretch">
+      <div class="field">
+        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
+      </div>
+    </div>
+    <div class="button button-reset" role="button" aria-label="Search">
+      <button class="toggle-button icon icon-close" id="reset-search"></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<main class="main">
+	<div class="drawer">
+		<nav aria-label="Navigation">
+  <a href="https://github.com/cisco-sso/kdf" class="project">
+    <div class="banner">
+      
+        <div class="logo">
+          <img src="https://kdf.csco.cloud/images/logo.png">
+        </div>
+      
+      <div class="name">
+        <strong>Kubernetes Development Framework (KDF) <span class="version">0.1.0</span></strong>
+        
+          <br>
+          cisco-sso/kdf
+        
+      </div>
+    </div>
+  </a>
+
+  <div class="scrollable">
+    <div class="wrapper">
+      
+        <ul class="repo">
+          <li class="repo-download">
+            <a href="https://github.com/cisco-sso/kdf/archive/master.zip" target="_blank" title="Download" data-action="download">
+              <i class="icon icon-download"></i> Download
+            </a>
+          </li>
+          <li class="repo-stars">
+            <a href="https://github.com/cisco-sso/kdf/stargazers" target="_blank" title="Stargazers" data-action="star">
+              <i class="icon icon-star"></i> Stars
+              <span class="count">&ndash;</span>
+            </a>
+          </li>
+        </ul>
+        <hr>
+      
+
+      <div class="toc">
+        
+        <ul>
+          
+
+
+
+
+<li>
+  
+    
+
+
+
+<a class="current" title="Concepts" href="https://kdf.csco.cloud/">
+	
+	Concepts
+</a>
+
+
+<ul id="scrollspy">
+</ul>
+
+
+  
+</li>
+
+
+
+<li>
+  
+    
+
+
+
+<a  title="Getting Started" href="https://kdf.csco.cloud/getting-started/">
+	
+	Getting Started
+</a>
+
+
+
+  
+</li>
+
+
+        </ul>
+        
+
+        
+        <hr>
+        <span class="section">The author</span>
+        
+        <ul>
+          
+
+          
+          <li>
+            <a href="https://github.com/cisco-sso" target="_blank" title="@cisco-sso on GitHub">
+              @cisco-sso on GitHub
+            </a>
+          </li>
+          
+
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</nav>
+
+	</div>
+
+	<article class="article">
+		<div class="wrapper">
+			
+				<h1>What Is the KDF? </h1>
+
+				<p>The Kubernetes Development Framework (KDF) is a set of <em>patterns</em>, <em>tools</em>, and
+<em>deployment packages</em>.  It is not a platform.  It is a toolkit and a way of
+doing things.</p>
+
+<p><strong>New users</strong> of Kubernetes may use the KDF to quickly create a cluster with
+basic services (e.g. logging, monitoring, HTTPS ingress, LetsEncrypt SSL certs)
+by using vetted and tested deployment packages, all while conforming to what we
+perceive as healthy patterns.</p>
+
+<p><strong>Experienced users</strong> of Kubernetes may use the KDF in order to make their
+lives easier and work more efficiently.  For example:</p>
+
+<ul>
+<li><p>Members of a team often spend hours individually setting up and maintaining
+their development and operations environments.  In order to work
+effectively, they should all work in a common environment, using the same
+list of tools, at the same versions.  We provide a cross-platform,
+lightweight, immutable cli tool and docker image that serves as this
+development environment called the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit
+(KDK)</a>.</p></li>
+
+<li><p>The <a href="https://github.com/cisco-sso/k8s-deploy">platform-deploy</a> code pattern
+allows a user to enter a &ldquo;cluster&rdquo; directory and automatically have all
+tools pre-configured for that specific enviroment.  Thus, by opening
+multiple shells to different &ldquo;cluster&rdquo; directories the user may be
+configured to operate on several clusters simultaneously.  This sounds
+simple, however it is not possible with &ldquo;kubectl&rdquo; today because only a
+single, global kube-context may be active at once.  It is also difficult
+with with other tools (e.g. aws-cli if working across AWS accounts).  Our
+&ldquo;platform-deploy&rdquo; code pattern relies on
+<a href="https://github.com/direnv/direnv">direnv</a> which is pre-configured in the
+<a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>, to
+auto-magically set enviroment variables upon entering a cluster directory
+and pull secrets from a <a href="https://keybase.io/">keybase</a> team to properly
+configure all of the cloud tools such as kubectl, helm, aws-cli, etc.</p></li>
+</ul>
+
+			
+
+			<aside class="copyright" role="note">
+				
+				&copy; 2018 Released under the Apache-2.0 license &ndash;
+				
+				Documentation built with
+				<a href="https://www.gohugo.io" target="_blank">Hugo</a>
+				using the
+				<a href="http://github.com/digitalcraftsman/hugo-material-docs" target="_blank">Material</a> theme.
+			</aside>
+
+			<footer class="footer">
+				
+
+
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
   </div>
 
-    <div class="highlightable">
-    <ul class="topics">
-
-        
-          
-          
-
-
- 
   
-    
-    <li data-nav-id="/concepts/" title="Concepts" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/concepts/">
-          <b>1. </b>Concepts
-          
-            <i class="fas read-icon"></i>
-          
+  
+  <div class="next">
+      <a href="https://kdf.csco.cloud/" title="What Is the KDF?">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              What Is the KDF?
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
       </a>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/concepts/what-is-the-kdf/" title="What Is the KDF?" class="dd-item ">
-        <a href="/concepts/what-is-the-kdf/">
-        What Is the KDF?
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
- 
-  
-    
-    <li data-nav-id="/quickstart/" title="Quickstart" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/quickstart/">
-          <b>2. </b>Quickstart
-          
-            <i class="fas read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-          
-          
-        
-          
-            
-            
-
-
- 
-  
-    
-      <li data-nav-id="/quickstart/install-the-kdk/" title="Install the KDK" class="dd-item ">
-        <a href="/quickstart/install-the-kdk/">
-        Install the KDK
-        <i class="fas fa-check read-icon"></i>
-        </a>
-    </li>
-     
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-         
-    </ul>
-
-    
-    
-      <section id="shortcuts">
-        <h3>More</h3>
-        <ul>
-          
-              <li> 
-                  <a class="padding" href="https://github.com/cisco-sso/kdf"><i class='fab fa-fw fa-github'></i> Github repo</a>
-              </li>
-          
-        </ul>
-      </section>
-    
-
-    
-    <section id="prefooter">
-      <hr/>
-      <ul>
-      
-      
-      
-        <li><a class="padding" href="#" data-clear-history-toggle=""><i class="fas fa-history fa-fw"></i> Clear History</a></li>
-      
-      </ul>
-    </section>
-    
-    <section id="footer">
-      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> from <a href="http://getgrav.org">Grav</a> and <a href="http://gohugo.io/">Hugo</a></p>
-
-    </section>
   </div>
 </nav>
 
 
 
+			</footer>
+		</div>
+	</article>
 
+	<div class="results" role="status" aria-live="polite">
+		<div class="scrollable">
+			<div class="wrapper">
+				<div class="meta"></div>
+				<div class="list"></div>
+			</div>
+		</div>
+	</div>
+</main>
 
-        <section id="body">
-        <div id="overlay"></div>
-        <div class="padding highlightable">
-              
-
-        
-        <div id="body-inner">
-          
-
-        
-
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
-
- 
-
-
-<h1 id="kubernetes-development-framework-kdf">Kubernetes Development Framework (KDF)</h1>
-
-<p>The Kubernetes Development Framework (KDF) is a set of <em>patterns</em>, <em>tools</em>, and
-<em>deployment packages</em>.  It is not a platform.  It is a toolkit and a way of
-doing things.</p>
-
-<p>Visit <a href="/concepts/">Concepts</a> for more
-information, or skip to the <a href="/quickstart/">Quickstart</a></p>
-	
-  
-        
-        </div> 
-        
-
-      </div>
-
-    <div id="navigation">
-        
-        
-        
-        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                        
-                        
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-            
-        
-        
-        
-
-
-        
-        
-            <a class="nav nav-next" href="/concepts/" title="Concepts" style="margin-right: 0px;"><i class="fas fa-chevron-right"></i></a>
-        
-    </div>
-
-    </section>
-    
-    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
-      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
-    </div>
-    <script src="/js/clipboard.min.js?1536701359"></script>
-    <script src="/js/perfect-scrollbar.min.js?1536701359"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1536701359"></script>
-    <script src="/js/jquery.sticky.js?1536701359"></script>
-    <script src="/js/featherlight.min.js?1536701359"></script>
-    <script src="/js/html5shiv-printshiv.min.js?1536701359"></script>
-    <script src="/js/highlight.pack.js?1536701359"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom.71422.js?1536701359"></script>
-    <script src="/js/learn.js?1536701359"></script>
-    <script src="/js/hugo-learn.js?1536701359"></script>
-
-    <link href="/mermaid/mermaid.css?1536701359" type="text/css" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1536701359"></script>
     <script>
-        mermaid.initialize({ startOnLoad: true });
+    
+      var base_url = 'https:\/\/kdf.csco.cloud\/';
+      var repo_id  = 'cisco-sso\/kdf';
+    
     </script>
+
+    <script src="https://kdf.csco.cloud/javascripts/application.js"></script>
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 
+    <script>
+      /* Add headers to scrollspy */
+      var headers   = document.getElementsByTagName("h2");
+      var scrollspy = document.getElementById('scrollspy');
+
+      if(scrollspy) {
+        if(headers.length > 0) {
+          for(var i = 0; i < headers.length; i++) {
+            var li = document.createElement("li");
+            li.setAttribute("class", "anchor");
+
+            var a  = document.createElement("a");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", headers[i].innerHTML);
+            a.innerHTML = headers[i].innerHTML;
+
+            li.appendChild(a)
+            scrollspy.appendChild(li);
+          }
+        } else {
+          scrollspy.parentElement.removeChild(scrollspy)
+        }
+
+
+        /* Add permanent link next to the headers */
+        var headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+        for(var i = 0; i < headers.length; i++) {
+            var a = document.createElement("a");
+            a.setAttribute("class", "headerlink");
+            a.setAttribute("href", "#" + headers[i].id);
+            a.setAttribute("title", "Permanent link")
+            a.innerHTML = "#";
+            headers[i].appendChild(a);
+        }
+      }
+    </script>
+
+    
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
 
