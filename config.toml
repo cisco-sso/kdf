@@ -1,32 +1,58 @@
-baseURL = "https://kdf.csco.cloud"
-languageCode = "en-US"
-defaultContentLanguage = "en"
-
+baseurl = "https://kdf.csco.cloud/"
+languageCode = "en-us"
 title = "Kubernetes Development Framework (KDF)"
-theme = "hugo-theme-learn"
-themesdir = "themes"
-metaDataFormat = "yaml"
-defaultContentLanguageInSubdir= true
+theme = "hugo-material-docs"
+metadataformat = "yaml"
+canonifyurls = true
+# Enable Google Analytics by entering your tracking id
+googleAnalytics = ""
 
 [params]
-  editURL = "https://github.com/cisco-sso/kdf/edit/master/content/"
-  description = "Kubernetes Development Framework (KDF)"
-  author = "Arch Team"
-  showVisitedLinks = true
-  disableBreadcrumb = true
-  disableNextPrev = true
+        # General information
+        author = "SSO Arch Team"
+        description = "Kubernetes Development Framework (KDF)"
+        copyright = "Released under the Apache-2.0 license"
 
-[outputs]
-home = [ "HTML", "RSS", "JSON"]
+        # Repository
+        provider = "GitHub"
+        repo_url = "https://github.com/cisco-sso/kdf"
 
-[Languages]
-[Languages.en]
-title = "KDF"
-weight = 1
-languageName = "English"
+        version = "0.1.0"
+        logo = "images/logo.png"
+        favicon = ""
 
-[[Languages.en.menu.shortcuts]]
-name = "<i class='fab fa-fw fa-github'></i> Github repo"
-identifier = "ds"
-url = "https://github.com/cisco-sso/kdf"
-weight = 10
+        permalink = "#"
+
+        # Custom assets
+        custom_css = ["https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"]
+        custom_js  = ["https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"]
+
+        # Syntax highlighting theme
+        highlight_css  = ""
+
+        [params.palette]
+        primary = "red"
+        accent  = "teal"
+
+        [params.font]
+        text = "Ubuntu"
+        code = "Ubuntu Mono"
+
+[social]
+        github  = "cisco-sso"
+
+[[menu.main]]
+        name   = "Concepts"
+        url    = "/"
+        weight = 10
+
+[[menu.main]]
+        name   = "Getting Started"
+        url    = "getting-started/"
+        weight = 20
+
+[blackfriday]
+        smartypants = true
+        fractions = true
+        smartDashes = true
+        plainIDAnchors = true

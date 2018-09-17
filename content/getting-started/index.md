@@ -1,6 +1,6 @@
 ---
-title: Install the KDK
-weight: 20
+title: Getting Started
+weight: 10
 ---
 
 *Select your Operating System:* {{<snippet-selector item-group="os" item-default="osx" item-list="osx win10" button-class="btn">}}
@@ -9,88 +9,88 @@ The kdk repository may be used to create a docker container with all of the tool
 
 The following steps are here to help you install the [Kubernetes Development Kit (KDK)](https://github.com/cisco-sso/kdk)
 
-{{% notice note %}}
+<div class="alert alert-info" role="alert">
 The KDK is compatible with OSX, Windows10, and Linux.  However, Linux is mostly untested except when using the KDK to develop itself running 'docker-in-docker'.  The instructions for Linux are not yet included, but should be similar to that of OSX.
-{{% /notice %}}
+</div>
 
 ## Install Prerequisites
 
 *Select your Operating System:* {{<snippet-selector item-group="os" item-default="osx" item-list="osx win10" button-class="btn">}}
 
 <div item-group="os" item="win10">
-{{% notice warning %}}
+<div class="alert alert-warning" role="alert">
 Windows10 Only: prerequisites installation requires the usage of Powershell as the adminstrative user.
-{{% /notice %}}
+</div>
 </div>
 
 
 Install package management system
 <div item-group="os" item="osx">
-{{< highlight bash >}}
+```bash
 # Open a Terminal
 #   Spotlight Search Command[⌘]-Space[" "] -> Terminal
 
 # Install HomeBrew Package Management System
 #   https://brew.sh/
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-{{</ highlight >}}
+```
 </div>
 <div item-group="os" item="win10">
-{{< highlight bash >}}
+```bash
 # Open the Powershell Terminal as Administrator
 #   Windows Search -> Windows PowerShell (Right click "Run as Administrator")
 
 # Install Chocolatey Package Management System
 #   https://chocolatey.org/
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-{{</ highlight >}}
+```
 </div>
 
 Install utils
 <div item-group="os" item="osx">
-{{< highlight bash >}}
+```bash
 # Install utils
 brew install git
 brew cask install keybase
-{{</ highlight >}}
+```
 </div>
 
 <div item-group="os" item="win10">
-{{< highlight bash >}}
+```bash
 # Install utils
 choco.exe install -y git curl sudo keybase
-{{</ highlight >}}
+```
 </div>
 
 Uninstall potentially conflicting packages (Optional)
 <div item-group="os" item="osx">
-{{< highlight bash >}}
+```bash
 # Uninstall potentially conflicting packages
 brew uninstall vagrant virtualbox
-{{</ highlight >}}
+```
 </div>
 
 <div item-group="os" item="win10">
-{{< highlight bash >}}
+```bash
 # Uninstall potentially conflicting packages
 choco.exe uninstall vagrant virtualbox
-{{</ highlight >}}
+```
 </div>
 
 
 Install Docker
 <div item-group="os" item="osx">
-{{< highlight bash >}}
+```bash
 # Install Docker for Mac
 open https://docs.docker.com/docker-for-mac/release-notes/
-{{</ highlight >}}
+```
 </div>
 
 <div item-group="os" item="win10">
-{{< highlight bash >}}
+```bash
 # Install Docker for Windows
 start https://docs.docker.com/docker-for-windows/release-notes/
-{{</ highlight >}}
+```
 </div>
 
 
@@ -105,7 +105,7 @@ Keybase is optionally required to make sharing secrets with other people easier.
 
 Configure Keybase
 <div item-group="os" item="osx">
-{{< highlight bash >}}
+```bash
 # Open Keybase
 #   Spotlight Search Command[⌘]-Space[" "] -> keybase
 
@@ -114,11 +114,11 @@ Configure Keybase
 
 # Verify that KeybaseFS has been mounted on your system
 ls /keybase
-{{</ highlight >}}
+```
 </div>
 
 <div item-group="os" item="win10">
-{{< highlight bash >}}
+```bash
 # Open "Git Bash"
 #   Windows Search -> keybase
 
@@ -127,7 +127,7 @@ ls /keybase
 
 # Verify that KeybaseFS has been mounted on your system
 dir k:
-{{</ highlight >}}
+```
 </div>
 
 Be a good Keybase citizen, and ensure you are registered on keybase with your full name and at least one verification.  Ask your team lead to add you to any relevant keybase teams to gain access to their files under <span item="osx">'/keybase/team/\<team-name\>'</span><span item="win10">'k:/team/\<team-name\>'</span>.
@@ -138,27 +138,27 @@ Be a good Keybase citizen, and ensure you are registered on keybase with your fu
 *Select your Operating System:* {{<snippet-selector item-group="os" item-default="osx" item-list="osx win10" button-class="btn">}}
 
 <div item-group="os" item="win10">
-{{% notice warning %}}
+<div class="alert alert-warning" role="alert">
 Windows 10 Only: After prerequisites installation, all KDK operations must occur within the "Git Bash" shell, instead of the PowerShell.
-{{% /notice %}}
+</div>
 </div>
 
 <div item-group="os" item="osx">
-{{< highlight bash >}}
+```bash
 # Open a Terminal
 #   Spotlight Search Command[⌘]-Space[" "] -> Terminal
-{{</ highlight >}}
+```
 </div>
 
 <div item-group="os" item="win10">
-{{< highlight bash >}}
+```bash
 # Open "Git Bash"
 #   Windows Search -> Git Bash
-{{</ highlight >}}
+```
 </div>
 
 
-{{< highlight bash >}}
+```bash
 # Install the KDK
 curl -sSL https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install | bash
 
@@ -170,12 +170,12 @@ kdk init
 
 # Run and Connect the KDK
 kdk ssh
-{{</ highlight >}}
+```
 
 At this point, running 'kdk ssh' at any	time will connect you to the KDK.
 
 
-## Post-Install Configuration
+## Post Install Configuration
 
 ### Adding keys to source control
 
