@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -ueo pipefail
+set -x
 
 DIR=$(dirname "$0")
 
@@ -12,9 +14,9 @@ fi
 
 echo "Deleting old publication"
 rm -rf public
-mkdir public
 git worktree prune
 rm -rf .git/worktrees/public/
+mkdir public
 
 echo "Checking out gh-pages branch into public"
 git worktree add -B gh-pages public origin/gh-pages

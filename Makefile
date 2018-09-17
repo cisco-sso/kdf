@@ -15,7 +15,7 @@ build:  ## Build the website to ./public
 	@echo "Your website has been generated"
 	@echo "  In order to push your changes to the real website"
 	@echo
-	@echo "        make publish-push"
+	@echo "        make publish"
 
 publish: build  ## Build and push the website to ghpages
 	@echo "Pushing your website"
