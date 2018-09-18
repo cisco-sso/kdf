@@ -1,13 +1,15 @@
 ---
-title: What Is the KDF?
-weight: 10
-disableToc: false
+title: Concepts
 type: index
 ---
 
-The Kubernetes Development Framework (KDF) is a set of *patterns*, *tools*, and
-*deployment packages*.  It is not a platform.  It is a toolkit and a way of
-doing things.
+## What is the KDF?
+
+The Kubernetes Development Framework (KDF) is a lightweight set of *patterns*,
+*tools*, and *deployment packages*.  It is not a platform.  It is a toolkit and
+a way of doing things.
+
+## How will it help?
 
 **New users** of Kubernetes may use the KDF to quickly create a cluster with
 basic services (e.g. logging, monitoring, HTTPS ingress, LetsEncrypt SSL certs)
@@ -39,3 +41,10 @@ lives easier and work more efficiently.  For example:
     auto-magically set enviroment variables upon entering a cluster directory
     and pull secrets from a [keybase](https://keybase.io/) team to properly
     configure all of the cloud tools such as kubectl, helm, aws-cli, etc.
+
+## The KDF is not...
+
+* a **platform**
+* a **cloud service**
+* a **set of Kubernetes cluster installation scripts**
+  - Many existing projects, products, and teams already address this.

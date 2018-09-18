@@ -1,6 +1,5 @@
 ---
 title: Getting Started
-weight: 10
 ---
 
 *Select your Operating System:* {{<snippet-selector item-group="os" item-default="osx" item-list="osx win10" button-class="btn">}}
