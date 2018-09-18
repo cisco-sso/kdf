@@ -51,6 +51,42 @@ googleAnalytics = ""
         url    = "getting-started/"
         weight = 20
 
+[[menu.main]]
+        name   = "Patterns"
+        url    = "patterns/"
+        weight = 30
+
+[[menu.main]]
+        name   = "Tools"
+        url    = "tools/"
+        weight = 40
+
+[[menu.main]]
+        name   = "Deployment Packages"
+        url    = "deployment-packages/"
+        weight = 50
+
+[[menu.main]]
+        name   = "Kubernetes"
+        url    = "kubernetes/"
+        weight = 60
+
+[[menu.main]]
+        name   = "Training"
+        url    = "training/"
+        weight = 70
+
+[[menu.main]]
+        name   = "Backlog"
+        url    = "backlog/"
+        weight = 80
+
+[[menu.main]]
+        name   = "Team"
+        url    = "team/"
+        weight = 100
+
+
 [blackfriday]
         smartypants = true
         fractions = true
