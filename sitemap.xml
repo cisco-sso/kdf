@@ -12,19 +12,15 @@
   </url>
   
   <url>
-    <loc>https://kdf.csco.cloud/</loc>
-  </url>
-  
-  <url>
     <loc>https://kdf.csco.cloud/deployment-packages/</loc>
   </url>
   
   <url>
-    <loc>https://kdf.csco.cloud/getting-started/</loc>
+    <loc>https://kdf.csco.cloud/kubernetes/</loc>
   </url>
   
   <url>
-    <loc>https://kdf.csco.cloud/kubernetes/</loc>
+    <loc>https://kdf.csco.cloud/</loc>
   </url>
   
   <url>
@@ -33,6 +29,10 @@
   
   <url>
     <loc>https://kdf.csco.cloud/patterns/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/quick-start/</loc>
   </url>
   
   <url>

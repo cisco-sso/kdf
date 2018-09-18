@@ -9,7 +9,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Concepts</title>
+    <title>Kubernetes Development Framework (KDF)</title>
     <meta name="generator" content="Hugo 0.48" />
 
     
@@ -21,9 +21,9 @@
     
 
     <meta property="og:url" content="https://kdf.csco.cloud/">
-    <meta property="og:title" content="Kubernetes Development Framework (KDF)">
+    <meta property="og:title" content="KDF">
     <meta property="og:image" content="https://kdf.csco.cloud/images/logo.png">
-    <meta name="apple-mobile-web-app-title" content="Kubernetes Development Framework (KDF)">
+    <meta name="apple-mobile-web-app-title" content="KDF">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
@@ -71,8 +71,8 @@
     <script src="https://kdf.csco.cloud/javascripts/modernizr.js"></script>
 
     
-    <link href="https://kdf.csco.cloud/index.xml" rel="alternate" type="application/rss+xml" title="Kubernetes Development Framework (KDF)" />
-    <link href="https://kdf.csco.cloud/index.xml" rel="feed" type="application/rss+xml" title="Kubernetes Development Framework (KDF)" />
+    <link href="https://kdf.csco.cloud/index.xml" rel="alternate" type="application/rss+xml" title="KDF" />
+    <link href="https://kdf.csco.cloud/index.xml" rel="feed" type="application/rss+xml" title="KDF" />
     
 
   </head>
@@ -102,7 +102,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Concepts
+        Kubernetes Development Framework (KDF)
       </div>
     </div>
 
@@ -143,7 +143,7 @@
         </div>
       
       <div class="name">
-        <strong>Kubernetes Development Framework (KDF) <span class="version">0.1.0</span></strong>
+        <strong>KDF <span class="version">0.1.0</span></strong>
         
           <br>
           cisco-sso/kdf
@@ -156,16 +156,16 @@
     <div class="wrapper">
       
         <ul class="repo">
-          <li class="repo-download">
-            <a href="https://github.com/cisco-sso/kdf/archive/master.zip" target="_blank" title="Download" data-action="download">
-              <i class="icon icon-download"></i> Download
-            </a>
-          </li>
           <li class="repo-stars">
             <a href="https://github.com/cisco-sso/kdf/stargazers" target="_blank" title="Stargazers" data-action="star">
               <i class="icon icon-star"></i> Stars
               <span class="count">&ndash;</span>
             </a>
+          </li>
+          <li class="repo-fork">
+            <a href="https://github.com/cisco-sso/kdf/fork" target="_blank" title="Fork" data-action="fork">
+              <i class="icon icon-fork"></i>Fork on GitHub
+	    </a>
           </li>
         </ul>
         <hr>
@@ -185,9 +185,9 @@
 
 
 
-<a class="current" title="Concepts" href="https://kdf.csco.cloud/">
+<a class="current" title="About KDF" href="https://kdf.csco.cloud/">
 	
-	Concepts
+	About KDF
 </a>
 
 
@@ -206,9 +206,9 @@
 
 
 
-<a  title="Getting Started" href="https://kdf.csco.cloud/getting-started/">
+<a  title="Quick Start" href="https://kdf.csco.cloud/quick-start/">
 	
-	Getting Started
+	Quick Start
 </a>
 
 
@@ -348,7 +348,7 @@
 
         
         <hr>
-        <span class="section">The author</span>
+        <span class="section">Contact</span>
         
         <ul>
           
@@ -374,24 +374,43 @@
 	<article class="article">
 		<div class="wrapper">
 			
-				<h1>Concepts </h1>
+				<h1>Kubernetes Development Framework (KDF) </h1>
 
 				
 
-<h2 id="what-is-the-kdf">What is the KDF?</h2>
+<h2 id="what-is-it">What is it?</h2>
 
-<p>The Kubernetes Development Framework (KDF) is a lightweight set of <em>patterns</em>,
-<em>tools</em>, and <em>deployment packages</em>.  It is not a platform.  It is a toolkit and
-a way of doing things.</p>
+<p>KDF is a&hellip;</p>
 
-<h2 id="how-will-it-help">How will it help?</h2>
+<ul>
+<li>lightweight set of <em>patterns</em>, <em>tools</em>, and <em>deployment packages</em></li>
+<li><strong>toolkit</strong></li>
+<li><strong>way of doing things</strong></li>
+</ul>
 
-<p><strong>New users</strong> of Kubernetes may use the KDF to quickly create a cluster with
+<h2 id="what-is-it-not">What is it not?</h2>
+
+<p>KDF is <em>not</em> a&hellip;</p>
+
+<ul>
+<li><strong>platform</strong></li>
+<li><strong>cloud service</strong></li>
+<li><strong>Platform as a Service (PaaS)</strong></li>
+<li><strong>set of Kubernetes cluster installation scripts</strong></li>
+</ul>
+
+<h2 id="how-does-it-help">How does it help?</h2>
+
+<h3 id="new-kubernetes-users">New Kubernetes Users</h3>
+
+<p>Use the KDF to quickly create a cluster with
 basic services (e.g. logging, monitoring, HTTPS ingress, LetsEncrypt SSL certs)
 by using vetted and tested deployment packages, all while conforming to what we
 perceive as healthy patterns.</p>
 
-<p><strong>Experienced users</strong> of Kubernetes may use the KDF in order to make their
+<h3 id="experienced-kubernetes-users">Experienced Kubernetes Users</h3>
+
+<p>Use the KDF in order to make their
 lives easier and work more efficiently.  For example:</p>
 
 <ul>
@@ -417,18 +436,6 @@ with with other tools (e.g. aws-cli if working across AWS accounts).  Our
 auto-magically set enviroment variables upon entering a cluster directory
 and pull secrets from a <a href="https://keybase.io/">keybase</a> team to properly
 configure all of the cloud tools such as kubectl, helm, aws-cli, etc.</p></li>
-</ul>
-
-<h2 id="the-kdf-is-not">The KDF is not&hellip;</h2>
-
-<ul>
-<li>a <strong>platform</strong></li>
-<li>a <strong>cloud service</strong></li>
-<li>a <strong>set of Kubernetes cluster installation scripts</strong>
-
-<ul>
-<li>Many existing projects, products, and teams already address this.</li>
-</ul></li>
 </ul>
 
 			
