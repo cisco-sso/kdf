@@ -1,6 +1,6 @@
 baseurl = "https://kdf.csco.cloud/"
 languageCode = "en-us"
-title = "Kubernetes Development Framework (KDF)"
+title = "KDF"
 theme = "hugo-material-docs"
 metadataformat = "yaml"
 canonifyurls = true
@@ -42,13 +42,13 @@ googleAnalytics = ""
         github  = "cisco-sso"
 
 [[menu.main]]
-        name   = "Concepts"
+        name   = "About KDF"
         url    = "/"
         weight = 10
 
 [[menu.main]]
-        name   = "Getting Started"
-        url    = "getting-started/"
+        name   = "Quick Start"
+        url    = "quick-start/"
         weight = 20
 
 [[menu.main]]
@@ -85,7 +85,6 @@ googleAnalytics = ""
         name   = "Team"
         url    = "team/"
         weight = 100
-
 
 [blackfriday]
         smartypants = true

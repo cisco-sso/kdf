@@ -1,5 +1,5 @@
 ---
-title: Concepts
+title: Kubernetes Development Framework (KDF)
 type: index
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Getting Started
+title: Quick Start
 ---
 
 *Select your Operating System:* {{<snippet-selector item-group="os" item-default="osx" item-list="osx win10" button-class="btn">}}
