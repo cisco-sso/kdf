@@ -1,14 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>What Is the KDF? on Kubernetes Development Framework (KDF)</title>
+    <title>Concepts on Kubernetes Development Framework (KDF)</title>
     <link>https://kdf.csco.cloud/</link>
-    <description>Recent content in What Is the KDF? on Kubernetes Development Framework (KDF)</description>
+    <description>Recent content in Concepts on Kubernetes Development Framework (KDF)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
 	<atom:link href="https://kdf.csco.cloud/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Backlog</title>
+      <link>https://kdf.csco.cloud/backlog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/backlog/</guid>
+      <description>Roadmap Priorities  Dockerized KDK Multi-cluster DRY Configuration  e.g. How to manage highly redundant umbrella charts or mh configs across many kubernetes clusters. Next generation of mh technology, could be something else  Kubernetes Individual Identity (Security)  OIDC Provider Integration  Kubernetes RBAC (Security) Kubernetes Audit logging (Security) Multi-tenant Kubernetes Clusters  Per-region Kubernetes clusters Individual Namespaces per project.  Service Mesh  East/West (intra-cluster)  e.g. pod in one cluster can talk to service in another cluster.</description>
+    </item>
+    
+    <item>
+      <title>Deployment Packages</title>
+      <link>https://kdf.csco.cloud/deployment-packages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/deployment-packages/</guid>
+      <description>Deployment Packages (Helm Charts) (components list)
+All changes to deployment packages were upstreamed.
+How to generate parts of this doc: git checkout git@github.com:cisco-sso/framework-deploy.git cd framework-deploy/apps ls | awk -F&#39;-&#39; &#39;{OFS=&#34;-&#34;;NF--;print &#34;- &#34; $0;}&#39;|sort | uniq   cassandra cert-manager cert-manager-configs chaoskube cluster-autoscaler consul docker-registry drone elasticsearch elasticsearch-curator elasticsearch-exporter envoy external-dns filebeat filebeat-elasticsearch grafana hackmd kafka kafka-manager kafka-rest kafka-schema-registry kibana logstash metallb metrics-server minio mysql nginx-ingress nginx-reverse-proxy oauth2-proxy openebs prometheus raw redis redis-ha stolon ureplicator vault  </description>
+    </item>
     
     <item>
       <title>Getting Started</title>
@@ -17,6 +37,53 @@
       
       <guid>https://kdf.csco.cloud/getting-started/</guid>
       <description>Select your Operating System: osx&amp;nbsp; win10&amp;nbsp;    $(&#39;document&#39;).ready(function(){ toggleOnloadFunction(&#34;os&#34;, &#34;osx&#34;, [&#34;osx&#34;,&#34;win10&#34;]); }); function toggleOnloadFunction(itemGroup, itemDefault, itemList) { for (i of itemList) { if (i == itemDefault) { $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;&#39;]&#34;).show(); $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;-button&#39;]&#34;).css(&#34;background-color&#34;, &#34;PaleGreen&#34;) } else { $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;&#39;]&#34;).hide(); $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;-button&#39;]&#34;).css(&#34;background-color&#34;, &#34;&#34;) } } } function toggleButtonFunction(itemGroup, itemDefault, itemList, itemName) { for (i of itemList) { if (i == itemName) { $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;&#39;]&#34;).show(); $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;-button&#39;]&#34;).css(&#34;background-color&#34;, &#34;PaleGreen&#34;) } else { $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;&#39;]&#34;).hide(); $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;-button&#39;]&#34;).css(&#34;background-color&#34;, &#34;&#34;) } } }  The kdk repository may be used to create a docker container with all of the tools that one would typically use in order to develop and operate kubernetes clusters.</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>https://kdf.csco.cloud/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/kubernetes/</guid>
+      <description> Testing Chaoskube Litmus Test Delete all nodes
+Helm Chart Practices Selecting a Helm Chart Helm Chart Code Review Cluster Deployments Local Machine AWS Vsphere Openstack </description>
+    </item>
+    
+    <item>
+      <title>Kubernetes Training Resources</title>
+      <link>https://kdf.csco.cloud/training/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/training/</guid>
+      <description> Docker  Getting Started:  https://docs.docker.com/get-started/   Kubernetes  A Comic-Book Intro to Kubernetes  https://cloud.google.com/kubernetes-engine/kubernetes-comic/  Official Kubernetes Tutorials  https://kubernetes.io/docs/tutorials/  Kubernetes Concepts  https://kubernetes.io/docs/concepts/   Helm  Quickstart  https://docs.helm.sh/using_helm/#quickstart   </description>
+    </item>
+    
+    <item>
+      <title>Patterns</title>
+      <link>https://kdf.csco.cloud/patterns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/patterns/</guid>
+      <description> Development Environment Framework-Deploy Custom Chart Repository Monitoring </description>
+    </item>
+    
+    <item>
+      <title>Team</title>
+      <link>https://kdf.csco.cloud/team/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/team/</guid>
+      <description> Agreements Code Reviews Upstreaming People </description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://kdf.csco.cloud/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/tools/</guid>
+      <description> Keybase Kubernetes Development Kit kdk (components list: autogen)
+framework-deploy mh </description>
     </item>
     
   </channel>

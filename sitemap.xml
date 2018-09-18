@@ -3,11 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://kdf.csco.cloud/getting-started/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kdf.csco.cloud/</loc>
+    <loc>https://kdf.csco.cloud/backlog/</loc>
   </url>
   
   <url>
@@ -16,8 +12,40 @@
   </url>
   
   <url>
+    <loc>https://kdf.csco.cloud/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/deployment-packages/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/getting-started/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/kubernetes/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/training/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/patterns/</loc>
+  </url>
+  
+  <url>
     <loc>https://kdf.csco.cloud/tags/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/team/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/tools/</loc>
   </url>
   
 </urlset>

@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Concepts</title>
+    <title>Deployment Packages - Kubernetes Development Framework (KDF)</title>
     <meta name="generator" content="Hugo 0.48" />
 
     
     <meta name="description" content="Kubernetes Development Framework (KDF)">
     
-    <link rel="canonical" href="https://kdf.csco.cloud/">
+    <link rel="canonical" href="https://kdf.csco.cloud/deployment-packages/">
     
     <meta name="author" content="SSO Arch Team">
     
 
-    <meta property="og:url" content="https://kdf.csco.cloud/">
+    <meta property="og:url" content="https://kdf.csco.cloud/deployment-packages/">
     <meta property="og:title" content="Kubernetes Development Framework (KDF)">
     <meta property="og:image" content="https://kdf.csco.cloud/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="Kubernetes Development Framework (KDF)">
@@ -71,9 +71,6 @@
     <script src="https://kdf.csco.cloud/javascripts/modernizr.js"></script>
 
     
-    <link href="https://kdf.csco.cloud/index.xml" rel="alternate" type="application/rss+xml" title="Kubernetes Development Framework (KDF)" />
-    <link href="https://kdf.csco.cloud/index.xml" rel="feed" type="application/rss+xml" title="Kubernetes Development Framework (KDF)" />
-    
 
   </head>
   <body class="palette-primary-red palette-accent-teal">
@@ -102,7 +99,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Concepts
+        Deployment Packages
       </div>
     </div>
 
@@ -185,14 +182,11 @@
 
 
 
-<a class="current" title="Concepts" href="https://kdf.csco.cloud/">
+<a  title="Concepts" href="https://kdf.csco.cloud/">
 	
 	Concepts
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -260,11 +254,14 @@
 
 
 
-<a  title="Deployment Packages" href="https://kdf.csco.cloud/deployment-packages/">
+<a class="current" title="Deployment Packages" href="https://kdf.csco.cloud/deployment-packages/">
 	
 	Deployment Packages
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
 
   
@@ -373,65 +370,60 @@
 
 	<article class="article">
 		<div class="wrapper">
-			
-				<h1>Concepts </h1>
+			<h1>Deployment Packages </h1>
 
-				
+			<p>Deployment Packages (Helm Charts) (components list)</p>
 
-<h2 id="what-is-the-kdf">What is the KDF?</h2>
+<p>All changes to deployment packages were upstreamed.</p>
 
-<p>The Kubernetes Development Framework (KDF) is a lightweight set of <em>patterns</em>,
-<em>tools</em>, and <em>deployment packages</em>.  It is not a platform.  It is a toolkit and
-a way of doing things.</p>
-
-<h2 id="how-will-it-help">How will it help?</h2>
-
-<p><strong>New users</strong> of Kubernetes may use the KDF to quickly create a cluster with
-basic services (e.g. logging, monitoring, HTTPS ingress, LetsEncrypt SSL certs)
-by using vetted and tested deployment packages, all while conforming to what we
-perceive as healthy patterns.</p>
-
-<p><strong>Experienced users</strong> of Kubernetes may use the KDF in order to make their
-lives easier and work more efficiently.  For example:</p>
+<div hidden>
+How to generate parts of this doc:
+git checkout git@github.com:cisco-sso/framework-deploy.git
+cd framework-deploy/apps
+ls | awk -F'-' '{OFS="-";NF--;print "- " $0;}'|sort | uniq
+</div>
 
 <ul>
-<li><p>Members of a team often spend hours individually setting up and maintaining
-their development and operations environments.  In order to work
-effectively, they should all work in a common environment, using the same
-list of tools, at the same versions.  We provide a cross-platform,
-lightweight, immutable cli tool and docker image that serves as this
-development environment called the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit
-(KDK)</a>.</p></li>
-
-<li><p>The <a href="https://github.com/cisco-sso/k8s-deploy">platform-deploy</a> code pattern
-allows a user to enter a &ldquo;cluster&rdquo; directory and automatically have all
-tools pre-configured for that specific enviroment.  Thus, by opening
-multiple shells to different &ldquo;cluster&rdquo; directories the user may be
-configured to operate on several clusters simultaneously.  This sounds
-simple, however it is not possible with &ldquo;kubectl&rdquo; today because only a
-single, global kube-context may be active at once.  It is also difficult
-with with other tools (e.g. aws-cli if working across AWS accounts).  Our
-&ldquo;platform-deploy&rdquo; code pattern relies on
-<a href="https://github.com/direnv/direnv">direnv</a> which is pre-configured in the
-<a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>, to
-auto-magically set enviroment variables upon entering a cluster directory
-and pull secrets from a <a href="https://keybase.io/">keybase</a> team to properly
-configure all of the cloud tools such as kubectl, helm, aws-cli, etc.</p></li>
+<li>cassandra</li>
+<li>cert-manager</li>
+<li>cert-manager-configs</li>
+<li>chaoskube</li>
+<li>cluster-autoscaler</li>
+<li>consul</li>
+<li>docker-registry</li>
+<li>drone</li>
+<li>elasticsearch</li>
+<li>elasticsearch-curator</li>
+<li>elasticsearch-exporter</li>
+<li>envoy</li>
+<li>external-dns</li>
+<li>filebeat</li>
+<li>filebeat-elasticsearch</li>
+<li>grafana</li>
+<li>hackmd</li>
+<li>kafka</li>
+<li>kafka-manager</li>
+<li>kafka-rest</li>
+<li>kafka-schema-registry</li>
+<li>kibana</li>
+<li>logstash</li>
+<li>metallb</li>
+<li>metrics-server</li>
+<li>minio</li>
+<li>mysql</li>
+<li>nginx-ingress</li>
+<li>nginx-reverse-proxy</li>
+<li>oauth2-proxy</li>
+<li>openebs</li>
+<li>prometheus</li>
+<li>raw</li>
+<li>redis</li>
+<li>redis-ha</li>
+<li>stolon</li>
+<li>ureplicator</li>
+<li>vault</li>
 </ul>
 
-<h2 id="the-kdf-is-not">The KDF is not&hellip;</h2>
-
-<ul>
-<li>a <strong>platform</strong></li>
-<li>a <strong>cloud service</strong></li>
-<li>a <strong>set of Kubernetes cluster installation scripts</strong>
-
-<ul>
-<li>Many existing projects, products, and teams already address this.</li>
-</ul></li>
-</ul>
-
-			
 
 			<aside class="copyright" role="note">
 				
@@ -446,23 +438,37 @@ configure all of the cloud tools such as kubectl, helm, aws-cli, etc.</p></li>
 			<footer class="footer">
 				
 
-
-
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
+  
+      <a href="https://kdf.csco.cloud/backlog/" title="Backlog">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Backlog
+            </div>
+          </div>
+        </div>
+      </a>
+  
   </div>
 
-  
-  
   <div class="next">
-      <a href="https://kdf.csco.cloud/categories/" title="Categories">
+  
+      <a href="https://kdf.csco.cloud/getting-started/" title="Getting Started">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Categories
+              Getting Started
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
@@ -470,8 +476,11 @@ configure all of the cloud tools such as kubectl, helm, aws-cli, etc.</p></li>
           </div>
         </div>
       </a>
+  
   </div>
 </nav>
+
+
 
 
 
