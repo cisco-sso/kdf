@@ -7,8 +7,8 @@ within the Keybase filesystem at common paths.
 Later in this guide (upon `kdk init`), the `kdk` command will ask to mount the host's Keybase filesytem to the KDK
 container at `/keybase`.
 
-Be a good Keybase citizen and ensure you are registered an [keybase.io](https://keybase.io/) with your full name and
-publishing at least one verification.
+Be a good Keybase citizen and ensure you are registered on [keybase.io](https://keybase.io/) displaying your full name
+and publishing at least one verification.
 
 Ask your team lead to add you to relevant Keybase teams. This will allow you to access team files at
 `{{ $mountpoint }}/team/<team-name>`.
