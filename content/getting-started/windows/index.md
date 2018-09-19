@@ -41,8 +41,6 @@ choco install -y git curl sudo
 
 ```bash
 choco install -y docker-for-windows
-
-choco install -y docker
 ```
 
 ### Reboot
