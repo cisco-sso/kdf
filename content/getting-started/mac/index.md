@@ -29,8 +29,6 @@ title: Getting Started > Mac
 
 ```bash
 brew cask install docker
-
-brew install docker
 ```
 
 
