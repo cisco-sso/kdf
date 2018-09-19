@@ -14,7 +14,7 @@ develop: submodule  ## Start the development webserver
 	@echo
 	@echo "        http://localhost:1313"
 	@echo
-	hugo server -D --bind 0.0.0.0 --disableFastRender
+	hugo server -D --bind 0.0.0.0 --disableFastRender --debug
 
 build: submodule  ## Build the website to ./public
 	./bin/build-to-local-ghpages-branch.sh
