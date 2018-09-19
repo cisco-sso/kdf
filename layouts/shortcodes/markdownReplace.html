@@ -1,0 +1,3 @@
+{{- $old := .Get "old" -}}
+{{- $new := .Get "new" -}}
+{{ replace .Inner $old $new | markdownify }}
