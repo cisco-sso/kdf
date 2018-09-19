@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Patterns - KDF</title>
+    <title>Getting Started &gt; Windows - KDF</title>
     <meta name="generator" content="Hugo 0.48" />
 
     
     <meta name="description" content="Kubernetes Development Framework (KDF)">
     
-    <link rel="canonical" href="https://kdf.csco.cloud/patterns/">
+    <link rel="canonical" href="https://kdf.csco.cloud/getting-started/windows/">
     
     <meta name="author" content="SSO Arch Team">
     
 
-    <meta property="og:url" content="https://kdf.csco.cloud/patterns/">
+    <meta property="og:url" content="https://kdf.csco.cloud/getting-started/windows/">
     <meta property="og:title" content="KDF">
     <meta property="og:image" content="https://kdf.csco.cloud/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="KDF">
@@ -99,7 +99,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Patterns
+        Getting Started &gt; Windows
       </div>
     </div>
 
@@ -230,11 +230,14 @@
 
 
 
-<a  title="Windows" href="https://kdf.csco.cloud/getting-started/windows/">
+<a class="current" title="Windows" href="https://kdf.csco.cloud/getting-started/windows/">
 	
 	Windows
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
 
       
@@ -250,14 +253,11 @@
 
 
 
-<a class="current" title="Patterns" href="https://kdf.csco.cloud/patterns/">
+<a  title="Patterns" href="https://kdf.csco.cloud/patterns/">
 	
 	Patterns
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -402,17 +402,164 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Patterns </h1>
+			<h1>Getting Started &gt; Windows </h1>
 
 			
 
-<h2 id="development-environment">Development Environment</h2>
+<h2 id="requirements">Requirements</h2>
 
-<h2 id="framework-deploy">Framework-Deploy</h2>
+<ul>
+<li><strong>Windows 10 Pro</strong> or <strong>Windows 10 Enterprise</strong> is required.</li>
+<li>You must execute all PowerShell commands as an adminstrative user.</li>
+<li>8 GB RAM</li>
+<li>2 CPU cores</li>
+</ul>
 
-<h2 id="custom-chart-repository">Custom Chart Repository</h2>
+<h2 id="step-1-chocolatey">Step 1: Chocolatey</h2>
 
-<h2 id="monitoring">Monitoring</h2>
+<h3 id="open-a-powershell-terminal-as-administrator">Open a Powershell terminal as <code>Administrator</code>.</h3>
+
+<ul>
+<li><code>Windows Search</code> -&gt; <code>Windows PowerShell</code> -&gt; right click <code>Run as Administrator</code></li>
+</ul>
+
+<h3 id="install-chocolatey-https-chocolatey-org-install">Install <a href="https://chocolatey.org/install">Chocolatey</a>.</h3>
+
+<pre><code class="language-bash">Set-ExecutionPolicy Bypass -Scope Process -Force
+iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+</code></pre>
+
+<h2 id="step-2-utilities">Step 2: Utilities</h2>
+
+<h3 id="install-git-curl-and-sudo">Install <code>git</code>, <code>curl</code> and <code>sudo</code>.</h3>
+
+<pre><code class="language-bash">choco install -y git curl sudo
+</code></pre>
+
+<h3 id="open-git-bash">Open <code>Git Bash</code></h3>
+
+<ul>
+<li><code>Windows Search</code> -&gt; <code>Git Bash</code></li>
+</ul>
+
+<h2 id="step-3-docker">Step 3: Docker</h2>
+
+<h3 id="install-docker-for-windows-https-docs-docker-com-docker-for-windows-release-notes">Install <a href="https://docs.docker.com/docker-for-windows/release-notes/">Docker for Windows</a>.</h3>
+
+<pre><code class="language-bash">choco install -y docker-for-windows
+
+choco install -y docker
+</code></pre>
+
+<h3 id="reboot">Reboot</h3>
+
+<div class="admonition warning">
+<p class="admonition-title"></p>
+<p>You must reboot after installing Docker on Windows.</p>
+</div>
+
+<h2 id="step-4-kubernetes">Step 4: Kubernetes</h2>
+
+<div class="admonition warning">
+<p class="admonition-title"></p>
+<p>TODO (use a shortcode)</p>
+</div>
+
+<h2 id="step-5-keybase">Step 5: Keybase</h2>
+
+<div class="admonition note">
+<p class="admonition-title"></p>
+<p><p><a href="https://keybase.io/">Keybase</a> makes sharing secrets with your team <strong>much</strong> easier. A Keybase user may be added to one
+or more <a href="https://keybase.io/docs/teams/index">Keybase Teams</a>, at which point the team&rsquo;s secret files are accessible
+under your local filesystem at <code>k:</code>. Scripts and automation may then locate secrets
+within the Keybase filesystem at common paths.</p>
+
+<p>Later in this guide (upon <code>kdk init</code>), the <code>kdk</code> command will ask to mount the host&rsquo;s Keybase filesytem to the KDK
+container at <code>/keybase</code>.</p>
+
+<p>Be a good Keybase citizen and ensure you are registered an <a href="https://keybase.io/">keybase.io</a> with your full name and
+publishing at least one verification.</p>
+
+<p>Ask your team lead to add you to relevant Keybase teams. This will allow you to access team files at
+<code>k:/team/&lt;team-name&gt;</code>.</p>
+</p>
+</div>
+
+<h3 id="install-keybase">Install Keybase.</h3>
+
+<pre><code class="language-bash">choco install -y keybase
+</code></pre>
+
+<h3 id="open-keybase">Open Keybase.</h3>
+
+<ul>
+<li><code>Windows Search</code> -&gt; <code>keybase</code></li>
+</ul>
+
+<h3 id="enable-keybase-files">Enable Keybase Files.</h3>
+
+<ul>
+<li><code>Settings</code> -&gt; <code>Files</code> -&gt; <code>Enable Keybase</code> in <code>Explorer</code></li>
+</ul>
+
+<h3 id="verify-that-keybasefs-is-mounted-to-your-system">Verify that KeybaseFS is mounted to your system.</h3>
+
+<pre><code>dir k:
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title"></p>
+<p><p>Success looks like&hellip;</p>
+
+<pre><code class="language-bash">$ dir k:
+private  public  team
+</code></pre>
+</p>
+</div>
+
+<h2 id="step-5-kdk">Step 5: KDK</h2>
+
+<div class="admonition note">
+<p class="admonition-title"></p>
+<p>The KDK tool creates a Docker container that contains many tools for interacting with and developing for Kubernetes.</p>
+</div>
+
+<h3 id="install-the-kubernetes-development-kit-kdk-https-github-com-cisco-sso-kdk">Install the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>.</h3>
+
+<pre><code class="language-bash">curl -sSL https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install | bash
+</code></pre>
+
+<h3 id="print-kdk-usage-information">Print KDK usage information.</h3>
+
+<pre><code class="language-bash">kdk
+</code></pre>
+
+<h3 id="configure-kdk">Configure KDK.</h3>
+
+<pre><code class="language-bash">kdk init
+</code></pre>
+
+<h3 id="run-the-kdk-container-and-log-into-it">Run the KDK container and log into it.</h3>
+
+<pre><code class="language-bash">kdk ssh
+</code></pre>
+
+<h2 id="post-install">Post-Install</h2>
+
+<p><em>(optional)</em></p>
+
+<h3 id="add-your-public-ssh-key-to-source-control-systems">Add your public SSH key to source control systems.</h3>
+
+<p>This is optional if you are using <a href="https://developer.github.com/v3/guides/using-ssh-agent-forwarding/">ssh-agent</a>, which the KDK automatically forwards.  Otherwise, you may directly configure the pre-generated ssh key which is used to connect to the KDK, within each source control provider.</p>
+
+<p>Add content of ssh public key <code>~/.kdk/ssh/id_rsa.pub</code></p>
+
+<ul>
+<li>To your <a href="https://github.com/settings/keys">Github Account Keys</a></li>
+<li>To your Bitbucket Server https://<BITBUCKET-SERVER>/bitbucket/plugins/servlet/ssh/account/keys</li>
+</ul>
+
+
 
 
 			<aside class="copyright" role="note">
@@ -431,7 +578,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://kdf.csco.cloud/training/" title="Kubernetes Training Resources">
+      <a href="https://kdf.csco.cloud/getting-started/mac/" title="Getting Started &gt; Mac">
         <span class="direction">
           Previous
         </span>
@@ -441,7 +588,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              Kubernetes Training Resources
+              Getting Started &gt; Mac
             </div>
           </div>
         </div>
@@ -451,14 +598,14 @@
 
   <div class="next">
   
-      <a href="https://kdf.csco.cloud/team/" title="Team">
+      <a href="https://kdf.csco.cloud/kubernetes/" title="Kubernetes">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Team
+              Kubernetes
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

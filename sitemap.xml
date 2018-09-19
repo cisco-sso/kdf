@@ -16,6 +16,23 @@
   </url>
   
   <url>
+    <loc>https://kdf.csco.cloud/getting-started/linux/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/getting-started/mac/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/getting-started/windows/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/getting-started/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kdf.csco.cloud/kubernetes/</loc>
   </url>
   
@@ -29,10 +46,6 @@
   
   <url>
     <loc>https://kdf.csco.cloud/patterns/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kdf.csco.cloud/quick-start/</loc>
   </url>
   
   <url>

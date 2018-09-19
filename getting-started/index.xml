@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting-starteds on KDF</title>
+    <link>https://kdf.csco.cloud/getting-started/</link>
+    <description>Recent content in Getting-starteds on KDF</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://kdf.csco.cloud/getting-started/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Getting Started &gt; Linux</title>
+      <link>https://kdf.csco.cloud/getting-started/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/linux/</guid>
+      <description>Linux is not currently supported.
+However, the Mac instructions may help you get KDF running on Linux.
+ </description>
+    </item>
+    
+    <item>
+      <title>Getting Started &gt; Mac</title>
+      <link>https://kdf.csco.cloud/getting-started/mac/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/mac/</guid>
+      <description>Requirements  macOS High Sierra (10.13) or later is required. You must execute all commands as an administrative (sudo-allowed) user. 8 GB RAM 2 CPU cores  Step 1: Homebrew Open a Terminal.  Spotlight Search ( Command[⌘] + Space[&amp;quot; &amp;quot;] ) -&amp;gt; Terminal  Install Homebrew. /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  Step 2: Docker  Install Docker for Mac.  brew cask install docker brew install docker  Step 3: Kubernetes TODO (use a shortcode)</description>
+    </item>
+    
+    <item>
+      <title>Getting Started &gt; Windows</title>
+      <link>https://kdf.csco.cloud/getting-started/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/windows/</guid>
+      <description>Requirements  Windows 10 Pro or Windows 10 Enterprise is required. You must execute all PowerShell commands as an adminstrative user. 8 GB RAM 2 CPU cores  Step 1: Chocolatey Open a Powershell terminal as Administrator.  Windows Search -&amp;gt; Windows PowerShell -&amp;gt; right click Run as Administrator  Install Chocolatey. Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))  Step 2: Utilities Install git, curl and sudo. choco install -y git curl sudo  Open Git Bash  Windows Search -&amp;gt; Git Bash  Step 3: Docker Install Docker for Windows.</description>
+    </item>
+    
+  </channel>
+</rss>

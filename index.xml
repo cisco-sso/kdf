@@ -31,6 +31,35 @@ How to generate parts of this doc: git checkout git@github.com:cisco-sso/framewo
     </item>
     
     <item>
+      <title>Getting Started &gt; Linux</title>
+      <link>https://kdf.csco.cloud/getting-started/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/linux/</guid>
+      <description>Linux is not currently supported.
+However, the Mac instructions may help you get KDF running on Linux.
+ </description>
+    </item>
+    
+    <item>
+      <title>Getting Started &gt; Mac</title>
+      <link>https://kdf.csco.cloud/getting-started/mac/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/mac/</guid>
+      <description>Requirements  macOS High Sierra (10.13) or later is required. You must execute all commands as an administrative (sudo-allowed) user. 8 GB RAM 2 CPU cores  Step 1: Homebrew Open a Terminal.  Spotlight Search ( Command[⌘] + Space[&amp;quot; &amp;quot;] ) -&amp;gt; Terminal  Install Homebrew. /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  Step 2: Docker  Install Docker for Mac.  brew cask install docker brew install docker  Step 3: Kubernetes TODO (use a shortcode)</description>
+    </item>
+    
+    <item>
+      <title>Getting Started &gt; Windows</title>
+      <link>https://kdf.csco.cloud/getting-started/windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/windows/</guid>
+      <description>Requirements  Windows 10 Pro or Windows 10 Enterprise is required. You must execute all PowerShell commands as an adminstrative user. 8 GB RAM 2 CPU cores  Step 1: Chocolatey Open a Powershell terminal as Administrator.  Windows Search -&amp;gt; Windows PowerShell -&amp;gt; right click Run as Administrator  Install Chocolatey. Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))  Step 2: Utilities Install git, curl and sudo. choco install -y git curl sudo  Open Git Bash  Windows Search -&amp;gt; Git Bash  Step 3: Docker Install Docker for Windows.</description>
+    </item>
+    
+    <item>
       <title>Kubernetes</title>
       <link>https://kdf.csco.cloud/kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -56,15 +85,6 @@ Helm Chart Practices Selecting a Helm Chart Helm Chart Code Review Cluster Deplo
       
       <guid>https://kdf.csco.cloud/patterns/</guid>
       <description> Development Environment Framework-Deploy Custom Chart Repository Monitoring </description>
-    </item>
-    
-    <item>
-      <title>Quick Start</title>
-      <link>https://kdf.csco.cloud/quick-start/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/quick-start/</guid>
-      <description>Select your Operating System: osx&amp;nbsp; win10&amp;nbsp;    $(&#39;document&#39;).ready(function(){ toggleOnloadFunction(&#34;os&#34;, &#34;osx&#34;, [&#34;osx&#34;,&#34;win10&#34;]); }); function toggleOnloadFunction(itemGroup, itemDefault, itemList) { for (i of itemList) { if (i == itemDefault) { $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;&#39;]&#34;).show(); $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;-button&#39;]&#34;).css(&#34;background-color&#34;, &#34;PaleGreen&#34;) } else { $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;&#39;]&#34;).hide(); $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;-button&#39;]&#34;).css(&#34;background-color&#34;, &#34;&#34;) } } } function toggleButtonFunction(itemGroup, itemDefault, itemList, itemName) { for (i of itemList) { if (i == itemName) { $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;&#39;]&#34;).show(); $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;-button&#39;]&#34;).css(&#34;background-color&#34;, &#34;PaleGreen&#34;) } else { $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;&#39;]&#34;).hide(); $(&#34;[item-group=&#39;&#34;+itemGroup+&#34;&#39;][item=&#39;&#34;+i+&#34;-button&#39;]&#34;).css(&#34;background-color&#34;, &#34;&#34;) } } }  The kdk repository may be used to create a docker container with all of the tools that one would typically use in order to develop and operate kubernetes clusters.</description>
     </item>
     
     <item>
