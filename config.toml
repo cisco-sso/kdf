@@ -48,24 +48,24 @@ googleAnalytics = ""
 
 [[menu.main]]
         name       = "Getting Started"
-	url        = "getting-started/"
+        url        = "getting-started/"
         weight     = 20
-	identifier = "getting-started"
+        identifier = "getting-started"
 
 [[menu.main]]
         name       = "Linux"
-	url        = "getting-started/linux/"
-	parent     = "getting-started"
+        url        = "getting-started/linux/"
+        parent     = "getting-started"
 
 [[menu.main]]
         name       = "Mac"
-	url        = "getting-started/mac/"
-	parent     = "getting-started"
+        url        = "getting-started/mac/"
+        parent     = "getting-started"
 
 [[menu.main]]
         name       = "Windows"
-	url        = "getting-started/windows/"
-	parent     = "getting-started"
+        url        = "getting-started/windows/"
+        parent     = "getting-started"
 
 [[menu.main]]
         name   = "Patterns"
