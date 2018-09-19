@@ -37,14 +37,16 @@ brew install docker
 ## Step 3: Kubernetes
 
 {{% warning %}}
-TODO (use a shortcode)
+TODO (use a readfile)
 {{% /warning %}}
 
 
 ## Step 4: Keybase
 
 {{% note %}}
-{{% keybase-note mountpoint="/keybase" %}}
+{{% markdownReplace old="MOUNTPOINT" new="/keybase" %}}
+{{% readfile file="/content/getting-started/readfiles/keybase-note.md" %}}
+{{% /markdownReplace %}}
 {{% /note %}}
 
 ### Install Keybase.
@@ -78,15 +80,15 @@ private  public  team
 ## Step 5: KDK
 
 {{% note %}}
-{{% kdk-note %}}
+{{% readfile file="/content/getting-started/readfiles/kdk-note.md" markdown="true" %}}
 {{% /note %}}
 
 {{% markdown %}}
-{{% kdk-install %}}
+{{% readfile file="/content/getting-started/readfiles/kdk-install.md" markdown="true" %}}
 {{% markdown %}}
 
 ## Post-Install
 
 {{% markdown %}}
-{{% post-install %}}
+{{% readfile file="/content/getting-started/readfiles/post-install.md" markdown="true" %}}
 {{% markdown %}}

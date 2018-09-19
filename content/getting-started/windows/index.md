@@ -55,14 +55,14 @@ You must reboot after installing Docker on Windows.
 ## Step 4: Kubernetes
 
 {{% warning %}}
-TODO (use a shortcode)
+TODO (use a readfile)
 {{% /warning %}}
 
 
 ## Step 5: Keybase
 
 {{% note %}}
-{{% keybase-note mountpoint="k:" %}}
+{{% readfile file="/content/getting-started/readfiles/keybase-note.md" markdown="true" %}}
 {{% /note %}}
 
 ### Install Keybase.
@@ -96,15 +96,15 @@ private  public  team
 ## Step 5: KDK
 
 {{% note %}}
-{{% kdk-note %}}
+{{% readfile file="/content/getting-started/readfiles/kdk-note.md" markdown="true" %}}
 {{% /note %}}
 
 {{% markdown %}}
-{{% kdk-install %}}
+{{% readfile file="/content/getting-started/readfiles/kdk-install.md" markdown="true" %}}
 {{% markdown %}}
 
 ## Post-Install
 
 {{% markdown %}}
-{{% post-install %}}
+{{% readfile file="/content/getting-started/readfiles/post-install.md" markdown="true" %}}
 {{% markdown %}}
