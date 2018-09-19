@@ -62,7 +62,9 @@ TODO (use a readfile)
 ## Step 5: Keybase
 
 {{% note %}}
-{{% readfile file="/content/getting-started/readfiles/keybase-note.md" markdown="true" %}}
+{{% markdownReplace old="[[ MOUNTPOINT ]]" new="k:" %}}
+{{% readfile file="/content/getting-started/readfiles/keybase-note.md" %}}
+{{% /markdownReplace %}}
 {{% /note %}}
 
 ### Install Keybase.
@@ -99,12 +101,8 @@ private  public  team
 {{% readfile file="/content/getting-started/readfiles/kdk-note.md" markdown="true" %}}
 {{% /note %}}
 
-{{% markdown %}}
 {{% readfile file="/content/getting-started/readfiles/kdk-install.md" markdown="true" %}}
-{{% markdown %}}
 
 ## Post-Install
 
-{{% markdown %}}
 {{% readfile file="/content/getting-started/readfiles/post-install.md" markdown="true" %}}
-{{% markdown %}}

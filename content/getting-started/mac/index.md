@@ -44,7 +44,7 @@ TODO (use a readfile)
 ## Step 4: Keybase
 
 {{% note %}}
-{{% markdownReplace old="MOUNTPOINT" new="/keybase" %}}
+{{% markdownReplace old="[[ MOUNTPOINT ]]" new="/keybase" %}}
 {{% readfile file="/content/getting-started/readfiles/keybase-note.md" %}}
 {{% /markdownReplace %}}
 {{% /note %}}
@@ -83,12 +83,8 @@ private  public  team
 {{% readfile file="/content/getting-started/readfiles/kdk-note.md" markdown="true" %}}
 {{% /note %}}
 
-{{% markdown %}}
 {{% readfile file="/content/getting-started/readfiles/kdk-install.md" markdown="true" %}}
-{{% markdown %}}
 
 ## Post-Install
 
-{{% markdown %}}
 {{% readfile file="/content/getting-started/readfiles/post-install.md" markdown="true" %}}
-{{% markdown %}}
