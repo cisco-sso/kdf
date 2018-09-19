@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Kubernetes Development Framework (KDF)</title>
+    <title> - KDF</title>
     <meta name="generator" content="Hugo 0.48" />
 
     
     <meta name="description" content="Kubernetes Development Framework (KDF)">
     
-    <link rel="canonical" href="https://kdf.csco.cloud/">
+    <link rel="canonical" href="https://kdf.csco.cloud/getting-started/readfiles/kdk-install/">
     
     <meta name="author" content="SSO Arch Team">
     
 
-    <meta property="og:url" content="https://kdf.csco.cloud/">
+    <meta property="og:url" content="https://kdf.csco.cloud/getting-started/readfiles/kdk-install/">
     <meta property="og:title" content="KDF">
     <meta property="og:image" content="https://kdf.csco.cloud/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="KDF">
@@ -71,9 +71,6 @@
     <script src="https://kdf.csco.cloud/javascripts/modernizr.js"></script>
 
     
-    <link href="https://kdf.csco.cloud/index.xml" rel="alternate" type="application/rss+xml" title="KDF" />
-    <link href="https://kdf.csco.cloud/index.xml" rel="feed" type="application/rss+xml" title="KDF" />
-    
 
   </head>
   <body class="palette-primary-red palette-accent-teal">
@@ -102,7 +99,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Kubernetes Development Framework (KDF)
+        
       </div>
     </div>
 
@@ -185,14 +182,11 @@
 
 
 
-<a class="current" title="About" href="https://kdf.csco.cloud/">
+<a  title="About" href="https://kdf.csco.cloud/">
 	
 	About
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -405,72 +399,30 @@
 
 	<article class="article">
 		<div class="wrapper">
-			
-				<h1>Kubernetes Development Framework (KDF) </h1>
-
-				
-
-<h2 id="what-is-it">What is it?</h2>
-
-<p>KDF is a&hellip;</p>
-
-<ul>
-<li>lightweight set of <em>patterns</em>, <em>tools</em>, and <em>deployment packages</em></li>
-<li><strong>toolkit</strong></li>
-<li><strong>way of doing things</strong></li>
-</ul>
-
-<h2 id="what-is-it-not">What is it not?</h2>
-
-<p>KDF is <em>not</em> a&hellip;</p>
-
-<ul>
-<li><strong>platform</strong></li>
-<li><strong>cloud service</strong></li>
-<li><strong>Platform as a Service (PaaS)</strong></li>
-<li><strong>set of Kubernetes cluster installation scripts</strong></li>
-</ul>
-
-<h2 id="how-does-it-help">How does it help?</h2>
-
-<h3 id="new-kubernetes-users">New Kubernetes Users</h3>
-
-<p>Use the KDF to quickly create a cluster with
-basic services (e.g. logging, monitoring, HTTPS ingress, LetsEncrypt SSL certs)
-by using vetted and tested deployment packages, all while conforming to what we
-perceive as healthy patterns.</p>
-
-<h3 id="experienced-kubernetes-users">Experienced Kubernetes Users</h3>
-
-<p>Use the KDF in order to make their
-lives easier and work more efficiently.  For example:</p>
-
-<ul>
-<li><p>Members of a team often spend hours individually setting up and maintaining
-their development and operations environments.  In order to work
-effectively, they should all work in a common environment, using the same
-list of tools, at the same versions.  We provide a cross-platform,
-lightweight, immutable cli tool and docker image that serves as this
-development environment called the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit
-(KDK)</a>.</p></li>
-
-<li><p>The <a href="https://github.com/cisco-sso/k8s-deploy">platform-deploy</a> code pattern
-allows a user to enter a &ldquo;cluster&rdquo; directory and automatically have all
-tools pre-configured for that specific enviroment.  Thus, by opening
-multiple shells to different &ldquo;cluster&rdquo; directories the user may be
-configured to operate on several clusters simultaneously.  This sounds
-simple, however it is not possible with &ldquo;kubectl&rdquo; today because only a
-single, global kube-context may be active at once.  It is also difficult
-with with other tools (e.g. aws-cli if working across AWS accounts).  Our
-&ldquo;platform-deploy&rdquo; code pattern relies on
-<a href="https://github.com/direnv/direnv">direnv</a> which is pre-configured in the
-<a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>, to
-auto-magically set enviroment variables upon entering a cluster directory
-and pull secrets from a <a href="https://keybase.io/">keybase</a> team to properly
-configure all of the cloud tools such as kubectl, helm, aws-cli, etc.</p></li>
-</ul>
+			<h1> </h1>
 
 			
+
+<h3 id="install-the-kubernetes-development-kit-kdk-https-github-com-cisco-sso-kdk">Install the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>.</h3>
+
+<pre><code class="language-bash">curl -sSL https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install | bash
+</code></pre>
+
+<h3 id="print-kdk-usage-information">Print KDK usage information.</h3>
+
+<pre><code class="language-bash">kdk
+</code></pre>
+
+<h3 id="configure-kdk">Configure KDK.</h3>
+
+<pre><code class="language-bash">kdk init
+</code></pre>
+
+<h3 id="run-the-kdk-container-and-log-into-it">Run the KDK container and log into it.</h3>
+
+<pre><code class="language-bash">kdk ssh
+</code></pre>
+
 
 			<aside class="copyright" role="note">
 				
@@ -485,15 +437,13 @@ configure all of the cloud tools such as kubectl, helm, aws-cli, etc.</p></li>
 			<footer class="footer">
 				
 
-
-
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
+  
   </div>
 
-  
-  
   <div class="next">
+  
       <a href="https://kdf.csco.cloud/getting-started/readfiles/kdk-note/" title="">
         <span class="direction">
           Next
@@ -509,8 +459,11 @@ configure all of the cloud tools such as kubectl, helm, aws-cli, etc.</p></li>
           </div>
         </div>
       </a>
+  
   </div>
 </nav>
+
+
 
 
 

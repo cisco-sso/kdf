@@ -3,6 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kdf.csco.cloud/getting-started/readfiles/kdk-install/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/getting-started/readfiles/kdk-note/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/getting-started/readfiles/keybase-note/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/getting-started/readfiles/post-install/</loc>
+  </url>
+  
+  <url>
     <loc>https://kdf.csco.cloud/backlog/</loc>
   </url>
   

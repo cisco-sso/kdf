@@ -11,6 +11,46 @@
     
     
     <item>
+      <title></title>
+      <link>https://kdf.csco.cloud/getting-started/readfiles/kdk-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-install/</guid>
+      <description> Install the Kubernetes Development Kit (KDK). curl -sSL https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install | bash  Print KDK usage information. kdk  Configure KDK. kdk init  Run the KDK container and log into it. kdk ssh  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kdf.csco.cloud/getting-started/readfiles/kdk-note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-note/</guid>
+      <description>The KDK tool creates a Docker container that contains many tools for interacting with and developing for Kubernetes.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kdf.csco.cloud/getting-started/readfiles/keybase-note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/readfiles/keybase-note/</guid>
+      <description>Keybase makes sharing secrets with your team much easier. A Keybase user may be added to one or more Keybase Teams, at which point the team&amp;rsquo;s secret files are accessible under your local filesystem at [[ MOUNTPOINT ]]. Scripts and automation may then locate secrets within the Keybase filesystem at common paths.
+Later in this guide (upon kdk init), the kdk command will ask to mount the host&amp;rsquo;s Keybase filesytem to the KDK container at /keybase.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kdf.csco.cloud/getting-started/readfiles/post-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/readfiles/post-install/</guid>
+      <description> (optional)
+Add your public SSH key to source control systems. This is optional if you are using ssh-agent, which the KDK automatically forwards. Otherwise, you may directly configure the pre-generated ssh key which is used to connect to the KDK, within each source control provider.
+Add content of ssh public key ~/.kdk/ssh/id_rsa.pub
+ To your Github Account Keys To your Bitbucket Server https:///bitbucket/plugins/servlet/ssh/account/keys  </description>
+    </item>
+    
+    <item>
       <title>Backlog</title>
       <link>https://kdf.csco.cloud/backlog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -47,7 +87,7 @@ However, the Mac instructions may help you get KDF running on Linux.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/mac/</guid>
-      <description>Requirements  macOS High Sierra (10.13) or later is required. You must execute all commands as an administrative (sudo-allowed) user. 8 GB RAM 2 CPU cores  Step 1: Homebrew Open a Terminal.  Spotlight Search ( Command[⌘] + Space[&amp;quot; &amp;quot;] ) -&amp;gt; Terminal  Install Homebrew. /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  Step 2: Docker  Install Docker for Mac.  brew cask install docker brew install docker  Step 3: Kubernetes TODO (use a shortcode)</description>
+      <description>Requirements  macOS High Sierra (10.13) or later is required. You must execute all commands as an administrative (sudo-allowed) user. 8 GB RAM 2 CPU cores  Step 1: Homebrew Open a Terminal.  Spotlight Search ( Command[⌘] + Space[&amp;quot; &amp;quot;] ) -&amp;gt; Terminal  Install Homebrew. /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  Step 2: Docker  Install Docker for Mac.  brew cask install docker brew install docker  Step 3: Kubernetes TODO (use a readfile)</description>
     </item>
     
     <item>
