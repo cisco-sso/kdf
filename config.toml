@@ -42,14 +42,30 @@ googleAnalytics = ""
         github  = "cisco-sso"
 
 [[menu.main]]
-        name   = "About KDF"
+        name   = "About"
         url    = "/"
         weight = 10
 
 [[menu.main]]
-        name   = "Quick Start"
-        url    = "quick-start/"
-        weight = 20
+        name       = "Getting Started"
+	url        = "getting-started/"
+        weight     = 20
+	identifier = "getting-started"
+
+[[menu.main]]
+        name       = "Linux"
+	url        = "getting-started/linux/"
+	parent     = "getting-started"
+
+[[menu.main]]
+        name       = "Mac"
+	url        = "getting-started/mac/"
+	parent     = "getting-started"
+
+[[menu.main]]
+        name       = "Windows"
+	url        = "getting-started/windows/"
+	parent     = "getting-started"
 
 [[menu.main]]
         name   = "Patterns"
