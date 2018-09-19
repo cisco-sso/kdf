@@ -5,7 +5,7 @@ title: Getting Started > Windows
 ## Requirements
 
 - **Windows 10 Pro** or **Windows 10 Enterprise** is required.
-- You must execute all PowerShell commands as an adminstrative user.
+- You must execute all PowerShell commands as an administrative user.
 - 8 GB RAM
 - 2 CPU cores
 
