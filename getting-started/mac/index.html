@@ -430,18 +430,88 @@
 
 <h2 id="step-2-docker">Step 2: Docker</h2>
 
-<ul>
-<li>Install <a href="https://docs.docker.com/docker-for-mac/release-notes/">Docker for Mac</a>.</li>
-</ul>
+<h3 id="install-docker-for-mac-https-docs-docker-com-docker-for-mac-release-notes">Install <a href="https://docs.docker.com/docker-for-mac/release-notes/">Docker for Mac</a>.</h3>
 
 <pre><code class="language-bash">brew cask install docker
 </code></pre>
 
+<h3 id="start-docker">Start Docker.</h3>
+
+<ul>
+<li><p>Spotlight Search ( <code>Command[⌘] + Space[&quot; &quot;]</code> ) -&gt; <code>Docker</code> -&gt; ( <code>Enter</code>)
+<img src="https://kdf.csco.cloud/images/docker-spotlight.png" alt="docker-spotlight" /></p></li>
+
+<li><p>At the <code>Are you sure you want to open it?</code> prompt, click <code>Open</code>.</p></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/docker-open.png" alt="docker-open" /></p>
+
+<ul>
+<li>At the <code>Docker needs privileged access.</code> prompt, click <code>OK</code>.</li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/docker-privileged-access.png" alt="docker-privileged-access" /></p>
+
+<ul>
+<li>At the <code>Docker wants to make changes.</code> prompt, click <code>OK</code>.</li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/docker-make-changes.png" alt="docker-make-changes" /></p>
+
+<ul>
+<li><p>Docker should now be running in the taskbar tray.</p></li>
+
+<li><p>Open the Docker menu by clicking: <img src="https://kdf.csco.cloud/images/docker-tray-icon.png" alt="docker-tray-icon" /></p></li>
+
+<li><p>After a minute or two, you should see <code>Docker is running</code> with a green circle.</p></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/docker-tray-menu.png" alt="docker-tray-menu" /></p>
+
+<ul>
+<li>Once you see the above, Docker is ready to use.</li>
+</ul>
+
 <h2 id="step-3-kubernetes">Step 3: Kubernetes</h2>
+
+<ul>
+<li><p>Ensure Docker is running by completing <a href="#step-2-docker">Step 2: Docker</a> above.</p></li>
+
+<li><p>Open the Docker menu by clicking: <img src="https://kdf.csco.cloud/images/docker-tray-icon.png" alt="docker-tray-icon" /></p></li>
+
+<li><p>Open Docker Preferences.</p></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/docker-tray-menu-preferences.png" alt="docker-tray-menu-preferences" /></p>
+
+<ul>
+<li>On the <code>Kubernetes</code> tab:
+
+<ul>
+<li>Toggle on <code>Enable Kubernetes</code>.</li>
+<li>Click the <code>Kubernetes</code> radio button under <code>Default orchestrator for &quot;docker stack&quot; commands</code>.</li>
+<li>Toggle on <code>Show system containers (advanced)</code>.</li>
+<li>Click <code>Apply</code>.</li>
+</ul></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/docker-preferences-kubernetes.png" alt="docker-preferences-kubernetes" /></p>
+
+<ul>
+<li>For what may become several minutes, you will see <code>Kubernetes is starting...</code> with an amber circle.</li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/docker-preferences-kubernetes-starting.png" alt="docker-preferences-kubernetes-starting" /></p>
+
+<ul>
+<li>Once Kubernetes is ready, you will see <code>Kubernetes is running</code></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/docker-preferences-kubernetes-running.png" alt="docker-preferences-kubernetes-running" /></p>
 
 <div class="admonition warning">
 <p class="admonition-title"></p>
-<p>TODO (use a readfile)</p>
+<p>TODO: Document basic Kubernetes interactions with <code>kubectl</code>.</p>
 </div>
 
 <h2 id="step-4-keybase">Step 4: Keybase</h2>
