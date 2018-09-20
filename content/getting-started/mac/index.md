@@ -81,7 +81,7 @@ brew cask install docker
 
 ![docker-preferences-kubernetes-starting](/images/docker-preferences-kubernetes-starting.png)
 
-- Once Kubernetes is ready, you will see `Kubernetes is running`
+- Once Kubernetes is ready, you will see `Kubernetes is running`.
 
 ![docker-preferences-kubernetes-running](/images/docker-preferences-kubernetes-running.png)
 
