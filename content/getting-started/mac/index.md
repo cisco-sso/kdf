@@ -44,7 +44,7 @@ brew cask install docker
 
 ![docker-privileged-access](/images/docker-privileged-access.png)
 
-- At the `Docker wants to make changes.` prompt, click `OK`.
+- At the `Docker wants to make changes.` prompt, fill in your administrative user credentials and click `OK`.
 
 ![docker-make-changes](/images/docker-make-changes.png)
 
