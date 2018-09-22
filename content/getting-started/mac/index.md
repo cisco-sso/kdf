@@ -85,9 +85,10 @@ brew cask install docker
 
 ![docker-preferences-kubernetes-running](/images/docker-preferences-kubernetes-running.png)
 
-{{% warning %}}
-TODO: Document basic Kubernetes interactions with `kubectl`.
-{{% /warning %}}
+{{% note %}}
+We'll explore Kubernetes more later in this guide from inside of a
+[Kubernetes Development Kit (KDK)](https://github.com/cisco-sso/kdk) container.
+{{% /note %}}
 
 
 ## Step 4: Keybase
@@ -133,6 +134,13 @@ private  public  team
 {{% /note %}}
 
 {{% readfile file="/content/getting-started/readfiles/kdk-install.md" markdown="true" %}}
+
+## Step 6: Framework Deploy
+
+{{% note %}}
+{{% readfile file="/content/getting-started/readfiles/framework-deploy-note.md" markdown="true" %}}
+{{% /note %}}
+
 
 ## Post-Install
 
