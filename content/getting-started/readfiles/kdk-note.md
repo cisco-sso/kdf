@@ -1,1 +1,1 @@
-The KDK tool creates a Docker container that contains many tools for interacting with and developing for Kubernetes.
+The KDK CLI creates a Docker container with many tools already installed and ready for you to develop with Kubernetes.
