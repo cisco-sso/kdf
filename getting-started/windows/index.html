@@ -519,7 +519,7 @@ private  public  team
 
 <div class="admonition note">
 <p class="admonition-title"></p>
-<p>The KDK tool creates a Docker container that contains many tools for interacting with and developing for Kubernetes.</p>
+<p>The KDK CLI creates a Docker container with many tools already installed and ready for you to develop with Kubernetes.</p>
 </div>
 
 <h3 id="install-the-kubernetes-development-kit-kdk-https-github-com-cisco-sso-kdk">Install the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>.</h3>
@@ -542,6 +542,21 @@ private  public  team
 <pre><code class="language-bash">kdk ssh
 </code></pre>
 
+
+<h2 id="step-6-framework-deploy">Step 6: Framework Deploy</h2>
+
+<div class="admonition note">
+<p class="admonition-title"></p>
+<p><p>Framework Deploy AKA <a href="https://github.com/cisco-sso/framework-deploy">framework-deploy</a> is a boilerplate git repo in
+the KDF deployment pattern. The boilerplate structure in framework-deploy is made to fit perfectly with the tools
+available in the KDK container.</p>
+
+<p>Create a private fork of platform-deploy and use it to hold non-secret Kubernetes-related application configuration
+files and templates. In the KDF pattern, templates and configuration files for tools like
+<a href="https://github.com/cisco-sso/mh">mh</a> are hosted in a private fork of platform-deploy. <code>mh</code> allows you to template
+and deploy <a href="https://docs.helm.sh/developing_charts">Helm Chart</a> values overrides.</p>
+</p>
+</div>
 
 <h2 id="post-install">Post-Install</h2>
 

@@ -12,6 +12,16 @@
     
     <item>
       <title></title>
+      <link>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-note/</guid>
+      <description>Framework Deploy AKA framework-deploy is a boilerplate git repo in the KDF deployment pattern. The boilerplate structure in framework-deploy is made to fit perfectly with the tools available in the KDK container.
+Create a private fork of platform-deploy and use it to hold non-secret Kubernetes-related application configuration files and templates. In the KDF pattern, templates and configuration files for tools like mh are hosted in a private fork of platform-deploy. mh allows you to template and deploy Helm Chart values overrides.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://kdf.csco.cloud/getting-started/readfiles/kdk-install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -25,7 +35,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-note/</guid>
-      <description>The KDK tool creates a Docker container that contains many tools for interacting with and developing for Kubernetes.</description>
+      <description>The KDK CLI creates a Docker container with many tools already installed and ready for you to develop with Kubernetes.</description>
     </item>
     
     <item>
