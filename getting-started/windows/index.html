@@ -585,7 +585,7 @@ ls -a
 </ul>
 
 <p>Upon entering a directory that contains an <code>.envrc</code> file, the <code>direnv</code> tool installed in the KDK container will
-automatically source the <code>.envrc</code> file.</p>
+automatically source the <code>./.envrc</code> file if it is present.</p>
 
 <p>For example, in the framework-deploy pattern, <code>direnv</code> tunes your shell&rsquo;s environment variables for each cluster
 directory into which you change (<code>cd</code>).</p>
