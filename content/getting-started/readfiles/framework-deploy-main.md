@@ -30,7 +30,7 @@ automatically source the `./.envrc` file if it is present.
 For example, in the framework-deploy pattern, `direnv` tunes your shell's environment variables for each cluster
 directory into which you change (`cd`).
 
-If `direnv` encounters a `.envrc` that is has not processed, or one that has changed since last it was seen, `direnv`
+If `direnv` encounters a `.envrc` file it has not previously processed, or one that has changed since last seen, `direnv`
 will prompt you to approve the processing of its content.
 
 ```
