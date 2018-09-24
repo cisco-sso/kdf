@@ -38,7 +38,7 @@ direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 ```
 
 At prompts like this, if you're confident that the `.envrc` file is safe for `direnv` to process, run `direnv allow`
-to make process it.
+to do so.
 
 - `.git`
 
