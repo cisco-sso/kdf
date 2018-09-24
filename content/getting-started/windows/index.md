@@ -23,6 +23,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
+
 ## Step 2: Utilities
 
 ### Install `git`, `curl` and `sudo`.
@@ -34,6 +35,7 @@ choco install -y git curl sudo
 ### Open `Git Bash`
 
 - `Windows Search` -> `Git Bash`
+
 
 ## Step 3: Docker
 
@@ -93,6 +95,7 @@ private  public  team
 ```
 {{% /note %}}
 
+
 ## Step 5: KDK
 
 {{% note %}}
@@ -101,11 +104,14 @@ private  public  team
 
 {{% readfile file="/content/getting-started/readfiles/kdk-install.md" markdown="true" %}}
 
+
 ## Step 6: Framework Deploy
 
 {{% note %}}
 {{% readfile file="/content/getting-started/readfiles/framework-deploy-note.md" markdown="true" %}}
 {{% /note %}}
+
+{{% readfile file="/content/getting-started/readfiles/framework-deploy-main.md" markdown="true" %}}
 
 
 ## Post-Install

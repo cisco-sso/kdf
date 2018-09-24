@@ -127,6 +127,7 @@ private  public  team
 ```
 {{% /note %}}
 
+
 ## Step 5: KDK
 
 {{% note %}}
@@ -135,11 +136,14 @@ private  public  team
 
 {{% readfile file="/content/getting-started/readfiles/kdk-install.md" markdown="true" %}}
 
+
 ## Step 6: Framework Deploy
 
 {{% note %}}
 {{% readfile file="/content/getting-started/readfiles/framework-deploy-note.md" markdown="true" %}}
 {{% /note %}}
+
+{{% readfile file="/content/getting-started/readfiles/framework-deploy-main.md" markdown="true" %}}
 
 
 ## Post-Install
