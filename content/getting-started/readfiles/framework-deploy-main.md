@@ -25,7 +25,7 @@ You should see:
 - `.envrc`
 
 Upon entering a directory that contains an `.envrc` file, the `direnv` tool installed in the KDK container will
-automatically source the `.envrc` file.
+automatically source the `./.envrc` file if it is present.
 
 For example, in the framework-deploy pattern, `direnv` tunes your shell's environment variables for each cluster
 directory into which you change (`cd`).
