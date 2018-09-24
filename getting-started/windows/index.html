@@ -558,6 +558,166 @@ and deploy <a href="https://docs.helm.sh/developing_charts">Helm Chart</a> value
 </p>
 </div>
 
+<p>(inside your KDK container)</p>
+
+<h3 id="clone-the-framework-deploy-https-github-com-cisco-sso-framework-deploy-repo-using-git">Clone the <a href="https://github.com/cisco-sso/framework-deploy">framework-deploy</a> repo using git.</h3>
+
+<pre><code class="language-bash">#### Run this command if you have configured your GitHub account for public key SSH.
+git clone git@github.com:cisco-sso/framework-deploy.git
+
+#### (OR) Run this command if you have not configured a GitHub for public key SSH.
+git clone https://github.com/cisco-sso/framework-deploy.git
+</code></pre>
+
+<h3 id="change-to-the-framework-deploy-directory-and-take-a-look-around">Change to the <code>framework-deploy</code> directory and take a look around.</h3>
+
+<pre><code class="language-bash">cd framework-deploy/
+ls -a
+</code></pre>
+
+<p>You should see:</p>
+
+<pre><code class="language-bash">.  ..  .envrc  .git  .gitignore  LICENSE  README.md  apps  bin  clusters  ensure-env.sh
+</code></pre>
+
+<ul>
+<li><code>.envrc</code></li>
+</ul>
+
+<p>Upon entering a directory that contains an <code>.envrc</code> file, the <code>direnv</code> tool installed in the KDK container will
+automatically source the <code>.envrc</code> file.</p>
+
+<p>For example, in the framework-deploy pattern, <code>direnv</code> tunes your shell&rsquo;s environment variables for each cluster
+directory into which you change (<code>cd</code>).</p>
+
+<p>If <code>direnv</code> encounters a <code>.envrc</code> that is has not processed, or one that has changed since last it was seen, <code>direnv</code>
+will prompt you to approve the processing of its content.</p>
+
+<pre><code>direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
+</code></pre>
+
+<p>At prompts like this, if you&rsquo;re confident that the <code>.envrc</code> file is safe for <code>direnv</code> to process, run <code>direnv allow</code>
+to make process it.</p>
+
+<ul>
+<li><code>.git</code></li>
+</ul>
+
+<p>The <code>.git</code> directory holds files that <code>git</code> uses. You will likely never need to interact directly with this directory.</p>
+
+<ul>
+<li><code>.gitignore</code></li>
+</ul>
+
+<p>The <code>.gitignore</code> file tracks which file names <code>git</code> should ignore when doing <code>git add</code> commands.</p>
+
+<ul>
+<li><code>LICENSE</code> and <code>README.md</code></li>
+</ul>
+
+<p>These are standard fare license and high level documentation for the framework-deploy project.</p>
+
+<ul>
+<li><code>apps</code></li>
+</ul>
+
+<p>The <code>apps</code> directory contains template files for the <a href="https://github.com/cisco-sso/mh">mh</a> command. Each &ldquo;app&rdquo; is a template of a Helm chart override.</p>
+
+<ul>
+<li><code>bin</code></li>
+</ul>
+
+<p>The <code>bin</code> directory contains scripts that simplify specific operations. For example, <code>bin/get-password-grafana.sh</code> is a
+helper script that retrieves the auto-generated admin password for <a href="https://grafana.com/">grafana</a> as installed by
+framework-deploy.</p>
+
+<ul>
+<li><code>clusters</code></li>
+</ul>
+
+<p>The <code>clusters</code> directory contains a directory for each Kubernetes cluster you manage with framework-deploy. The
+framework-deploy repo contains boilerplate for the <code>docker-for-desktop</code> Kubernetes cluster you can easily spin
+on macOS and Windows Docker installs.</p>
+
+<p>In an internal and private fork of framework-deploy, you can make cluster directories for your own Kubernetes clusters
+such as <code>myorg1-dev.example.org</code>. Each cluster directory gets an <code>.envrc</code> that can automatically configure your
+shell&rsquo;s <code>KUBECONFIG</code> environment variable. In the framework-deploy pattern, Kubernetes cluster context name and
+KUBECONFIG filename are both set to the cluster&rsquo;s external FQDN (e.g. <code>myorg1-dev.example.org</code>). This naming
+convention enables the framework-deploy automation to simplify interactive cluster usage.</p>
+
+<ul>
+<li><code>ensure-env.sh</code></li>
+</ul>
+
+<p>The <code>ensure-env.sh</code> script ensures presence of all prerequisite shell environment variables and tools. The script is
+normally <code>source</code>&lsquo;ed by <code>.envrc</code> files.</p>
+
+<h3 id="allow-direnv-https-direnv-net-to-source-the-envrc-https-github-com-cisco-sso-framework-deploy-blob-master-envrc-file">Allow <a href="https://direnv.net/">direnv</a> to source the <a href="https://github.com/cisco-sso/framework-deploy/blob/master/.envrc">.envrc</a> file.</h3>
+
+<pre><code class="language-bash">direnv allow
+</code></pre>
+
+<h3 id="change-to-the-clusters-docker-for-desktop-directory-and-take-a-look-around">Change to the <code>clusters/docker-for-desktop</code> directory and take a look around.</h3>
+
+<pre><code class="language-bash">cd clusters/docker-for-desktop
+ls -a
+</code></pre>
+
+<p>You should see:</p>
+
+<pre><code class="language-bash">.  ..  .envrc  README.md  mh  vars.yaml
+direnv: error .envrc is blocked. Run `direnv allow` to approve its content. 
+</code></pre>
+
+<ul>
+<li><code>.envrc</code></li>
+</ul>
+
+<p>The <code>.envrc</code> file in this directory is a symlink to <code>../common/dot.envrc</code>. The <code>dot.envrc</code> file behind the symlink
+configures your shell for the current cluster directory name. In this case, that means <code>docker-for-desktop</code></p>
+
+<ul>
+<li><code>README.md</code></li>
+</ul>
+
+<p>The <code>README.md</code> in this directory contains guidance specific to the <code>docker-for-desktop</code> Kubernetes cluster.</p>
+
+<ul>
+<li><code>mh/main.yaml</code></li>
+</ul>
+
+<p>The <a href="https://github.com/cisco-sso/mh">mh</a> tool which ships with the KDK container iamge is capable of managing one or
+many Kubernetes namespaces in a single <code>MH_CONFIG</code>.</p>
+
+<p>The <code>mh/main.yaml</code> file inside the <code>mh</code> directory is the <a href="https://github.com/cisco-sso/mh#select-a-mh-config">MH_CONFIG</a>
+file for the <code>docker-for-desktop</code> Kubernetes cluster.</p>
+
+<p>This file declares the cluster&rsquo;s Helm Chart releases, <code>mh</code> apps (Helm Chart override templates), and base truth.
+Secret base truth is one exception. Secrets should never be committed to framework-deploy nor any fork of it. Any
+secrets seen in this boilerplate version of the repo are for illustrative purposes.</p>
+
+<p>Instead of writing secrets into your <code>mh/main.yaml</code>, you may pre-load them as Kubernetes Secrets and make your Helm
+Charts use those out of band secrets directly. Another way to manage secrets is to use Helm Charts that generate
+secrets into Kubernetes and use them there as needed. Once generated, your Kubernetes user should be able to read them
+back out using <code>kubectl</code>.</p>
+
+<ul>
+<li><code>vars.yaml</code></li>
+</ul>
+
+<p>The <code>vars.yaml</code> file stores some very basic key values for tools like
+<a href="https://github.com/cisco-sso/kdk/blob/master/files/usr/local/bin/awake">awake</a> and
+<a href="https://yq.readthedocs.io/en/latest/">yq</a> to draw upon. In the framework-deploy pattern, we use <code>vars.yaml</code> to declare
+which <a href="http://keybase.io">keybase.io</a> team manages each cluster.</p>
+
+<h3 id="allow-direnv-https-direnv-net-to-source-the-envrc-https-github-com-cisco-sso-framework-deploy-blob-master-clusters-common-dot-envrc-file">Allow <a href="https://direnv.net/">direnv</a> to source the <a href="https://github.com/cisco-sso/framework-deploy/blob/master/clusters/common/dot.envrc">.envrc</a> file.</h3>
+
+<pre><code class="language-bash">direnv allow
+</code></pre>
+
+<p>TODO: To be continued&hellip;</p>
+
+
 <h2 id="post-install">Post-Install</h2>
 
 <p><em>(optional)</em></p>

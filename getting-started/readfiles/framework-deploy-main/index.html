@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Kubernetes Development Framework (KDF)</title>
+    <title> - KDF</title>
     <meta name="generator" content="Hugo 0.48" />
 
     
     <meta name="description" content="Kubernetes Development Framework (KDF)">
     
-    <link rel="canonical" href="https://kdf.csco.cloud/">
+    <link rel="canonical" href="https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-main/">
     
     <meta name="author" content="SSO Arch Team">
     
 
-    <meta property="og:url" content="https://kdf.csco.cloud/">
+    <meta property="og:url" content="https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-main/">
     <meta property="og:title" content="KDF">
     <meta property="og:image" content="https://kdf.csco.cloud/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="KDF">
@@ -71,9 +71,6 @@
     <script src="https://kdf.csco.cloud/javascripts/modernizr.js"></script>
 
     
-    <link href="https://kdf.csco.cloud/index.xml" rel="alternate" type="application/rss+xml" title="KDF" />
-    <link href="https://kdf.csco.cloud/index.xml" rel="feed" type="application/rss+xml" title="KDF" />
-    
 
   </head>
   <body class="palette-primary-red palette-accent-teal">
@@ -102,7 +99,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Kubernetes Development Framework (KDF)
+        
       </div>
     </div>
 
@@ -185,14 +182,11 @@
 
 
 
-<a class="current" title="About" href="https://kdf.csco.cloud/">
+<a  title="About" href="https://kdf.csco.cloud/">
 	
 	About
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -405,72 +399,169 @@
 
 	<article class="article">
 		<div class="wrapper">
-			
-				<h1>Kubernetes Development Framework (KDF) </h1>
-
-				
-
-<h2 id="what-is-it">What is it?</h2>
-
-<p>KDF is a&hellip;</p>
-
-<ul>
-<li>lightweight set of <em>patterns</em>, <em>tools</em>, and <em>deployment packages</em></li>
-<li><strong>toolkit</strong></li>
-<li><strong>way of doing things</strong></li>
-</ul>
-
-<h2 id="what-is-it-not">What is it not?</h2>
-
-<p>KDF is <em>not</em> a&hellip;</p>
-
-<ul>
-<li><strong>platform</strong></li>
-<li><strong>cloud service</strong></li>
-<li><strong>Platform as a Service (PaaS)</strong></li>
-<li><strong>set of Kubernetes cluster installation scripts</strong></li>
-</ul>
-
-<h2 id="how-does-it-help">How does it help?</h2>
-
-<h3 id="new-kubernetes-users">New Kubernetes Users</h3>
-
-<p>Use the KDF to quickly create a cluster with
-basic services (e.g. logging, monitoring, HTTPS ingress, LetsEncrypt SSL certs)
-by using vetted and tested deployment packages, all while conforming to what we
-perceive as healthy patterns.</p>
-
-<h3 id="experienced-kubernetes-users">Experienced Kubernetes Users</h3>
-
-<p>Use the KDF in order to make their
-lives easier and work more efficiently.  For example:</p>
-
-<ul>
-<li><p>Members of a team often spend hours individually setting up and maintaining
-their development and operations environments.  In order to work
-effectively, they should all work in a common environment, using the same
-list of tools, at the same versions.  We provide a cross-platform,
-lightweight, immutable cli tool and docker image that serves as this
-development environment called the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit
-(KDK)</a>.</p></li>
-
-<li><p>The <a href="https://github.com/cisco-sso/k8s-deploy">platform-deploy</a> code pattern
-allows a user to enter a &ldquo;cluster&rdquo; directory and automatically have all
-tools pre-configured for that specific enviroment.  Thus, by opening
-multiple shells to different &ldquo;cluster&rdquo; directories the user may be
-configured to operate on several clusters simultaneously.  This sounds
-simple, however it is not possible with &ldquo;kubectl&rdquo; today because only a
-single, global kube-context may be active at once.  It is also difficult
-with with other tools (e.g. aws-cli if working across AWS accounts).  Our
-&ldquo;platform-deploy&rdquo; code pattern relies on
-<a href="https://github.com/direnv/direnv">direnv</a> which is pre-configured in the
-<a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>, to
-auto-magically set enviroment variables upon entering a cluster directory
-and pull secrets from a <a href="https://keybase.io/">keybase</a> team to properly
-configure all of the cloud tools such as kubectl, helm, aws-cli, etc.</p></li>
-</ul>
+			<h1> </h1>
 
 			
+
+<p>(inside your KDK container)</p>
+
+<h3 id="clone-the-framework-deploy-https-github-com-cisco-sso-framework-deploy-repo-using-git">Clone the <a href="https://github.com/cisco-sso/framework-deploy">framework-deploy</a> repo using git.</h3>
+
+<pre><code class="language-bash">#### Run this command if you have configured your GitHub account for public key SSH.
+git clone git@github.com:cisco-sso/framework-deploy.git
+
+#### (OR) Run this command if you have not configured a GitHub for public key SSH.
+git clone https://github.com/cisco-sso/framework-deploy.git
+</code></pre>
+
+<h3 id="change-to-the-framework-deploy-directory-and-take-a-look-around">Change to the <code>framework-deploy</code> directory and take a look around.</h3>
+
+<pre><code class="language-bash">cd framework-deploy/
+ls -a
+</code></pre>
+
+<p>You should see:</p>
+
+<pre><code class="language-bash">.  ..  .envrc  .git  .gitignore  LICENSE  README.md  apps  bin  clusters  ensure-env.sh
+</code></pre>
+
+<ul>
+<li><code>.envrc</code></li>
+</ul>
+
+<p>Upon entering a directory that contains an <code>.envrc</code> file, the <code>direnv</code> tool installed in the KDK container will
+automatically source the <code>.envrc</code> file.</p>
+
+<p>For example, in the framework-deploy pattern, <code>direnv</code> tunes your shell&rsquo;s environment variables for each cluster
+directory into which you change (<code>cd</code>).</p>
+
+<p>If <code>direnv</code> encounters a <code>.envrc</code> that is has not processed, or one that has changed since last it was seen, <code>direnv</code>
+will prompt you to approve the processing of its content.</p>
+
+<pre><code>direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
+</code></pre>
+
+<p>At prompts like this, if you&rsquo;re confident that the <code>.envrc</code> file is safe for <code>direnv</code> to process, run <code>direnv allow</code>
+to make process it.</p>
+
+<ul>
+<li><code>.git</code></li>
+</ul>
+
+<p>The <code>.git</code> directory holds files that <code>git</code> uses. You will likely never need to interact directly with this directory.</p>
+
+<ul>
+<li><code>.gitignore</code></li>
+</ul>
+
+<p>The <code>.gitignore</code> file tracks which file names <code>git</code> should ignore when doing <code>git add</code> commands.</p>
+
+<ul>
+<li><code>LICENSE</code> and <code>README.md</code></li>
+</ul>
+
+<p>These are standard fare license and high level documentation for the framework-deploy project.</p>
+
+<ul>
+<li><code>apps</code></li>
+</ul>
+
+<p>The <code>apps</code> directory contains template files for the <a href="https://github.com/cisco-sso/mh">mh</a> command. Each &ldquo;app&rdquo; is a template of a Helm chart override.</p>
+
+<ul>
+<li><code>bin</code></li>
+</ul>
+
+<p>The <code>bin</code> directory contains scripts that simplify specific operations. For example, <code>bin/get-password-grafana.sh</code> is a
+helper script that retrieves the auto-generated admin password for <a href="https://grafana.com/">grafana</a> as installed by
+framework-deploy.</p>
+
+<ul>
+<li><code>clusters</code></li>
+</ul>
+
+<p>The <code>clusters</code> directory contains a directory for each Kubernetes cluster you manage with framework-deploy. The
+framework-deploy repo contains boilerplate for the <code>docker-for-desktop</code> Kubernetes cluster you can easily spin
+on macOS and Windows Docker installs.</p>
+
+<p>In an internal and private fork of framework-deploy, you can make cluster directories for your own Kubernetes clusters
+such as <code>myorg1-dev.example.org</code>. Each cluster directory gets an <code>.envrc</code> that can automatically configure your
+shell&rsquo;s <code>KUBECONFIG</code> environment variable. In the framework-deploy pattern, Kubernetes cluster context name and
+KUBECONFIG filename are both set to the cluster&rsquo;s external FQDN (e.g. <code>myorg1-dev.example.org</code>). This naming
+convention enables the framework-deploy automation to simplify interactive cluster usage.</p>
+
+<ul>
+<li><code>ensure-env.sh</code></li>
+</ul>
+
+<p>The <code>ensure-env.sh</code> script ensures presence of all prerequisite shell environment variables and tools. The script is
+normally <code>source</code>&lsquo;ed by <code>.envrc</code> files.</p>
+
+<h3 id="allow-direnv-https-direnv-net-to-source-the-envrc-https-github-com-cisco-sso-framework-deploy-blob-master-envrc-file">Allow <a href="https://direnv.net/">direnv</a> to source the <a href="https://github.com/cisco-sso/framework-deploy/blob/master/.envrc">.envrc</a> file.</h3>
+
+<pre><code class="language-bash">direnv allow
+</code></pre>
+
+<h3 id="change-to-the-clusters-docker-for-desktop-directory-and-take-a-look-around">Change to the <code>clusters/docker-for-desktop</code> directory and take a look around.</h3>
+
+<pre><code class="language-bash">cd clusters/docker-for-desktop
+ls -a
+</code></pre>
+
+<p>You should see:</p>
+
+<pre><code class="language-bash">.  ..  .envrc  README.md  mh  vars.yaml
+direnv: error .envrc is blocked. Run `direnv allow` to approve its content. 
+</code></pre>
+
+<ul>
+<li><code>.envrc</code></li>
+</ul>
+
+<p>The <code>.envrc</code> file in this directory is a symlink to <code>../common/dot.envrc</code>. The <code>dot.envrc</code> file behind the symlink
+configures your shell for the current cluster directory name. In this case, that means <code>docker-for-desktop</code></p>
+
+<ul>
+<li><code>README.md</code></li>
+</ul>
+
+<p>The <code>README.md</code> in this directory contains guidance specific to the <code>docker-for-desktop</code> Kubernetes cluster.</p>
+
+<ul>
+<li><code>mh/main.yaml</code></li>
+</ul>
+
+<p>The <a href="https://github.com/cisco-sso/mh">mh</a> tool which ships with the KDK container iamge is capable of managing one or
+many Kubernetes namespaces in a single <code>MH_CONFIG</code>.</p>
+
+<p>The <code>mh/main.yaml</code> file inside the <code>mh</code> directory is the <a href="https://github.com/cisco-sso/mh#select-a-mh-config">MH_CONFIG</a>
+file for the <code>docker-for-desktop</code> Kubernetes cluster.</p>
+
+<p>This file declares the cluster&rsquo;s Helm Chart releases, <code>mh</code> apps (Helm Chart override templates), and base truth.
+Secret base truth is one exception. Secrets should never be committed to framework-deploy nor any fork of it. Any
+secrets seen in this boilerplate version of the repo are for illustrative purposes.</p>
+
+<p>Instead of writing secrets into your <code>mh/main.yaml</code>, you may pre-load them as Kubernetes Secrets and make your Helm
+Charts use those out of band secrets directly. Another way to manage secrets is to use Helm Charts that generate
+secrets into Kubernetes and use them there as needed. Once generated, your Kubernetes user should be able to read them
+back out using <code>kubectl</code>.</p>
+
+<ul>
+<li><code>vars.yaml</code></li>
+</ul>
+
+<p>The <code>vars.yaml</code> file stores some very basic key values for tools like
+<a href="https://github.com/cisco-sso/kdk/blob/master/files/usr/local/bin/awake">awake</a> and
+<a href="https://yq.readthedocs.io/en/latest/">yq</a> to draw upon. In the framework-deploy pattern, we use <code>vars.yaml</code> to declare
+which <a href="http://keybase.io">keybase.io</a> team manages each cluster.</p>
+
+<h3 id="allow-direnv-https-direnv-net-to-source-the-envrc-https-github-com-cisco-sso-framework-deploy-blob-master-clusters-common-dot-envrc-file">Allow <a href="https://direnv.net/">direnv</a> to source the <a href="https://github.com/cisco-sso/framework-deploy/blob/master/clusters/common/dot.envrc">.envrc</a> file.</h3>
+
+<pre><code class="language-bash">direnv allow
+</code></pre>
+
+<p>TODO: To be continued&hellip;</p>
+
 
 			<aside class="copyright" role="note">
 				
@@ -485,15 +576,13 @@ configure all of the cloud tools such as kubectl, helm, aws-cli, etc.</p></li>
 			<footer class="footer">
 				
 
-
-
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
+  
   </div>
 
-  
-  
   <div class="next">
+  
       <a href="https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-note/" title="">
         <span class="direction">
           Next
@@ -509,8 +598,11 @@ configure all of the cloud tools such as kubectl, helm, aws-cli, etc.</p></li>
           </div>
         </div>
       </a>
+  
   </div>
 </nav>
+
+
 
 
 
