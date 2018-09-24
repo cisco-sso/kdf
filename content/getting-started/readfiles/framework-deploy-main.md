@@ -6,7 +6,7 @@
 #### Run this command if you have configured your GitHub account for public key SSH.
 git clone git@github.com:cisco-sso/framework-deploy.git
 
-#### (OR) Run this command if you have not configured a GitHub for public key SSH.
+#### (OR) Run this command if you have not configured GitHub for public key SSH.
 git clone https://github.com/cisco-sso/framework-deploy.git
 ```
 
