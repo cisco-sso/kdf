@@ -65,8 +65,8 @@ framework-deploy.
 - `clusters`
 
 The `clusters` directory contains a directory for each Kubernetes cluster you manage with framework-deploy. The
-framework-deploy repo contains boilerplate for the `docker-for-desktop` Kubernetes cluster you can easily spin
-on macOS and Windows Docker installs.
+framework-deploy repo contains boilerplate for the `docker-for-desktop` Kubernetes cluster which was spun up earlier
+in this tutorial.
 
 In an internal and private fork of framework-deploy, you can make cluster directories for your own Kubernetes clusters
 such as `myorg1-dev.example.org`. Each cluster directory gets an `.envrc` that can automatically configure your
