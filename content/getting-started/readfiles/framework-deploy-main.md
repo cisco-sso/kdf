@@ -69,10 +69,12 @@ framework-deploy repo contains boilerplate for the `docker-for-desktop` Kubernet
 in this tutorial.
 
 In an internal and private fork of framework-deploy, you can make cluster directories for your own Kubernetes clusters
-such as `myorg1-dev.example.org`. Each cluster directory gets an `.envrc` that can automatically configure your
-shell's `KUBECONFIG` environment variable. In the framework-deploy pattern, Kubernetes cluster context name and
-KUBECONFIG filename are both set to the cluster's external FQDN (e.g. `myorg1-dev.example.org`). This naming
-convention enables the framework-deploy automation to simplify interactive cluster usage.
+(e.g. `myorg1-dev.example.org`). Each cluster directory contains an `.envrc` (via symlink) that automatically
+configures your shell environment (e.g. the `KUBECONFIG` environment variable).
+
+In the framework-deploy pattern, Kubernetes cluster context name and KUBECONFIG filename are both set to match the
+cluster's external FQDN (e.g. `myorg1-dev.example.org`). This naming convention enables framework-deploy automation to
+simplify interactive cluster usage.
 
 - `ensure-env.sh`
 
