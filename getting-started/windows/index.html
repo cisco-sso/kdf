@@ -590,7 +590,7 @@ automatically source the <code>./.envrc</code> file if it is present.</p>
 <p>For example, in the framework-deploy pattern, <code>direnv</code> tunes your shell&rsquo;s environment variables for each cluster
 directory into which you change (<code>cd</code>).</p>
 
-<p>If <code>direnv</code> encounters a <code>.envrc</code> that is has not processed, or one that has changed since last it was seen, <code>direnv</code>
+<p>If <code>direnv</code> encounters a <code>.envrc</code> file it has not previously processed, or one that has changed since last seen, <code>direnv</code>
 will prompt you to approve the processing of its content.</p>
 
 <pre><code>direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
