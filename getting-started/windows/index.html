@@ -588,7 +588,8 @@ ls -a
 automatically source the <code>./.envrc</code> file if it is present.</p>
 
 <p>For example, in the framework-deploy pattern, <code>direnv</code> tunes your shell&rsquo;s environment variables for each cluster
-directory into which you change (<code>cd</code>).</p>
+directory into which you change (<code>cd</code>). It is through these environment variables that all of the tools are configured
+(e.g. <code>kubectl</code>, <code>docker</code>, <code>helm</code>, etc).</p>
 
 <p>If <code>direnv</code> encounters a <code>.envrc</code> file it has not previously processed, or one that has changed since last seen, <code>direnv</code>
 will prompt you to approve the processing of its content.</p>
@@ -640,10 +641,12 @@ framework-deploy repo contains boilerplate for the <code>docker-for-desktop</cod
 in this tutorial.</p>
 
 <p>In an internal and private fork of framework-deploy, you can make cluster directories for your own Kubernetes clusters
-such as <code>myorg1-dev.example.org</code>. Each cluster directory gets an <code>.envrc</code> that can automatically configure your
-shell&rsquo;s <code>KUBECONFIG</code> environment variable. In the framework-deploy pattern, Kubernetes cluster context name and
-KUBECONFIG filename are both set to the cluster&rsquo;s external FQDN (e.g. <code>myorg1-dev.example.org</code>). This naming
-convention enables the framework-deploy automation to simplify interactive cluster usage.</p>
+(e.g. <code>myorg1-dev.example.org</code>). Each cluster directory contains an <code>.envrc</code> (via symlink) that automatically
+configures your shell environment (e.g. the <code>KUBECONFIG</code> environment variable).</p>
+
+<p>In the framework-deploy pattern, Kubernetes cluster context name and KUBECONFIG filename are both set to match the
+cluster&rsquo;s external FQDN (e.g. <code>myorg1-dev.example.org</code>). This naming convention enables framework-deploy automation to
+simplify interactive cluster usage.</p>
 
 <ul>
 <li><code>ensure-env.sh</code></li>
@@ -686,7 +689,7 @@ configures your shell for the current cluster directory name. In this case, that
 <li><code>mh/main.yaml</code></li>
 </ul>
 
-<p>The <a href="https://github.com/cisco-sso/mh">mh</a> tool which ships with the KDK container iamge is capable of managing one or
+<p>The <a href="https://github.com/cisco-sso/mh">mh</a> tool which ships with the KDK container image is capable of managing one or
 many Kubernetes namespaces in a single <code>MH_CONFIG</code>.</p>
 
 <p>The <code>mh/main.yaml</code> file inside the <code>mh</code> directory is the <a href="https://github.com/cisco-sso/mh#select-a-mh-config">MH_CONFIG</a>
