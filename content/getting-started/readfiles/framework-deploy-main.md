@@ -28,7 +28,8 @@ Upon entering a directory that contains an `.envrc` file, the `direnv` tool inst
 automatically source the `./.envrc` file if it is present.
 
 For example, in the framework-deploy pattern, `direnv` tunes your shell's environment variables for each cluster
-directory into which you change (`cd`).
+directory into which you change (`cd`). It is through these environment variables that all of the tools are configured
+(e.g. `kubectl`, `docker`, `helm`, etc).
 
 If `direnv` encounters a `.envrc` file it has not previously processed, or one that has changed since last seen, `direnv`
 will prompt you to approve the processing of its content.
@@ -111,7 +112,7 @@ The `README.md` in this directory contains guidance specific to the `docker-for-
 
 - `mh/main.yaml`
 
-The [mh](https://github.com/cisco-sso/mh) tool which ships with the KDK container iamge is capable of managing one or
+The [mh](https://github.com/cisco-sso/mh) tool which ships with the KDK container image is capable of managing one or
 many Kubernetes namespaces in a single `MH_CONFIG`.
 
 The `mh/main.yaml` file inside the `mh` directory is the [MH_CONFIG](https://github.com/cisco-sso/mh#select-a-mh-config)
