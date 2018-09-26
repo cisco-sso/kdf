@@ -8,6 +8,7 @@ title: Getting Started > Windows
 - You must execute all PowerShell commands as an administrative user.
 - 8 GB RAM
 - 2 CPU cores
+- BIOS Settings with Hardware Virtualization Enabled (VTx and VT-d)
 
 
 ## Step 1: Chocolatey
@@ -24,20 +25,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 ```
 
 
-## Step 2: Utilities
-
-### Install `git`, `curl` and `sudo`.
-
-```bash
-choco install -y git curl sudo
-```
-
-### Open `Git Bash`
-
-- `Windows Search` -> `Git Bash`
-
-
-## Step 3: Docker
+## Step 2: Docker
 
 ### Install [Docker for Windows](https://docs.docker.com/docker-for-windows/release-notes/).
 
@@ -48,18 +36,18 @@ choco install -y docker-for-windows
 ### Reboot
 
 {{% warning %}}
-You must reboot after installing Docker on Windows.
+You must reboot after installing Docker For Windows, and accept all prompts (e.g. enabling Hyper-V)
 {{% /warning %}}
 
 
-## Step 4: Kubernetes
+## Step 3: Kubernetes
 
 {{% warning %}}
 TODO (use a readfile)
 {{% /warning %}}
 
 
-## Step 5: Keybase
+## Step 4: Keybase
 
 {{% note %}}
 {{% markdownReplace old="[[ MOUNTPOINT ]]" new="k:" %}}
@@ -83,7 +71,7 @@ choco install -y keybase
 
 ### Verify that KeybaseFS is mounted to your system.
 
-```
+```bash
 dir k:
 ```
 
@@ -102,7 +90,8 @@ private  public  team
 {{% readfile file="/content/getting-started/readfiles/kdk-note.md" markdown="true" %}}
 {{% /note %}}
 
-{{% readfile file="/content/getting-started/readfiles/kdk-install.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/kdk-install-windows.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/kdk-usage.md" markdown="true" %}}
 
 
 ## Step 6: Framework Deploy
