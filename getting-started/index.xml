@@ -33,11 +33,20 @@ Create a private fork of framework-deploy and use it to hold non-secret Kubernet
     
     <item>
       <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/kdk-install/</link>
+      <link>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-maclinux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-install/</guid>
-      <description> Install the Kubernetes Development Kit (KDK). curl -sSL https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install | bash  Print KDK usage information. kdk  Configure KDK. kdk init  Run the KDK container and log into it. kdk ssh  </description>
+      <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-maclinux/</guid>
+      <description> Install the Kubernetes Development Kit (KDK). curl -sSL https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install | bash  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-windows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-windows/</guid>
+      <description> Install the Kubernetes Development Kit (KDK). # Via Windows Powershell Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1&#39;))  </description>
     </item>
     
     <item>
@@ -47,6 +56,15 @@ Create a private fork of framework-deploy and use it to hold non-secret Kubernet
       
       <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-note/</guid>
       <description>The KDK CLI creates a Docker container with many tools already installed and ready for you to develop with Kubernetes.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kdf.csco.cloud/getting-started/readfiles/kdk-usage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-usage/</guid>
+      <description> Print KDK usage information. kdk  Configure KDK. kdk init  Run the KDK container and log into it. kdk ssh  </description>
     </item>
     
     <item>
@@ -97,7 +115,7 @@ However, the Mac instructions may help you get KDF running on Linux.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/windows/</guid>
-      <description>Requirements  Windows 10 Pro or Windows 10 Enterprise is required. You must execute all PowerShell commands as an administrative user. 8 GB RAM 2 CPU cores  Step 1: Chocolatey Open a Powershell terminal as Administrator.  Windows Search -&amp;gt; Windows PowerShell -&amp;gt; right click Run as Administrator  Install Chocolatey. Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))  Step 2: Utilities Install git, curl and sudo. choco install -y git curl sudo  Open Git Bash  Windows Search -&amp;gt; Git Bash  Step 3: Docker Install Docker for Windows.</description>
+      <description>Requirements  Windows 10 Pro or Windows 10 Enterprise is required. You must execute all PowerShell commands as an administrative user. 8 GB RAM 2 CPU cores BIOS Settings with Hardware Virtualization Enabled (VTx and VT-d)  Step 1: Chocolatey Open a Powershell terminal as Administrator.  Windows Search -&amp;gt; Windows PowerShell -&amp;gt; right click Run as Administrator  Install Chocolatey. Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))  Step 2: Docker Install Docker for Windows.</description>
     </item>
     
   </channel>

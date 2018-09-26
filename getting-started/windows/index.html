@@ -413,6 +413,7 @@
 <li>You must execute all PowerShell commands as an administrative user.</li>
 <li>8 GB RAM</li>
 <li>2 CPU cores</li>
+<li>BIOS Settings with Hardware Virtualization Enabled (VTx and VT-d)</li>
 </ul>
 
 <h2 id="step-1-chocolatey">Step 1: Chocolatey</h2>
@@ -429,20 +430,7 @@
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 </code></pre>
 
-<h2 id="step-2-utilities">Step 2: Utilities</h2>
-
-<h3 id="install-git-curl-and-sudo">Install <code>git</code>, <code>curl</code> and <code>sudo</code>.</h3>
-
-<pre><code class="language-bash">choco install -y git curl sudo
-</code></pre>
-
-<h3 id="open-git-bash">Open <code>Git Bash</code></h3>
-
-<ul>
-<li><code>Windows Search</code> -&gt; <code>Git Bash</code></li>
-</ul>
-
-<h2 id="step-3-docker">Step 3: Docker</h2>
+<h2 id="step-2-docker">Step 2: Docker</h2>
 
 <h3 id="install-docker-for-windows-https-docs-docker-com-docker-for-windows-release-notes">Install <a href="https://docs.docker.com/docker-for-windows/release-notes/">Docker for Windows</a>.</h3>
 
@@ -453,17 +441,17 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 
 <div class="admonition warning">
 <p class="admonition-title"></p>
-<p>You must reboot after installing Docker on Windows.</p>
+<p>You must reboot after installing Docker For Windows, and accept all prompts (e.g. enabling Hyper-V)</p>
 </div>
 
-<h2 id="step-4-kubernetes">Step 4: Kubernetes</h2>
+<h2 id="step-3-kubernetes">Step 3: Kubernetes</h2>
 
 <div class="admonition warning">
 <p class="admonition-title"></p>
 <p>TODO (use a readfile)</p>
 </div>
 
-<h2 id="step-5-keybase">Step 5: Keybase</h2>
+<h2 id="step-4-keybase">Step 4: Keybase</h2>
 
 <div class="admonition note">
 <p class="admonition-title"></p>
@@ -502,7 +490,7 @@ and publishing at least one verification.</p>
 
 <h3 id="verify-that-keybasefs-is-mounted-to-your-system">Verify that KeybaseFS is mounted to your system.</h3>
 
-<pre><code>dir k:
+<pre><code class="language-bash">dir k:
 </code></pre>
 
 <div class="admonition note">
@@ -522,9 +510,11 @@ private  public  team
 <p>The KDK CLI creates a Docker container with many tools already installed and ready for you to develop with Kubernetes.</p>
 </div>
 
-<h3 id="install-the-kubernetes-development-kit-kdk-https-github-com-cisco-sso-kdk">Install the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>.</h3>
+<p><h3 id="install-the-kubernetes-development-kit-kdk-https-github-com-cisco-sso-kdk">Install the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>.</h3>
 
-<pre><code class="language-bash">curl -sSL https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install | bash
+<pre><code class="language-bash"># Via Windows Powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1'))
 </code></pre>
 
 <h3 id="print-kdk-usage-information">Print KDK usage information.</h3>
@@ -541,7 +531,7 @@ private  public  team
 
 <pre><code class="language-bash">kdk ssh
 </code></pre>
-
+</p>
 
 <h2 id="step-6-framework-deploy">Step 6: Framework Deploy</h2>
 

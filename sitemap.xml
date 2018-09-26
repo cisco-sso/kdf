@@ -11,11 +11,19 @@
   </url>
   
   <url>
-    <loc>https://kdf.csco.cloud/getting-started/readfiles/kdk-install/</loc>
+    <loc>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-maclinux/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-windows/</loc>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/kdk-note/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/getting-started/readfiles/kdk-usage/</loc>
   </url>
   
   <url>

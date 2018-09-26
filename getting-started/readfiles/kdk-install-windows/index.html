@@ -15,12 +15,12 @@
     
     <meta name="description" content="Kubernetes Development Framework (KDF)">
     
-    <link rel="canonical" href="https://kdf.csco.cloud/getting-started/readfiles/kdk-install/">
+    <link rel="canonical" href="https://kdf.csco.cloud/getting-started/readfiles/kdk-install-windows/">
     
     <meta name="author" content="SSO Arch Team">
     
 
-    <meta property="og:url" content="https://kdf.csco.cloud/getting-started/readfiles/kdk-install/">
+    <meta property="og:url" content="https://kdf.csco.cloud/getting-started/readfiles/kdk-install-windows/">
     <meta property="og:title" content="KDF">
     <meta property="og:image" content="https://kdf.csco.cloud/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="KDF">
@@ -405,22 +405,9 @@
 
 <h3 id="install-the-kubernetes-development-kit-kdk-https-github-com-cisco-sso-kdk">Install the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>.</h3>
 
-<pre><code class="language-bash">curl -sSL https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install | bash
-</code></pre>
-
-<h3 id="print-kdk-usage-information">Print KDK usage information.</h3>
-
-<pre><code class="language-bash">kdk
-</code></pre>
-
-<h3 id="configure-kdk">Configure KDK.</h3>
-
-<pre><code class="language-bash">kdk init
-</code></pre>
-
-<h3 id="run-the-kdk-container-and-log-into-it">Run the KDK container and log into it.</h3>
-
-<pre><code class="language-bash">kdk ssh
+<pre><code class="language-bash"># Via Windows Powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force
+iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1'))
 </code></pre>
 
 
@@ -440,7 +427,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-note/" title="">
+      <a href="https://kdf.csco.cloud/getting-started/readfiles/kdk-install-maclinux/" title="">
         <span class="direction">
           Previous
         </span>
