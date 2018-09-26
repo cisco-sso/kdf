@@ -134,7 +134,8 @@ private  public  team
 {{% readfile file="/content/getting-started/readfiles/kdk-note.md" markdown="true" %}}
 {{% /note %}}
 
-{{% readfile file="/content/getting-started/readfiles/kdk-install.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/kdk-install-maclinux.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/kdk-usage.md" markdown="true" %}}
 
 
 ## Step 6: Framework Deploy
