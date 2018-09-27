@@ -35,6 +35,10 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 choco install -y docker-for-windows
 ```
 
+- *If* at any point during these instructions you receive an undocumented
+  prompt of Docker requesting elevated permissions, please select the
+  *Affirmative* answer.
+
 ### Start Docker.
 
 - Windows Search -> `Docker For Windows` -> ( `Enter`)
@@ -42,8 +46,8 @@ choco install -y docker-for-windows
 ![docker-startmenu](/images/windows/docker-startmenu.png)
 
 - *If* you receive a prompt to enable Hyper-V, then enable it by clicking `Ok`.
-    This will restart your computer, at which point you will have to start
-    Docker for Windows again by following the prior step.
+  This will restart your computer, at which point you will have to start Docker
+  for Windows again by following the prior step.
 
 ![docker-hyperv](/images/windows/docker-hyperv.png)
 
@@ -106,15 +110,16 @@ We'll explore Kubernetes more later in this guide from inside of a
 ### Install Keybase.
 
 ```bash
+# Windows Powershell as Administrator
 choco install -y keybase
 ```
 
 ### Open Keybase.
 
 - `Windows Search` -> `keybase`
+- Login using your [keybase.io](https://keybase.io/) credentials and authorize the client.
 
 ### Enable Keybase Files.
-
 
 - `Settings` -> `Files` -> `Enable Keybase in Explorer`
 

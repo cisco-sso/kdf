@@ -1,8 +1,14 @@
-### Install the [Kubernetes Development Kit (KDK)](https://github.com/cisco-sso/kdk).
-
+### Install Prerequisites
 
 ```bash
-# Windows Powershell
+# Windows Powershell as Administrator
+choco install openssh
+```
+
+### Install the [Kubernetes Development Kit (KDK)](https://github.com/cisco-sso/kdk).
+
+```bash
+# Windows Powershell - NOT AS ADMINSTRATOR
 Set-ExecutionPolicy Bypass -Scope Process -Force
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1'))
 ```
