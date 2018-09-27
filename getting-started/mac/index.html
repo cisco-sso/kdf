@@ -724,7 +724,7 @@ ls -a
 <p>You should see:</p>
 
 <pre><code class="language-bash">.  ..  .envrc  README.md  mh  vars.yaml
-direnv: error .envrc is blocked. Run `direnv allow` to approve its content. 
+direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 </code></pre>
 
 <ul>
@@ -773,7 +773,164 @@ which <a href="http://keybase.io">keybase.io</a> team manages each cluster.</p>
 <pre><code class="language-bash">direnv allow
 </code></pre>
 
-<p>TODO: To be continued&hellip;</p>
+<h3 id="interact-with-kubernetes-using-kubectl-https-kubernetes-io-docs-reference-kubectl-overview">Interact with Kubernetes using <a href="https://kubernetes.io/docs/reference/kubectl/overview/">kubectl</a>.</h3>
+
+<pre><code class="language-bash">kubectl config get-contexts
+## CURRENT   NAME                 CLUSTER                      AUTHINFO             NAMESPACE
+## *         docker-for-desktop   docker-for-desktop-cluster   docker-for-desktop
+
+kubectl config current-context
+## docker-for-desktop
+
+kubectl version
+## Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;11&quot;, GitVersion:&quot;v1.11.1&quot;, GitCommit:&quot;b1b29978270dc22fecc592ac55d903350454310a&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2018-07-18T11:36:43Z&quot;, GoVersion:&quot;go1.10.3&quot;, Compiler:&quot;gc&quot;, Platform:&quot;darwin/amd64&quot;}
+## Server Version: version.Info{Major:&quot;1&quot;, Minor:&quot;10&quot;, GitVersion:&quot;v1.10.3&quot;, GitCommit:&quot;2bba0127d85d5a46ab4b778548be28623b32d0b0&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2018-05-21T09:05:37Z&quot;, GoVersion:&quot;go1.9.3&quot;, Compiler:&quot;gc&quot;, Platform:&quot;linux/amd64&quot;}
+
+kubectl get nodes
+## NAME                 STATUS    ROLES     AGE       VERSION
+## docker-for-desktop   Ready     master     1h       v1.10.3
+
+kubectl get statefulsets --all-namespaces
+## No resources found.
+
+kubectl get deployments --all-namespaces
+## NAMESPACE     NAME          DESIRED   CURRENT   UP-TO-DATE   AVAILABLE   AGE
+## docker        compose       1         1         1            1           21h
+## docker        compose-api   1         1         1            1           21h
+## kube-system   kube-dns      1         1         1            1           21h
+
+kubectl get pod --all-namespaces
+## NAMESPACE     NAME                                         READY     STATUS    RESTARTS   AGE
+## docker        compose-7447646cf5-gbcrx                     1/1       Running   0          1h
+## docker        compose-api-6fbc44c575-gd92f                 1/1       Running   0          1h
+## kube-system   etcd-docker-for-desktop                      1/1       Running   1          1h
+## kube-system   kube-apiserver-docker-for-desktop            1/1       Running   1          1h
+## kube-system   kube-controller-manager-docker-for-desktop   1/1       Running   1          1h
+## kube-system   kube-dns-86f4d74b45-snz5s                    3/3       Running   0          1h
+## kube-system   kube-proxy-dmqvq                             1/1       Running   0          1h
+## kube-system   kube-scheduler-docker-for-desktop            1/1       Running   1          1h
+</code></pre>
+
+<h3 id="initialize-helm-tiller-https-docs-helm-sh-glossary-tiller-into-your-local-kubernetes-cluster">Initialize <a href="https://docs.helm.sh/glossary/#tiller">Helm Tiller</a> into your local Kubernetes cluster.</h3>
+
+<pre><code class="language-bash">helm version
+## Client: &amp;version.Version{SemVer:&quot;v2.10.0&quot;, GitCommit:&quot;9ad53aac42165a5fadc6c87be0dea6b115f93090&quot;, GitTreeState:&quot;clean&quot;}
+## Error: could not find tiller
+
+helm init --wait
+## $HELM_HOME has been configured at /home/&lt;you&gt;/.helm.
+##
+## Tiller (the Helm server-side component) has been installed into your Kubernetes Cluster.
+##
+## Please note: by default, Tiller is deployed with an insecure 'allow unauthenticated users' policy.
+## To prevent this, run `helm init` with the --tiller-tls-verify flag.
+## For more information on securing your installation see: https://docs.helm.sh/using_helm/#securing-your-helm-installation
+## Happy Helming!
+
+helm version
+## Client: &amp;version.Version{SemVer:&quot;v2.10.0&quot;, GitCommit:&quot;9ad53aac42165a5fadc6c87be0dea6b115f93090&quot;, GitTreeState:&quot;clean&quot;}
+## Server: &amp;version.Version{SemVer:&quot;v2.10.0&quot;, GitCommit:&quot;9ad53aac42165a5fadc6c87be0dea6b115f93090&quot;, GitTreeState:&quot;clean&quot;}
+</code></pre>
+
+<h3 id="simulate-https-github-com-cisco-sso-mh-simulate-app-upgrades-or-simulate-install-of-apps-as-needed-the-deployment-of-kdf-apps-using-mh"><a href="https://github.com/cisco-sso/mh#simulate-app-upgrades-or-simulate-install-of-apps-as-needed">Simulate</a> the deployment of KDF apps using mh.</h3>
+
+<pre><code class="language-bash">mh simulate --printRendered
+## ...
+</code></pre>
+
+<h3 id="apply-https-github-com-cisco-sso-mh-apply-app-upgrades-or-install-apps-as-needed-the-deployment-of-kdf-apps-using-mh"><a href="https://github.com/cisco-sso/mh#apply-app-upgrades-or-install-apps-as-needed">Apply</a> the deployment of KDF apps using mh.</h3>
+
+<pre><code class="language-bash">mh apply
+## ...
+</code></pre>
+
+<h3 id="inspect-the-resulting-helm-releases">Inspect the resulting Helm releases.</h3>
+
+<pre><code class="language-bash">helm ls
+## NAME                   REVISION UPDATED                  STATUS   CHART                        APP VERSION NAMESPACE
+## chaoskube              1        Thu Sep 27 15:37:53 2018 DEPLOYED chaoskube-0.8.0              0.8.0       default
+## elasticsearch          1        Thu Sep 27 15:37:40 2018 DEPLOYED elasticsearch-1.4.0          6.3.1       default
+## elasticsearch-exporter 1        Thu Sep 27 15:37:42 2018 DEPLOYED elasticsearch-exporter-0.2.0 1.0.2       default
+## filebeat               1        Thu Sep 27 15:37:47 2018 DEPLOYED filebeat-0.6.0               6.3.1       default
+## grafana                1        Thu Sep 27 15:37:51 2018 DEPLOYED grafana-1.13.1               5.1.3       default
+## kibana                 1        Thu Sep 27 15:37:45 2018 DEPLOYED kibana-0.8.0                 6.3.1       default
+## nginx-ingress-external 1        Thu Sep 27 15:37:43 2018 DEPLOYED nginx-ingress-0.23.0         0.15.0      default
+## prometheus             1        Thu Sep 27 15:37:48 2018 DEPLOYED prometheus-7.0.0             2.3.2       default
+</code></pre>
+
+<h3 id="use-the-watch-https-linux-die-net-man-1-watch-command-to-monitor-the-status">Use the <a href="https://linux.die.net/man/1/watch">watch</a> command to monitor the status.</h3>
+
+<p>(Use <code>CTRL + c</code> to exit the watch command loop.)</p>
+
+<pre><code class="language-bash">watch -n1 'kubectl get pod'
+## Every 1.0s: kubectl get pod
+##
+## NAME                                                            READY     STATUS              RESTARTS   AGE
+## chaoskube-chaoskube-7f5874cc98-nvksz                            0/1       ContainerCreating   0          9s
+## elasticsearch-client-7cdc657767-p9kzq                           0/1       PodInitializing     0          22s
+## elasticsearch-data-0                                            0/1       Init:1/2            0          22s
+## elasticsearch-exporter-elasticsearch-exporter-659975bf4-b75sf   1/1       Running             0          20s
+## elasticsearch-master-0                                          0/1       Init:0/2            0          22s
+## filebeat-dvgd8                                                  0/1       ContainerCreating   0          15s
+## grafana-599bd6c66-fqf98                                         0/1       Init:0/1            0          11s
+## kibana-5f66c65c47-6nttz                                         0/1       ContainerCreating   0          17s
+## nginx-ingress-external-controller-dd7775d7f-clflh               0/1       ContainerCreating   0          19s
+## nginx-ingress-external-default-backend-744cd584cf-drxx9         0/1       ContainerCreating   0          19s
+## prometheus-alertmanager-6bfdc4b7f4-4wtxl                        0/2       ContainerCreating   0          13s
+## prometheus-kube-state-metrics-6584885ccf-l7lnz                  0/1       ContainerCreating   0          13s
+## prometheus-node-exporter-zzz5b                                  0/1       ContainerCreating   0          13s
+## prometheus-pushgateway-d5fdc4f5b-wjzdt                          0/1       ContainerCreating   0          13s
+## prometheus-server-5c969bc49c-jm9fl                              0/2       PodInitializing     0          13s
+</code></pre>
+
+<h3 id="you-should-soon-see-that-all-pods-are-running-and-ready">You should soon see that all pods are running and ready.</h3>
+
+<pre><code class="language-bash">## Every 1.0s: kubectl get pod
+##
+## NAME                                                            READY     STATUS    RESTARTS   AGE
+## chaoskube-chaoskube-7f5874cc98-nvksz                            1/1       Running   0          21m
+## elasticsearch-client-7cdc657767-p9kzq                           1/1       Running   0          21m
+## elasticsearch-data-0                                            1/1       Running   0          21m
+## elasticsearch-exporter-elasticsearch-exporter-659975bf4-b75sf   1/1       Running   0          21m
+## elasticsearch-master-0                                          1/1       Running   0          21m
+## elasticsearch-master-1                                          1/1       Running   0          18m
+## filebeat-dvgd8                                                  1/1       Running   0          21m
+## grafana-599bd6c66-fqf98                                         1/1       Running   0          21m
+## kibana-5f66c65c47-6nttz                                         1/1       Running   0          21m
+## nginx-ingress-external-controller-dd7775d7f-clflh               1/1       Running   0          21m
+## nginx-ingress-external-default-backend-744cd584cf-drxx9         1/1       Running   0          21m
+## prometheus-alertmanager-6bfdc4b7f4-4wtxl                        2/2       Running   0          21m
+## prometheus-kube-state-metrics-6584885ccf-l7lnz                  1/1       Running   0          21m
+## prometheus-node-exporter-zzz5b                                  1/1       Running   0          21m
+## prometheus-pushgateway-d5fdc4f5b-wjzdt                          1/1       Running   0          21m
+## prometheus-server-5c969bc49c-jm9fl                              2/2       Running   0          21m
+</code></pre>
+
+<h3 id="get-a-list-of-kubernetes-ingress-https-kubernetes-io-docs-concepts-services-networking-ingress-resources">Get a list of <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Kubernetes Ingress</a> resources.</h3>
+
+<pre><code class="language-bash">kubectl get ingress
+## NAME                      HOSTS                                         ADDRESS     PORTS     AGE
+## grafana                   grafana.docker-for-desktop.example.org        localhost   80        21m
+## kibana                    kibana.docker-for-desktop.example.org         localhost   80        21m
+## prometheus-alertmanager   alertmanager.docker-for-desktop.example.org   localhost   80        21m
+## prometheus-pushgateway    pushgateway.docker-for-desktop.example.org    localhost   80        21m
+## prometheus-server         prometheus.docker-for-desktop.example.org     localhost   80        21m
+</code></pre>
+
+<h3 id="http-get-an-api-behind-a-kubernetes-ingress-resource">HTTP GET an API behind a Kubernetes Ingress resource.</h3>
+
+<p>This <a href="https://curl.haxx.se/">curl</a> call performs an HTTP GET against the <a href="https://prometheus.io/docs/prometheus/latest/querying/api/">Prometheus API</a> the <a href="https://github.com/kubernetes/ingress-nginx">nginx-ingess</a>. Note how the host header is used for ingress routing.</p>
+
+<pre><code class="language-bash">curl -fsSL \
+  --header 'Host: prometheus.docker-for-desktop.example.org' \
+  http://host.docker.internal/api/v1/label/__name__/values \
+  | jq '.status'
+## &quot;success&quot;
+</code></pre>
+
+<p>It is also possible to visit ingress endpoints in the broswer on your host machine. However, you&rsquo;ll need to include
+<a href="https://en.wikipedia.org/wiki/Hosts_(file)">hosts</a> file lines to ensure the ingress host names resolve properly to
+<code>127.0.0.1</code>. We plan to add documentation to simplify and clarify how this is done.</p>
 
 
 <h2 id="post-install">Post-Install</h2>
