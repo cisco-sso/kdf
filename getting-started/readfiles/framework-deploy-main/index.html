@@ -709,7 +709,7 @@ helm version
 
 <h3 id="http-get-an-api-behind-a-kubernetes-ingress-resource">HTTP GET an API behind a Kubernetes Ingress resource.</h3>
 
-<p>This <a href="https://curl.haxx.se/">curl</a> call performs an HTTP GET against the <a href="https://prometheus.io/docs/prometheus/latest/querying/api/">Prometheus API</a> the <a href="https://github.com/kubernetes/ingress-nginx">nginx-ingess</a>. Note how the host header is used for ingress routing.</p>
+<p>This <a href="https://curl.haxx.se/">curl</a> command performs an HTTP GET against the <a href="https://prometheus.io/docs/prometheus/latest/querying/api/">Prometheus API</a> which is exposed by the <a href="https://github.com/kubernetes/ingress-nginx">nginx-ingess</a>. Note how the host header is used for ingress routing.</p>
 
 <pre><code class="language-bash">curl -fsSL \
   --header 'Host: prometheus.docker-for-desktop.example.org' \
