@@ -46,7 +46,7 @@ Create a private fork of framework-deploy and use it to hold non-secret Kubernet
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-windows/</guid>
-      <description> Install the Kubernetes Development Kit (KDK). # Via Windows Powershell Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1&#39;))  </description>
+      <description> Install the Kubernetes Development Kit (KDK). # Windows Powershell Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1&#39;))  </description>
     </item>
     
     <item>
@@ -106,7 +106,7 @@ However, the Mac instructions may help you get KDF running on Linux.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/mac/</guid>
-      <description>Requirements  macOS High Sierra (10.13) or later is required. You must execute all commands as an administrative (sudo-allowed) user. 8 GB RAM 2 CPU cores  Step 1: Homebrew Open a Terminal.  Spotlight Search ( Command[⌘] + Space[&amp;quot; &amp;quot;] ) -&amp;gt; Terminal  Install Homebrew. /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  Step 2: Docker Install Docker for Mac. brew cask install docker  Start Docker.  Spotlight Search ( Command[⌘] + Space[&amp;quot; &amp;quot;] ) -&amp;gt; Docker -&amp;gt; ( Enter)  At the Are you sure you want to open it?</description>
+      <description>Requirements  macOS High Sierra (10.13) or later is required. You must execute all commands as an administrative (sudo-allowed) user. 8 GB RAM 2 CPU cores  Step 1: Homebrew Open a Terminal.  Spotlight Search ( Command[⌘] + Space[&amp;quot; &amp;quot;] ) -&amp;gt; Terminal  Install Homebrew. /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  Step 2: Docker Install Docker for Mac. brew cask install docker  Start Docker.  Spotlight Search ( Command[⌘] + Space[&amp;quot; &amp;quot;] ) -&amp;gt; Docker -&amp;gt; ( Enter)   At the Are you sure you want to open it?</description>
     </item>
     
     <item>
@@ -115,7 +115,7 @@ However, the Mac instructions may help you get KDF running on Linux.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/windows/</guid>
-      <description>Requirements  Windows 10 Pro or Windows 10 Enterprise is required. You must execute all PowerShell commands as an administrative user. 8 GB RAM 2 CPU cores BIOS Settings with Hardware Virtualization Enabled (VTx and VT-d)  Step 1: Chocolatey Open a Powershell terminal as Administrator.  Windows Search -&amp;gt; Windows PowerShell -&amp;gt; right click Run as Administrator  Install Chocolatey. Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))  Step 2: Docker Install Docker for Windows.</description>
+      <description>Requirements  Windows 10 Pro or Windows 10 Enterprise is required. You must execute all PowerShell commands as an administrative user. 8 GB RAM 2 CPU cores BIOS Settings with Hardware Virtualization Enabled (VTx and VT-d)  Step 1: Chocolatey Open a Powershell terminal as Administrator.  Windows Search -&amp;gt; Windows PowerShell -&amp;gt; right click Run as Administrator  Install Chocolatey. # Windows Powershell as Administrator Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.</description>
     </item>
     
   </channel>

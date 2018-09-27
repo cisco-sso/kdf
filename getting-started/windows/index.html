@@ -426,7 +426,8 @@
 
 <h3 id="install-chocolatey-https-chocolatey-org-install">Install <a href="https://chocolatey.org/install">Chocolatey</a>.</h3>
 
-<pre><code class="language-bash">Set-ExecutionPolicy Bypass -Scope Process -Force
+<pre><code class="language-bash"># Windows Powershell as Administrator
+Set-ExecutionPolicy Bypass -Scope Process -Force
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 </code></pre>
 
@@ -434,21 +435,92 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 
 <h3 id="install-docker-for-windows-https-docs-docker-com-docker-for-windows-release-notes">Install <a href="https://docs.docker.com/docker-for-windows/release-notes/">Docker for Windows</a>.</h3>
 
-<pre><code class="language-bash">choco install -y docker-for-windows
+<pre><code class="language-bash"># Windows Powershell as Administrator
+choco install -y docker-for-windows
 </code></pre>
 
-<h3 id="reboot">Reboot</h3>
+<h3 id="start-docker">Start Docker.</h3>
 
-<div class="admonition warning">
-<p class="admonition-title"></p>
-<p>You must reboot after installing Docker For Windows, and accept all prompts (e.g. enabling Hyper-V)</p>
-</div>
+<ul>
+<li>Windows Search -&gt; <code>Docker For Windows</code> -&gt; ( <code>Enter</code>)</li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/windows/docker-startmenu.png" alt="docker-startmenu" /></p>
+
+<ul>
+<li><em>If</em> you receive a prompt to enable Hyper-V, then enable it by clicking <code>Ok</code>.
+This will restart your computer, at which point you will have to start
+Docker for Windows again by following the prior step.</li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/windows/docker-hyperv.png" alt="docker-hyperv" /></p>
+
+<ul>
+<li><p>The Docker icon should now be displayed in the taskbar tray.</p></li>
+
+<li><p>Open the Docker menu by right clicking the Docker icon and selecting <code>Settings</code>.</p></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/windows/docker-tray-icon-settings.png" alt="docker-tray-icon-settings" /></p>
+
+<ul>
+<li>On the <code>General</code> tab:
+
+<ul>
+<li>Toggle on <code>Start Docker when you log in</code></li>
+<li>Toggle on <code>Automatically check for updates</code></li>
+</ul></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/windows/docker-settings-general.png" alt="docker-settings-general" /></p>
+
+<ul>
+<li>After a minute or two, you should see <code>Docker is running</code> with a green circle.</li>
+</ul>
 
 <h2 id="step-3-kubernetes">Step 3: Kubernetes</h2>
 
-<div class="admonition warning">
+<ul>
+<li><p>Ensure Docker is running by completing <a href="#step-2-docker">Step 2: Docker</a> above.</p></li>
+
+<li><p>Open the Docker menu by right clicking the Docker icon in the taskbar tray and selecting <code>Settings</code>.</p></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/windows/docker-tray-icon-settings.png" alt="docker-tray-icon-settings" /></p>
+
+<ul>
+<li>On the <code>Kubernetes</code> tab:
+
+<ul>
+<li>Toggle on <code>Enable Kubernetes</code>.</li>
+<li>Click the <code>Kubernetes</code> radio button under <code>Default orchestrator for &quot;docker stack&quot; commands</code>.</li>
+<li>Toggle on <code>Show system containers (advanced)</code>.</li>
+<li>Click <code>Apply</code>.</li>
+</ul></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/windows/docker-settings-kubernetes.png" alt="docker-settings-kubernetes" /></p>
+
+<ul>
+<li>When prompted with &ldquo;Kubernetes cluster installation&rdquo;, accept by clicking <code>Install</code></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/windows/docker-kubernetes-install-dialog.png" alt="docker-kubernetes-install-dialog" /></p>
+
+<ul>
+<li>Wait for the &ldquo;Installation Complete!&rdquo; dialog, and click <code>Close</code></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/windows/docker-kubernetes-install-complete.png" alt="docker-kubernetes-install-complete" /></p>
+
+<ul>
+<li>Once Kubernetes is ready, you will see <code>Kubernetes is running</code>.</li>
+</ul>
+
+<div class="admonition note">
 <p class="admonition-title"></p>
-<p>TODO (use a readfile)</p>
+<p>We&rsquo;ll explore Kubernetes more later in this guide from inside of a
+<a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a> container.</p>
 </div>
 
 <h2 id="step-4-keybase">Step 4: Keybase</h2>
@@ -485,7 +557,7 @@ and publishing at least one verification.</p>
 <h3 id="enable-keybase-files">Enable Keybase Files.</h3>
 
 <ul>
-<li><code>Settings</code> -&gt; <code>Files</code> -&gt; <code>Enable Keybase</code> in <code>Explorer</code></li>
+<li><code>Settings</code> -&gt; <code>Files</code> -&gt; <code>Enable Keybase in Explorer</code></li>
 </ul>
 
 <h3 id="verify-that-keybasefs-is-mounted-to-your-system">Verify that KeybaseFS is mounted to your system.</h3>
@@ -512,7 +584,7 @@ private  public  team
 
 <p><h3 id="install-the-kubernetes-development-kit-kdk-https-github-com-cisco-sso-kdk">Install the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>.</h3>
 
-<pre><code class="language-bash"># Via Windows Powershell
+<pre><code class="language-bash"># Windows Powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1'))
 </code></pre>
