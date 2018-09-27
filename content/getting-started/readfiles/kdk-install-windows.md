@@ -2,7 +2,7 @@
 
 
 ```bash
-# Via Windows Powershell
+# Windows Powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1'))
 ```
