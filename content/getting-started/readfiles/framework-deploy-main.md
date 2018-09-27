@@ -294,7 +294,7 @@ kubectl get ingress
 
 ### HTTP GET an API behind a Kubernetes Ingress resource.
 
-This [curl](https://curl.haxx.se/) call performs an HTTP GET against the [Prometheus API](https://prometheus.io/docs/prometheus/latest/querying/api/) the [nginx-ingess](https://github.com/kubernetes/ingress-nginx). Note how the host header is used for ingress routing.
+This [curl](https://curl.haxx.se/) command performs an HTTP GET against the [Prometheus API](https://prometheus.io/docs/prometheus/latest/querying/api/) which is exposed by the [nginx-ingess](https://github.com/kubernetes/ingress-nginx). Note how the host header is used for ingress routing.
 
 ```bash
 curl -fsSL \
