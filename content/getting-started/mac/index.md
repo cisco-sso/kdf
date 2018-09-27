@@ -109,6 +109,7 @@ brew cask install keybase
 ### Open Keybase.
 
 - Spotlight Search ( `Command[⌘] + Space[" "]` ) -> `keybase`
+- Login using your [keybase.io](https://keybase.io/) credentials and authorize the client.
 
 ### Enable Keybase Files.
 
