@@ -34,6 +34,7 @@ brew cask install docker
 ### Start Docker.
 
 - Spotlight Search ( `Command[⌘] + Space[" "]` ) -> `Docker` -> ( `Enter`)
+
 ![docker-spotlight](/images/docker-spotlight.png)
 
 - At the `Are you sure you want to open it?` prompt, click `Open`.
@@ -111,7 +112,7 @@ brew cask install keybase
 
 ### Enable Keybase Files.
 
-- `Settings` -> `Files` -> `Enable Keybase` in `Finder`
+- `Settings` -> `Files` -> `Enable Keybase in Finder`
 
 ### Verify that KeybaseFS is mounted to your system.
 

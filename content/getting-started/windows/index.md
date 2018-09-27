@@ -20,6 +20,7 @@ title: Getting Started > Windows
 ### Install [Chocolatey](https://chocolatey.org/install).
 
 ```bash
+# Windows Powershell as Administrator
 Set-ExecutionPolicy Bypass -Scope Process -Force
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
@@ -30,21 +31,68 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 ### Install [Docker for Windows](https://docs.docker.com/docker-for-windows/release-notes/).
 
 ```bash
+# Windows Powershell as Administrator
 choco install -y docker-for-windows
 ```
 
-### Reboot
+### Start Docker.
 
-{{% warning %}}
-You must reboot after installing Docker For Windows, and accept all prompts (e.g. enabling Hyper-V)
-{{% /warning %}}
+- Windows Search -> `Docker For Windows` -> ( `Enter`)
+
+![docker-startmenu](/images/windows/docker-startmenu.png)
+
+- *If* you receive a prompt to enable Hyper-V, then enable it by clicking `Ok`.
+    This will restart your computer, at which point you will have to start
+    Docker for Windows again by following the prior step.
+
+![docker-hyperv](/images/windows/docker-hyperv.png)
+
+- The Docker icon should now be displayed in the taskbar tray.
+
+- Open the Docker menu by right clicking the Docker icon and selecting `Settings`.
+
+![docker-tray-icon-settings](/images/windows/docker-tray-icon-settings.png)
+
+- On the `General` tab:
+  - Toggle on `Start Docker when you log in`
+  - Toggle on `Automatically check for updates`
+
+![docker-settings-general](/images/windows/docker-settings-general.png)
+
+- After a minute or two, you should see `Docker is running` with a green circle.
 
 
 ## Step 3: Kubernetes
 
-{{% warning %}}
-TODO (use a readfile)
-{{% /warning %}}
+- Ensure Docker is running by completing [Step 2: Docker](#step-2-docker) above.
+
+- Open the Docker menu by right clicking the Docker icon in the taskbar tray and selecting `Settings`.
+
+![docker-tray-icon-settings](/images/windows/docker-tray-icon-settings.png)
+
+- On the `Kubernetes` tab:
+  - Toggle on `Enable Kubernetes`.
+  - Click the `Kubernetes` radio button under `Default orchestrator for "docker stack" commands`.
+  - Toggle on `Show system containers (advanced)`.
+  - Click `Apply`.
+
+![docker-settings-kubernetes](/images/windows/docker-settings-kubernetes.png)
+
+- When prompted with "Kubernetes cluster installation", accept by clicking `Install`
+
+![docker-kubernetes-install-dialog](/images/windows/docker-kubernetes-install-dialog.png)
+
+- Wait for the "Installation Complete!" dialog, and click `Close`
+
+![docker-kubernetes-install-complete](/images/windows/docker-kubernetes-install-complete.png)
+
+- Once Kubernetes is ready, you will see `Kubernetes is running`.
+
+
+{{% note %}}
+We'll explore Kubernetes more later in this guide from inside of a
+[Kubernetes Development Kit (KDK)](https://github.com/cisco-sso/kdk) container.
+{{% /note %}}
 
 
 ## Step 4: Keybase
@@ -67,7 +115,8 @@ choco install -y keybase
 
 ### Enable Keybase Files.
 
-- `Settings` -> `Files` -> `Enable Keybase` in `Explorer`
+
+- `Settings` -> `Files` -> `Enable Keybase in Explorer`
 
 ### Verify that KeybaseFS is mounted to your system.
 
