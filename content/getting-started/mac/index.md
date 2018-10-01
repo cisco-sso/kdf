@@ -35,27 +35,27 @@ brew cask install docker
 
 - Spotlight Search ( `Command[⌘] + Space[" "]` ) -> `Docker` -> ( `Enter`)
 
-![docker-spotlight](/images/docker-spotlight.png)
+![docker-spotlight](/images/mac/docker-spotlight.png)
 
 - At the `Are you sure you want to open it?` prompt, click `Open`.
 
-![docker-open](/images/docker-open.png)
+![docker-open](/images/mac/docker-open.png)
 
 - At the `Docker needs privileged access.` prompt, click `OK`.
 
-![docker-privileged-access](/images/docker-privileged-access.png)
+![docker-privileged-access](/images/mac/docker-privileged-access.png)
 
 - At the `Docker wants to make changes.` prompt, fill in your administrative user credentials and click `OK`.
 
-![docker-make-changes](/images/docker-make-changes.png)
+![docker-make-changes](/images/mac/docker-make-changes.png)
 
 - Docker should now be running in the taskbar tray.
 
-- Open the Docker menu by clicking: ![docker-tray-icon](/images/docker-tray-icon.png)
+- Open the Docker menu by clicking: ![docker-tray-icon](/images/mac/docker-tray-icon.png)
 
 - After a minute or two, you should see `Docker is running` with a green circle.
 
-![docker-tray-menu](/images/docker-tray-menu.png)
+![docker-tray-menu](/images/mac/docker-tray-menu.png)
 
 - Once you see the above, Docker is ready to use.
 
@@ -64,11 +64,11 @@ brew cask install docker
 
 - Ensure Docker is running by completing [Step 2: Docker](#step-2-docker) above.
 
-- Open the Docker menu by clicking: ![docker-tray-icon](/images/docker-tray-icon.png)
+- Open the Docker menu by clicking: ![docker-tray-icon](/images/mac/docker-tray-icon.png)
 
 - Open Docker Preferences.
 
-![docker-tray-menu-preferences](/images/docker-tray-menu-preferences.png)
+![docker-tray-menu-preferences](/images/mac/docker-tray-menu-preferences.png)
 
 - On the `Advanced` tab:
   - Set CPUs: 2
@@ -76,7 +76,7 @@ brew cask install docker
   - Set Swap: 512MiB
   - Click `Apply & Restart`
 
-![docker-preferences-kubernetes](/images/docker-preferences-advanced.png)
+![docker-preferences-kubernetes](/images/mac/docker-preferences-advanced.png)
 
 - On the `Kubernetes` tab:
   - Toggle on `Enable Kubernetes`.
@@ -84,15 +84,15 @@ brew cask install docker
   - Toggle on `Show system containers (advanced)`.
   - Click `Apply`.
 
-![docker-preferences-kubernetes](/images/docker-preferences-kubernetes.png)
+![docker-preferences-kubernetes](/images/mac/docker-preferences-kubernetes.png)
 
 - For what may become several minutes, you will see `Kubernetes is starting...` with an amber circle.
 
-![docker-preferences-kubernetes-starting](/images/docker-preferences-kubernetes-starting.png)
+![docker-preferences-kubernetes-starting](/images/mac/docker-preferences-kubernetes-starting.png)
 
 - Once Kubernetes is ready, you will see `Kubernetes is running`.
 
-![docker-preferences-kubernetes-running](/images/docker-preferences-kubernetes-running.png)
+![docker-preferences-kubernetes-running](/images/mac/docker-preferences-kubernetes-running.png)
 
 {{% note %}}
 We'll explore Kubernetes more later in this guide from inside of a
