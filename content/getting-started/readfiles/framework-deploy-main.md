@@ -10,6 +10,18 @@ git clone git@github.com:cisco-sso/framework-deploy.git
 git clone https://github.com/cisco-sso/framework-deploy.git
 ```
 
+### Get your `~/kube/config` into the KDK
+
+TODO(jmdots): Fill in this section
+
+This will copy your kube config into the KDK and modify the docker-for-desktop configuration context to work from within
+your kdk.
+
+```
+kdk kubesync
+```
+
+
 ### Change to the `framework-deploy` directory and take a look around.
 
 ```bash
