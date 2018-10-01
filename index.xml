@@ -17,9 +17,8 @@
       
       <guid>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-main/</guid>
       <description>Open up a SOCKS connection by connecting to your KDK kdk ssh  Install Firefox We prefer Firefox because it allows one to manage network proxy configurations independently of the host operating system.
-Download Firefox here or install it through a prior-installed package manager.
-Configure your web browser to connect via the KDK SOCKS proxy Get your docker-for-desktop ~/kube/config into the KDK TODO(jmdots): Fill in this section
-kdk kubesync  cd framework-deploy/clusters/docker-for-desktop  /Applications/Firefox.</description>
+Download Firefox here or install it through a prior-installed package manager as prior steps have used.
+Configure your web browser to connect via the KDK SOCKS proxy It may be beneficial to start Firefox with the profile manager so that you can keep these settings separate from the default instance.</description>
     </item>
     
     <item>
@@ -38,8 +37,8 @@ kdk kubesync  cd framework-deploy/clusters/docker-for-desktop  /Applications/Fir
       
       <guid>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-main/</guid>
       <description>(inside your KDK container)
-Clone the framework-deploy repo using git. #### Run this command if you have configured your GitHub account for public key SSH. git clone git@github.com:cisco-sso/framework-deploy.git #### (OR) Run this command if you have not configured GitHub for public key SSH. git clone https://github.com/cisco-sso/framework-deploy.git  Change to the framework-deploy directory and take a look around. cd framework-deploy/ ls -a  You should see:
-. .. .envrc .git .</description>
+Clone the framework-deploy repo using git. #### Run this command if you have configured your GitHub account for public key SSH. git clone git@github.com:cisco-sso/framework-deploy.git #### (OR) Run this command if you have not configured GitHub for public key SSH. git clone https://github.com/cisco-sso/framework-deploy.git  Get your ~/kube/config into the KDK TODO(jmdots): Fill in this section
+This will copy your kube config into the KDK and modify the docker-for-desktop configuration context to work from within your kdk.</description>
     </item>
     
     <item>
