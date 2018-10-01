@@ -156,6 +156,14 @@ private  public  team
 
 {{% readfile file="/content/getting-started/readfiles/framework-deploy-main.md" markdown="true" %}}
 
+## Step 7: Explore Kubernetes
+
+{{% note %}}
+{{% readfile file="/content/getting-started/readfiles/explore-kubernetes-note.md" markdown="true" %}}
+{{% /note %}}
+
+{{% readfile file="/content/getting-started/readfiles/explore-kubernetes-main.md" markdown="true" %}}
+
 
 ## Post-Install
 
