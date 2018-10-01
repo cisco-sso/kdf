@@ -24,8 +24,9 @@ googleAnalytics = ""
         permalink = "#"
 
         # Custom assets
-        custom_css = ["https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"]
-        custom_js  = ["https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"]
+        # custom_css = ["https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"]
+        # custom_js  = ["https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"]
+        custom_css = ["stylesheets/hugo-material-docs_application.css"]
 
         # Syntax highlighting theme
         highlight_css  = ""
