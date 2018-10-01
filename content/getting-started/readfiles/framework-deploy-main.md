@@ -24,22 +24,21 @@ You should see:
 
 - `.envrc`
 
-Upon entering a directory that contains an `.envrc` file, the `direnv` tool installed in the KDK container will
+Upon entering a directory that contains an `.envrc` file, the `direnv` tool installed within the KDK container will
 automatically source the `./.envrc` file if it is present.
 
-For example, in the framework-deploy pattern, `direnv` tunes your shell's environment variables for each cluster
-directory into which you change (`cd`). It is through these environment variables that all of the tools are configured
-(e.g. `kubectl`, `docker`, `helm`, etc).
+In the framework-deploy pattern, `direnv` sets your shell's environment variables for each cluster directory into which
+you change (`cd`). It is through these environment variables that all of the tools are configured (e.g. `kubectl`,
+`docker`, `helm`, etc).
 
-If `direnv` encounters a `.envrc` file it has not previously processed, or one that has changed since last seen, `direnv`
-will prompt you to approve the processing of its content.
+If `direnv` encounters an `.envrc` file it has not previously processed, or one that has changed since last seen,
+`direnv` will prompt you to approve the processing of its content.
 
 ```
 direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 ```
 
-At prompts like this, if you're confident that the `.envrc` file is safe for `direnv` to process, run `direnv allow`
-to do so.
+At prompts like this, if you're confident that the `.envrc` file is safe for `direnv` to process, run `direnv allow`.
 
 - `.git`
 
@@ -55,13 +54,14 @@ These are standard fare license and high level documentation for the framework-d
 
 - `apps`
 
-The `apps` directory contains template files for the [mh](https://github.com/cisco-sso/mh) command. Each "app" is a template of a Helm chart override.
+The `apps` directory contains template files for the [mh](https://github.com/cisco-sso/mh) command. Each "app" is a
+template which produces and overrides for a particular Helm chart.
 
 - `bin`
 
 The `bin` directory contains scripts that simplify specific operations. For example, `bin/get-password-grafana.sh` is a
-helper script that retrieves the auto-generated admin password for [grafana](https://grafana.com/) as installed by
-framework-deploy.
+helper script that retrieves the auto-generated admin password for [grafana](https://grafana.com/) from the kubernetes
+secret as installed by framework-deploy.
 
 - `clusters`
 
