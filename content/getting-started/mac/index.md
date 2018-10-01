@@ -70,6 +70,14 @@ brew cask install docker
 
 ![docker-tray-menu-preferences](/images/docker-tray-menu-preferences.png)
 
+- On the `Advanced` tab:
+  - Set CPUs: 2
+  - Set Memory: 4.0GiB
+  - Set Swap: 512MiB
+  - Click `Apply & Restart`
+
+![docker-preferences-kubernetes](/images/docker-preferences-advanced.png)
+
 - On the `Kubernetes` tab:
   - Toggle on `Enable Kubernetes`.
   - Click the `Kubernetes` radio button under `Default orchestrator for "docker stack" commands`.

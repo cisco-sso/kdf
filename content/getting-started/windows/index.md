@@ -74,6 +74,14 @@ choco install -y docker-for-windows
 
 ![docker-tray-icon-settings](/images/windows/docker-tray-icon-settings.png)
 
+- On the `Advanced` tab:
+  - Set CPUs: 2
+  - Set Memory: 4.0GiB
+  - Set Swap: 512MiB
+  - Click `Apply`
+
+![docker-settings-kubernetes](/images/windows/docker-settings-advanced.png)
+
 - On the `Kubernetes` tab:
   - Toggle on `Enable Kubernetes`.
   - Click the `Kubernetes` radio button under `Default orchestrator for "docker stack" commands`.
