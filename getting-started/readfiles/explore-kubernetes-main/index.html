@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Kubernetes - KDF</title>
+    <title> - KDF</title>
     <meta name="generator" content="Hugo 0.48" />
 
     
     <meta name="description" content="Kubernetes Development Framework (KDF)">
     
-    <link rel="canonical" href="https://kdf.csco.cloud/kubernetes/">
+    <link rel="canonical" href="https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-main/">
     
     <meta name="author" content="SSO Arch Team">
     
 
-    <meta property="og:url" content="https://kdf.csco.cloud/kubernetes/">
+    <meta property="og:url" content="https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-main/">
     <meta property="og:title" content="KDF">
     <meta property="og:image" content="https://kdf.csco.cloud/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="KDF">
@@ -99,7 +99,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Kubernetes
+        
       </div>
     </div>
 
@@ -304,14 +304,11 @@
 
 
 
-<a class="current" title="Kubernetes" href="https://kdf.csco.cloud/kubernetes/">
+<a  title="Kubernetes" href="https://kdf.csco.cloud/kubernetes/">
 	
 	Kubernetes
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -402,33 +399,46 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Kubernetes </h1>
+			<h1> </h1>
 
 			
 
-<h2 id="testing">Testing</h2>
+<h3 id="open-up-a-socks-connection-by-connecting-to-your-kdk">Open up a SOCKS connection by connecting to your KDK</h3>
 
-<h2 id="chaoskube">Chaoskube</h2>
+<pre><code>kdk ssh
+</code></pre>
 
-<h2 id="litmus-test">Litmus Test</h2>
+<h3 id="install-firefox">Install Firefox</h3>
 
-<p>Delete all nodes</p>
+<p>We prefer Firefox because it allows one to manage network proxy configurations independently of the host operating
+system.</p>
 
-<h2 id="helm-chart-practices">Helm Chart Practices</h2>
+<p>Download Firefox <a href="https://www.mozilla.org/en-US/firefox/new/">here</a> or install
+it through a prior-installed package manager.</p>
 
-<h3 id="selecting-a-helm-chart">Selecting a Helm Chart</h3>
+<h3 id="configure-your-web-browser-to-connect-via-the-kdk-socks-proxy">Configure your web browser to connect via the KDK SOCKS proxy</h3>
 
-<h3 id="helm-chart-code-review">Helm Chart Code Review</h3>
+<h3 id="get-your-docker-for-desktop-kube-config-into-the-kdk">Get your docker-for-desktop <code>~/kube/config</code> into the KDK</h3>
 
-<h2 id="cluster-deployments">Cluster Deployments</h2>
+<p>TODO(jmdots): Fill in this section</p>
 
-<h3 id="local-machine">Local Machine</h3>
+<pre><code>kdk kubesync
+</code></pre>
 
-<h3 id="aws">AWS</h3>
+<pre><code>cd framework-deploy/clusters/docker-for-desktop
 
-<h3 id="vsphere">Vsphere</h3>
+</code></pre>
 
-<h3 id="openstack">Openstack</h3>
+<p>/Applications/Firefox.app/Contents/MacOS/firefox-bin -P</p>
+
+<p>firefox.exe -P</p>
+
+<p><div hidden comment>$ kubectl get ing| grep -v HOSTS| awk &lsquo;{print &ldquo;http://&rdquo; $2}&rsquo;</div>
+* <a href="http://grafana.docker-for-desktop.example.org">http://grafana.docker-for-desktop.example.org</a>
+* <a href="http://kibana.docker-for-desktop.example.org">http://kibana.docker-for-desktop.example.org</a>
+* <a href="http://alertmanager.docker-for-desktop.example.org">http://alertmanager.docker-for-desktop.example.org</a>
+* <a href="http://pushgateway.docker-for-desktop.example.org">http://pushgateway.docker-for-desktop.example.org</a>
+* <a href="http://prometheus.docker-for-desktop.example.org">http://prometheus.docker-for-desktop.example.org</a></p>
 
 
 			<aside class="copyright" role="note">
@@ -447,34 +457,18 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://kdf.csco.cloud/getting-started/windows/" title="Getting Started &gt; Windows">
-        <span class="direction">
-          Previous
-        </span>
-        <div class="page">
-          <div class="button button-previous" role="button" aria-label="Previous">
-            <i class="icon icon-back"></i>
-          </div>
-          <div class="stretch">
-            <div class="title">
-              Getting Started &gt; Windows
-            </div>
-          </div>
-        </div>
-      </a>
-  
   </div>
 
   <div class="next">
   
-      <a href="https://kdf.csco.cloud/training/" title="Kubernetes Training Resources">
+      <a href="https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-note/" title="">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Kubernetes Training Resources
+              
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

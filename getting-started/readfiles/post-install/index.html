@@ -66,7 +66,7 @@
     </style>
 
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://kdf.csco.cloud/stylesheets/hugo-material-docs_application.css">
     
     <script src="https://kdf.csco.cloud/javascripts/modernizr.js"></script>
 
@@ -407,14 +407,33 @@
 
 <h3 id="add-your-public-ssh-key-to-source-control-systems">Add your public SSH key to source control systems.</h3>
 
-<p>This is optional if you are using <a href="https://developer.github.com/v3/guides/using-ssh-agent-forwarding/">ssh-agent</a>, which the KDK automatically forwards.  Otherwise, you may directly configure the pre-generated ssh key which is used to connect to the KDK, within each source control provider.</p>
+<p>This is optional if you are using <a href="https://developer.github.com/v3/guides/using-ssh-agent-forwarding/">ssh-agent</a>, which
+the KDK automatically forwards.  Otherwise, you may directly configure the pre-generated ssh key which is used to
+connect to the KDK, within each source control provider.</p>
 
 <p>Add content of ssh public key <code>~/.kdk/ssh/id_rsa.pub</code></p>
 
 <ul>
 <li>To your <a href="https://github.com/settings/keys">Github Account Keys</a></li>
-<li>To your Bitbucket Server https://<BITBUCKET-SERVER>/bitbucket/plugins/servlet/ssh/account/keys</li>
+<li>To your Bitbucket Server https://&lt;BITBUCKET-SERVER&gt;/bitbucket/plugins/servlet/ssh/account/keys</li>
 </ul>
+
+<h3 id="customing-your-bash-profile">Customing your <code>.bash_profile</code></h3>
+
+<p>If you have installed <a href="https://keybase.io/">Keybase</a>, you may customize your bash profile by creating the file
+<code>/keybase/private/&lt;user-keybase-id&gt;/.bash_profile_private</code>.  The default KDK
+<a href="https://github.com/cisco-sso/yadm-dotfiles/blob/master/.bash_profile#L101"><code>.bash_profile</code></a> will automatically source
+the <code>.bash_profile_private</code> file from keybase, if it exists.</p>
+
+<h3 id="customizing-your-dotfiles">Customizing your dotfiles</h3>
+
+<p>If you have your own yadm dotfiles repository, you may <code>kdk init</code> with the option:</p>
+
+<pre><code>--dotfiles-repo string      KDK Dotfiles Repo (default &quot;https://github.com/cisco-sso/yadm-dotfiles.git&quot;)
+</code></pre>
+
+<p>The easiest way to create a compatible dotfiles repository is to fork the repository
+<a href="https://github.com/cisco-sso/yadm-dotfiles.git">yadm-dotfiles</a>.</p>
 
 
 			<aside class="copyright" role="note">
@@ -498,8 +517,6 @@
     </script>
 
     <script src="https://kdf.csco.cloud/javascripts/application.js"></script>
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 
     <script>

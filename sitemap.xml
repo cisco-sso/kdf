@@ -3,6 +3,14 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-main/</loc>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-note/</loc>
+  </url>
+  
+  <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-main/</loc>
   </url>
   

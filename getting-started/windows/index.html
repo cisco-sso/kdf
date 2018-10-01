@@ -66,7 +66,7 @@
     </style>
 
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://kdf.csco.cloud/stylesheets/hugo-material-docs_application.css">
     
     <script src="https://kdf.csco.cloud/javascripts/modernizr.js"></script>
 
@@ -439,6 +439,12 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/in
 choco install -y docker-for-windows
 </code></pre>
 
+<ul>
+<li><em>If</em> at any point during these instructions you receive an undocumented
+prompt of Docker requesting elevated permissions, please select the
+<em>Affirmative</em> answer.</li>
+</ul>
+
 <h3 id="start-docker">Start Docker.</h3>
 
 <ul>
@@ -449,8 +455,8 @@ choco install -y docker-for-windows
 
 <ul>
 <li><em>If</em> you receive a prompt to enable Hyper-V, then enable it by clicking <code>Ok</code>.
-This will restart your computer, at which point you will have to start
-Docker for Windows again by following the prior step.</li>
+This will restart your computer, at which point you will have to start Docker
+for Windows again by following the prior step.</li>
 </ul>
 
 <p><img src="https://kdf.csco.cloud/images/windows/docker-hyperv.png" alt="docker-hyperv" /></p>
@@ -487,6 +493,19 @@ Docker for Windows again by following the prior step.</li>
 </ul>
 
 <p><img src="https://kdf.csco.cloud/images/windows/docker-tray-icon-settings.png" alt="docker-tray-icon-settings" /></p>
+
+<ul>
+<li>On the <code>Advanced</code> tab:
+
+<ul>
+<li>Set CPUs: 2</li>
+<li>Set Memory: 4.0GiB</li>
+<li>Set Swap: 512MiB</li>
+<li>Click <code>Apply</code></li>
+</ul></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/windows/docker-settings-advanced.png" alt="docker-settings-kubernetes" /></p>
 
 <ul>
 <li>On the <code>Kubernetes</code> tab:
@@ -545,13 +564,15 @@ and publishing at least one verification.</p>
 
 <h3 id="install-keybase">Install Keybase.</h3>
 
-<pre><code class="language-bash">choco install -y keybase
+<pre><code class="language-bash"># Windows Powershell as Administrator
+choco install -y keybase
 </code></pre>
 
 <h3 id="open-keybase">Open Keybase.</h3>
 
 <ul>
 <li><code>Windows Search</code> -&gt; <code>keybase</code></li>
+<li>Login using your <a href="https://keybase.io/">keybase.io</a> credentials and authorize the client.</li>
 </ul>
 
 <h3 id="enable-keybase-files">Enable Keybase Files.</h3>
@@ -582,9 +603,15 @@ private  public  team
 <p>The KDK CLI creates a Docker container with many tools already installed and ready for you to develop with Kubernetes.</p>
 </div>
 
-<p><h3 id="install-the-kubernetes-development-kit-kdk-https-github-com-cisco-sso-kdk">Install the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>.</h3>
+<p><h3 id="install-prerequisites">Install Prerequisites</h3>
 
-<pre><code class="language-bash"># Windows Powershell
+<pre><code class="language-bash"># Windows Powershell as Administrator
+choco install openssh
+</code></pre>
+
+<h3 id="install-the-kubernetes-development-kit-kdk-https-github-com-cisco-sso-kdk">Install the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>.</h3>
+
+<pre><code class="language-bash"># Windows Powershell - NOT AS ADMINSTRATOR
 Set-ExecutionPolicy Bypass -Scope Process -Force
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1'))
 </code></pre>
@@ -595,6 +622,15 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 </code></pre>
 
 <h3 id="configure-kdk">Configure KDK.</h3>
+
+<p>When running <code>kdk init</code>, please accept when prompted</p>
+
+<p>Please respond affirmatively when prompted for:</p>
+
+<ul>
+<li>Keybase directory mounting</li>
+<li>Enabling the SOCKS proxy at default port 8000</li>
+</ul>
 
 <pre><code class="language-bash">kdk init
 </code></pre>
@@ -609,14 +645,14 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 
 <div class="admonition note">
 <p class="admonition-title"></p>
-<p><p>Framework Deploy AKA <a href="https://github.com/cisco-sso/framework-deploy">framework-deploy</a> is a boilerplate git repo in
-the KDF deployment pattern. The boilerplate structure in framework-deploy is made to fit perfectly with the tools
-available in the KDK container.</p>
+<p><p><a href="https://github.com/cisco-sso/framework-deploy">Framework-deploy</a> is a git repo which implments the KDF deployment
+pattern. The boilerplate structure in framework-deploy is made to fit perfectly with the tools available in the KDK
+container.</p>
 
 <p>Create a private fork of framework-deploy and use it to hold non-secret Kubernetes-related application configuration
 files and templates. In the KDF pattern, templates and configuration files for tools like
-<a href="https://github.com/cisco-sso/mh">mh</a> are hosted in a private fork of framework-deploy. <code>mh</code> allows you to template
-and deploy <a href="https://docs.helm.sh/developing_charts">Helm Chart</a> values overrides.</p>
+<a href="https://github.com/cisco-sso/mh">mh</a> are hosted in a private fork of framework-deploy. <code>mh</code> allows you to template and
+deploy <a href="https://docs.helm.sh/developing_charts">Helm Chart</a> values overrides.</p>
 </p>
 </div>
 
@@ -646,21 +682,20 @@ ls -a
 <li><code>.envrc</code></li>
 </ul>
 
-<p>Upon entering a directory that contains an <code>.envrc</code> file, the <code>direnv</code> tool installed in the KDK container will
+<p>Upon entering a directory that contains an <code>.envrc</code> file, the <code>direnv</code> tool installed within the KDK container will
 automatically source the <code>./.envrc</code> file if it is present.</p>
 
-<p>For example, in the framework-deploy pattern, <code>direnv</code> tunes your shell&rsquo;s environment variables for each cluster
-directory into which you change (<code>cd</code>). It is through these environment variables that all of the tools are configured
-(e.g. <code>kubectl</code>, <code>docker</code>, <code>helm</code>, etc).</p>
+<p>In the framework-deploy pattern, <code>direnv</code> sets your shell&rsquo;s environment variables for each cluster directory into which
+you change (<code>cd</code>). It is through these environment variables that all of the tools are configured (e.g. <code>kubectl</code>,
+<code>docker</code>, <code>helm</code>, etc).</p>
 
-<p>If <code>direnv</code> encounters a <code>.envrc</code> file it has not previously processed, or one that has changed since last seen, <code>direnv</code>
-will prompt you to approve the processing of its content.</p>
+<p>If <code>direnv</code> encounters an <code>.envrc</code> file it has not previously processed, or one that has changed since last seen,
+<code>direnv</code> will prompt you to approve the processing of its content.</p>
 
 <pre><code>direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 </code></pre>
 
-<p>At prompts like this, if you&rsquo;re confident that the <code>.envrc</code> file is safe for <code>direnv</code> to process, run <code>direnv allow</code>
-to do so.</p>
+<p>At prompts like this, if you&rsquo;re confident that the <code>.envrc</code> file is safe for <code>direnv</code> to process, run <code>direnv allow</code>.</p>
 
 <ul>
 <li><code>.git</code></li>
@@ -684,15 +719,16 @@ to do so.</p>
 <li><code>apps</code></li>
 </ul>
 
-<p>The <code>apps</code> directory contains template files for the <a href="https://github.com/cisco-sso/mh">mh</a> command. Each &ldquo;app&rdquo; is a template of a Helm chart override.</p>
+<p>The <code>apps</code> directory contains template files for the <a href="https://github.com/cisco-sso/mh">mh</a> command. Each &ldquo;app&rdquo; is a
+template which produces and overrides for a particular Helm chart.</p>
 
 <ul>
 <li><code>bin</code></li>
 </ul>
 
 <p>The <code>bin</code> directory contains scripts that simplify specific operations. For example, <code>bin/get-password-grafana.sh</code> is a
-helper script that retrieves the auto-generated admin password for <a href="https://grafana.com/">grafana</a> as installed by
-framework-deploy.</p>
+helper script that retrieves the auto-generated admin password for <a href="https://grafana.com/">grafana</a> from the kubernetes
+secret as installed by framework-deploy.</p>
 
 <ul>
 <li><code>clusters</code></li>
@@ -940,20 +976,89 @@ helm version
 <code>127.0.0.1</code>. We plan to add documentation to simplify and clarify how this is done.</p>
 
 
+<h2 id="step-7-explore-kubernetes">Step 7: Explore Kubernetes</h2>
+
+<div class="admonition note">
+<p class="admonition-title"></p>
+<p>In this section, explore your newly provisioned Kubernetes cluster along with all of the basic services you have
+deployed via the <a href="https://github.com/cisco-sso/framework-deploy">framework-deploy</a> code repository.  You will connect to
+the admin panels of the services you have deployed.  Connecting to these admin panels requires a web browser which is
+configured to use the KDK as a <a href="https://en.wikipedia.org/wiki/SOCKS">SOCKS</a> proxy.  The KDK will proxy all web requests
+to the internal ingress, so that one may access the dashboards using the configured cluster DNS name
+(*.docker-for-desktop.example.org).</p>
+</div>
+
+<h3 id="open-up-a-socks-connection-by-connecting-to-your-kdk">Open up a SOCKS connection by connecting to your KDK</h3>
+
+<pre><code>kdk ssh
+</code></pre>
+
+<h3 id="install-firefox">Install Firefox</h3>
+
+<p>We prefer Firefox because it allows one to manage network proxy configurations independently of the host operating
+system.</p>
+
+<p>Download Firefox <a href="https://www.mozilla.org/en-US/firefox/new/">here</a> or install
+it through a prior-installed package manager.</p>
+
+<h3 id="configure-your-web-browser-to-connect-via-the-kdk-socks-proxy">Configure your web browser to connect via the KDK SOCKS proxy</h3>
+
+<h3 id="get-your-docker-for-desktop-kube-config-into-the-kdk">Get your docker-for-desktop <code>~/kube/config</code> into the KDK</h3>
+
+<p>TODO(jmdots): Fill in this section</p>
+
+<pre><code>kdk kubesync
+</code></pre>
+
+<pre><code>cd framework-deploy/clusters/docker-for-desktop
+
+</code></pre>
+
+<p>/Applications/Firefox.app/Contents/MacOS/firefox-bin -P</p>
+
+<p>firefox.exe -P</p>
+
+<p><div hidden comment>$ kubectl get ing| grep -v HOSTS| awk &lsquo;{print &ldquo;http://&rdquo; $2}&rsquo;</div>
+* <a href="http://grafana.docker-for-desktop.example.org">http://grafana.docker-for-desktop.example.org</a>
+* <a href="http://kibana.docker-for-desktop.example.org">http://kibana.docker-for-desktop.example.org</a>
+* <a href="http://alertmanager.docker-for-desktop.example.org">http://alertmanager.docker-for-desktop.example.org</a>
+* <a href="http://pushgateway.docker-for-desktop.example.org">http://pushgateway.docker-for-desktop.example.org</a>
+* <a href="http://prometheus.docker-for-desktop.example.org">http://prometheus.docker-for-desktop.example.org</a></p>
+
+
 <h2 id="post-install">Post-Install</h2>
 
 <p><em>(optional)</em></p>
 
 <h3 id="add-your-public-ssh-key-to-source-control-systems">Add your public SSH key to source control systems.</h3>
 
-<p>This is optional if you are using <a href="https://developer.github.com/v3/guides/using-ssh-agent-forwarding/">ssh-agent</a>, which the KDK automatically forwards.  Otherwise, you may directly configure the pre-generated ssh key which is used to connect to the KDK, within each source control provider.</p>
+<p>This is optional if you are using <a href="https://developer.github.com/v3/guides/using-ssh-agent-forwarding/">ssh-agent</a>, which
+the KDK automatically forwards.  Otherwise, you may directly configure the pre-generated ssh key which is used to
+connect to the KDK, within each source control provider.</p>
 
 <p>Add content of ssh public key <code>~/.kdk/ssh/id_rsa.pub</code></p>
 
 <ul>
 <li>To your <a href="https://github.com/settings/keys">Github Account Keys</a></li>
-<li>To your Bitbucket Server https://<BITBUCKET-SERVER>/bitbucket/plugins/servlet/ssh/account/keys</li>
+<li>To your Bitbucket Server https://&lt;BITBUCKET-SERVER&gt;/bitbucket/plugins/servlet/ssh/account/keys</li>
 </ul>
+
+<h3 id="customing-your-bash-profile">Customing your <code>.bash_profile</code></h3>
+
+<p>If you have installed <a href="https://keybase.io/">Keybase</a>, you may customize your bash profile by creating the file
+<code>/keybase/private/&lt;user-keybase-id&gt;/.bash_profile_private</code>.  The default KDK
+<a href="https://github.com/cisco-sso/yadm-dotfiles/blob/master/.bash_profile#L101"><code>.bash_profile</code></a> will automatically source
+the <code>.bash_profile_private</code> file from keybase, if it exists.</p>
+
+<h3 id="customizing-your-dotfiles">Customizing your dotfiles</h3>
+
+<p>If you have your own yadm dotfiles repository, you may <code>kdk init</code> with the option:</p>
+
+<pre><code>--dotfiles-repo string      KDK Dotfiles Repo (default &quot;https://github.com/cisco-sso/yadm-dotfiles.git&quot;)
+</code></pre>
+
+<p>The easiest way to create a compatible dotfiles repository is to fork the repository
+<a href="https://github.com/cisco-sso/yadm-dotfiles.git">yadm-dotfiles</a>.</p>
 
 
 
@@ -1038,8 +1143,6 @@ helm version
     </script>
 
     <script src="https://kdf.csco.cloud/javascripts/application.js"></script>
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 
     <script>

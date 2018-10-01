@@ -12,6 +12,27 @@
     
     <item>
       <title></title>
+      <link>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-main/</guid>
+      <description>Open up a SOCKS connection by connecting to your KDK kdk ssh  Install Firefox We prefer Firefox because it allows one to manage network proxy configurations independently of the host operating system.
+Download Firefox here or install it through a prior-installed package manager.
+Configure your web browser to connect via the KDK SOCKS proxy Get your docker-for-desktop ~/kube/config into the KDK TODO(jmdots): Fill in this section
+kdk kubesync  cd framework-deploy/clusters/docker-for-desktop  /Applications/Firefox.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-note/</guid>
+      <description>In this section, explore your newly provisioned Kubernetes cluster along with all of the basic services you have deployed via the framework-deploy code repository. You will connect to the admin panels of the services you have deployed. Connecting to these admin panels requires a web browser which is configured to use the KDK as a SOCKS proxy. The KDK will proxy all web requests to the internal ingress, so that one may access the dashboards using the configured cluster DNS name (*.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-main/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -27,7 +48,7 @@ Clone the framework-deploy repo using git. #### Run this command if you have con
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-note/</guid>
-      <description>Framework Deploy AKA framework-deploy is a boilerplate git repo in the KDF deployment pattern. The boilerplate structure in framework-deploy is made to fit perfectly with the tools available in the KDK container.
+      <description>Framework-deploy is a git repo which implments the KDF deployment pattern. The boilerplate structure in framework-deploy is made to fit perfectly with the tools available in the KDK container.
 Create a private fork of framework-deploy and use it to hold non-secret Kubernetes-related application configuration files and templates. In the KDF pattern, templates and configuration files for tools like mh are hosted in a private fork of framework-deploy. mh allows you to template and deploy Helm Chart values overrides.</description>
     </item>
     
@@ -46,7 +67,7 @@ Create a private fork of framework-deploy and use it to hold non-secret Kubernet
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-windows/</guid>
-      <description> Install the Kubernetes Development Kit (KDK). # Windows Powershell Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1&#39;))  </description>
+      <description> Install Prerequisites # Windows Powershell as Administrator choco install openssh  Install the Kubernetes Development Kit (KDK). # Windows Powershell - NOT AS ADMINSTRATOR Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1&#39;))  </description>
     </item>
     
     <item>
@@ -64,7 +85,9 @@ Create a private fork of framework-deploy and use it to hold non-secret Kubernet
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-usage/</guid>
-      <description> Print KDK usage information. kdk  Configure KDK. kdk init  Run the KDK container and log into it. kdk ssh  </description>
+      <description> Print KDK usage information. kdk  Configure KDK. When running kdk init, please accept when prompted
+Please respond affirmatively when prompted for:
+ Keybase directory mounting Enabling the SOCKS proxy at default port 8000  kdk init  Run the KDK container and log into it. kdk ssh  </description>
     </item>
     
     <item>
@@ -83,10 +106,10 @@ Later in this guide (upon kdk init), the kdk command will ask to mount the host&
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/readfiles/post-install/</guid>
-      <description> (optional)
+      <description>(optional)
 Add your public SSH key to source control systems. This is optional if you are using ssh-agent, which the KDK automatically forwards. Otherwise, you may directly configure the pre-generated ssh key which is used to connect to the KDK, within each source control provider.
 Add content of ssh public key ~/.kdk/ssh/id_rsa.pub
- To your Github Account Keys To your Bitbucket Server https:///bitbucket/plugins/servlet/ssh/account/keys  </description>
+ To your Github Account Keys To your Bitbucket Server https://&amp;lt;BITBUCKET-SERVER&amp;gt;/bitbucket/plugins/servlet/ssh/account/keys  Customing your .bash_profile If you have installed Keybase, you may customize your bash profile by creating the file /keybase/private/&amp;lt;user-keybase-id&amp;gt;/.</description>
     </item>
     
     <item>

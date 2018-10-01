@@ -66,7 +66,7 @@
     </style>
 
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://kdf.csco.cloud/stylesheets/hugo-material-docs_application.css">
     
     <script src="https://kdf.csco.cloud/javascripts/modernizr.js"></script>
 
@@ -429,21 +429,20 @@ ls -a
 <li><code>.envrc</code></li>
 </ul>
 
-<p>Upon entering a directory that contains an <code>.envrc</code> file, the <code>direnv</code> tool installed in the KDK container will
+<p>Upon entering a directory that contains an <code>.envrc</code> file, the <code>direnv</code> tool installed within the KDK container will
 automatically source the <code>./.envrc</code> file if it is present.</p>
 
-<p>For example, in the framework-deploy pattern, <code>direnv</code> tunes your shell&rsquo;s environment variables for each cluster
-directory into which you change (<code>cd</code>). It is through these environment variables that all of the tools are configured
-(e.g. <code>kubectl</code>, <code>docker</code>, <code>helm</code>, etc).</p>
+<p>In the framework-deploy pattern, <code>direnv</code> sets your shell&rsquo;s environment variables for each cluster directory into which
+you change (<code>cd</code>). It is through these environment variables that all of the tools are configured (e.g. <code>kubectl</code>,
+<code>docker</code>, <code>helm</code>, etc).</p>
 
-<p>If <code>direnv</code> encounters a <code>.envrc</code> file it has not previously processed, or one that has changed since last seen, <code>direnv</code>
-will prompt you to approve the processing of its content.</p>
+<p>If <code>direnv</code> encounters an <code>.envrc</code> file it has not previously processed, or one that has changed since last seen,
+<code>direnv</code> will prompt you to approve the processing of its content.</p>
 
 <pre><code>direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 </code></pre>
 
-<p>At prompts like this, if you&rsquo;re confident that the <code>.envrc</code> file is safe for <code>direnv</code> to process, run <code>direnv allow</code>
-to do so.</p>
+<p>At prompts like this, if you&rsquo;re confident that the <code>.envrc</code> file is safe for <code>direnv</code> to process, run <code>direnv allow</code>.</p>
 
 <ul>
 <li><code>.git</code></li>
@@ -467,15 +466,16 @@ to do so.</p>
 <li><code>apps</code></li>
 </ul>
 
-<p>The <code>apps</code> directory contains template files for the <a href="https://github.com/cisco-sso/mh">mh</a> command. Each &ldquo;app&rdquo; is a template of a Helm chart override.</p>
+<p>The <code>apps</code> directory contains template files for the <a href="https://github.com/cisco-sso/mh">mh</a> command. Each &ldquo;app&rdquo; is a
+template which produces and overrides for a particular Helm chart.</p>
 
 <ul>
 <li><code>bin</code></li>
 </ul>
 
 <p>The <code>bin</code> directory contains scripts that simplify specific operations. For example, <code>bin/get-password-grafana.sh</code> is a
-helper script that retrieves the auto-generated admin password for <a href="https://grafana.com/">grafana</a> as installed by
-framework-deploy.</p>
+helper script that retrieves the auto-generated admin password for <a href="https://grafana.com/">grafana</a> from the kubernetes
+secret as installed by framework-deploy.</p>
 
 <ul>
 <li><code>clusters</code></li>
@@ -739,6 +739,22 @@ helm version
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
+      <a href="https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-note/" title="">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              
+            </div>
+          </div>
+        </div>
+      </a>
+  
   </div>
 
   <div class="next">
@@ -788,8 +804,6 @@ helm version
     </script>
 
     <script src="https://kdf.csco.cloud/javascripts/application.js"></script>
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
 
     <script>
