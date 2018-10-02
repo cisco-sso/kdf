@@ -4,7 +4,6 @@
 ### Clone the [framework-deploy](https://github.com/cisco-sso/framework-deploy) repo using git.
 
 ```bash
-
 #### Run this command if you have configured your GitHub account for public key SSH.
 git clone git@github.com:cisco-sso/framework-deploy.git
 
@@ -12,10 +11,22 @@ git clone git@github.com:cisco-sso/framework-deploy.git
 git clone https://github.com/cisco-sso/framework-deploy.git
 ```
 
-### Change to the `framework-deploy` directory and take a look around.
+### Change to the `framework-deploy` directory.
 
 ```bash
 cd framework-deploy/
+## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
+```
+
+### Allow [direnv](https://direnv.net/) to source the [.envrc](https://github.com/cisco-sso/framework-deploy/blob/master/.envrc) file.
+
+```bash
+direnv allow
+```
+
+### Take a look around framework-deploy.
+
+```bash
 ls -a
 ## .  ..  .envrc  .git  .gitignore  LICENSE  README.md  apps  bin  clusters  ensure-env.sh
 ```
@@ -80,19 +91,16 @@ simplify interactive cluster usage.
 The `ensure-env.sh` script ensures presence of all prerequisite shell environment variables and tools. The script is
 normally `source`'ed by `.envrc` files.
 
-### Allow [direnv](https://direnv.net/) to source the [.envrc](https://github.com/cisco-sso/framework-deploy/blob/master/.envrc) file.
-
-```bash
-direnv allow
-```
 
 ### Change to the `clusters/docker-for-desktop.example.org` directory and take a look around.
 
 ```bash
 cd clusters/docker-for-desktop.example.org
+## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
+direnv allow
+## ...
 ls -a
 ## .  ..  .envrc  README.md  mh  vars.yaml
-## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 ```
 
 - `.envrc`
