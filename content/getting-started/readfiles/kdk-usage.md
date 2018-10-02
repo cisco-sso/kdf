@@ -17,16 +17,10 @@ Please respond affirmatively when prompted for:
 kdk init
 ```
 
-### Bring up the KDK container.
-
-```bash
-kdk up
-```
-
 ### Synchronize KDK container with Docker for Desktop KUBECONFIG.
 
-This will copy your host's default KUBECONFIG into the KDK and modify the docker-for-desktop configuration context to
-work from within your kdk.
+This will start the KDK and copy your host's default KUBECONFIG into the KDK and modify the docker-for-desktop
+configuration context to work from within your kdk.
 
 ```bash
 kdk kubesync
