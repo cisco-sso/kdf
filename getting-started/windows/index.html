@@ -1014,7 +1014,7 @@ default instance.  Start the profile manager by adding the <code>-P</code> optio
 </ul></li>
 </ul>
 
-<p><img src="https://kdf.csco.cloud/images/firefox-settings-socks.png" alt="docker-preferences-kubernetes" /></p>
+<p><img src="https://kdf.csco.cloud/images/firefox-settings-socks.png" alt="firefox-settings-socks" /></p>
 
 <h3 id="once-firefox-has-been-started-you-may-access-all-of-the-admin-panels">Once Firefox has been started, you may access all of the admin panels</h3>
 
@@ -1040,6 +1040,76 @@ default instance.  Start the profile manager by adding the <code>-P</code> optio
 <li><a href="http://prometheus.docker-for-desktop.example.org">http://prometheus.docker-for-desktop.example.org</a></li>
 <li><a href="http://alertmanager.docker-for-desktop.example.org">http://alertmanager.docker-for-desktop.example.org</a></li>
 <li><a href="http://pushgateway.docker-for-desktop.example.org">http://pushgateway.docker-for-desktop.example.org</a></li>
+</ul>
+
+<h3 id="warning">Warning</h3>
+
+<p>The rest of this section assumes that you have successfully properly setup your SOCKS proxy and web browser, and can
+reach the links mentioned prior.</p>
+
+<h3 id="explore-kibana">Explore Kibana</h3>
+
+<p>Kibana is a view into Elasticsearch, where all logs in the Kubernetes system are forwarded.</p>
+
+<ul>
+<li>Go to the Kibana admin panel:
+
+<ul>
+<li><a href="http://kibana.docker-for-desktop.example.org">http://kibana.docker-for-desktop.example.org</a></li>
+</ul></li>
+<li>Configure Kibana with some trivial configuration so it will show you logs.
+
+<ul>
+<li>Click the <code>Management</code> tab</li>
+<li>Under Step 1 of 2: Define index pattern</li>
+<li>Set Index pattern to be: <code>filebeat-*</code></li>
+<li>A message with &ldquo;Success!  Your index pattern matches&rdquo; should appear</li>
+<li>Click <code>Next Step</code></li>
+<li>Under Step 2 of 2: Configure Settings</li>
+<li>Set the Time Filter field name to be: <code>@timestamp</code></li>
+<li>Click <code>Create index pattern</code></li>
+</ul></li>
+<li>View some system logs
+
+<ul>
+<li>Click the <code>Discover</code> tab</li>
+<li>Now you should see system logs.</li>
+<li>For more information on Kibana searches, see the <a href="https://www.elastic.co/guide/en/kibana/current/search.html">official documentation</a></li>
+</ul></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/admin-panel-kibana.png" alt="admin-panel-kibana" /></p>
+
+<h3 id="explore-grafana">Explore Grafana</h3>
+
+<ul>
+<li>Go to the Grafana admin panel:
+
+<ul>
+<li><a href="http://grafana.docker-for-desktop.example.org">http://grafana.docker-for-desktop.example.org</a></li>
+</ul></li>
+<li>View the &ldquo;Elasticsearch&rdquo; Dashboard:
+
+<ul>
+<li>Select <code>Home</code> -&gt; <code>ElasticSearch</code>
+<img src="https://kdf.csco.cloud/images/admin-panel-grafana-elasticsearch.png" alt="admin-panel-grafana-elasticsearch" /></li>
+</ul></li>
+<li>View the &ldquo;Kubernetes Cluster Monitoring&rdquo; Dashboard:
+
+<ul>
+<li>Select <code>Home</code> -&gt; <code>Kubernetes Cluster Monitoring</code>
+<img src="https://kdf.csco.cloud/images/admin-panel-grafana-kubernetes.png" alt="admin-panel-grafana-kubernetes" /></li>
+</ul></li>
+</ul>
+
+<h3 id="explore-prometheus">Explore Prometheus</h3>
+
+<ul>
+<li>Go to the Prometheus admin panel:
+
+<ul>
+<li><a href="http://prometheus.docker-for-desktop.example.org">http://prometheus.docker-for-desktop.example.org</a></li>
+</ul></li>
 </ul>
 
 
