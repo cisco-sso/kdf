@@ -85,7 +85,7 @@ Create a private fork of framework-deploy and use it to hold non-secret Kubernet
       <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-usage/</guid>
       <description>Print KDK usage information. kdk  Configure KDK. When running kdk init, please accept when prompted
 Please respond affirmatively when prompted for:
- Keybase directory mounting Enabling the SOCKS proxy at default port 8000  kdk init  Bring up the KDK container. kdk up  Synchronize KDK container with Docker for Desktop KUBECONFIG. This will copy your host&amp;rsquo;s default KUBECONFIG into the KDK and modify the docker-for-desktop configuration context to work from within your kdk.</description>
+ Keybase directory mounting Enabling the SOCKS proxy at default port 8000  kdk init  Synchronize KDK container with Docker for Desktop KUBECONFIG. This will start the KDK and copy your host&amp;rsquo;s default KUBECONFIG into the KDK and modify the docker-for-desktop configuration context to work from within your kdk.</description>
     </item>
     
     <item>
