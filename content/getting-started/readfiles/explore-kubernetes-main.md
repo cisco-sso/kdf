@@ -62,16 +62,16 @@ Kibana is a view into Elasticsearch, where all logs in the Kubernetes system are
 
 * Go to the Kibana admin panel:
   * http://kibana.docker-for-desktop.example.org
-* Configure Kibana with some trivial configuration so it will show you logs.
+* Configure Kibana so it will show you logs:
   * Click the `Management` tab
   * Under Step 1 of 2: Define index pattern
-    * Set Index pattern to be: `filebeat-*`
+    * Set Index pattern: `filebeat-*`
     * A message with "Success!  Your index pattern matches" should appear
     * Click `Next Step`
   * Under Step 2 of 2: Configure Settings
-    * Set the Time Filter field name to be: `@timestamp`
+    * Set the Time Filter field name: `@timestamp`
     * Click `Create index pattern`
-* View some system logs
+* View system logs:
   * Click the `Discover` tab
   * Now you should see system logs.
   * For more information on Kibana searches, see the [official documentation](https://www.elastic.co/guide/en/kibana/current/search.html)
