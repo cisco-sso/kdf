@@ -1,0 +1,1 @@
+This section documents a graceful deletion of resources.  Quicker shortcuts do exist.

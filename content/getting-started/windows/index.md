@@ -170,3 +170,31 @@ dir k:
 ## Post-Install
 
 {{% readfile file="/content/getting-started/readfiles/post-install.md" markdown="true" %}}
+
+
+## Uninstall & Cleanup
+
+{{% note %}}
+{{% readfile file="/content/getting-started/readfiles/uninstall-cleanup-note.md" markdown="true" %}}
+{{% /note %}}
+
+{{% readfile file="/content/getting-started/readfiles/uninstall-cleanup-main.md" markdown="true" %}}
+
+### Uninstall Docker for Windows
+
+- Open "Add Or Remove Programs" through the Windows start menu search:
+![windows-start-add-or-remove-programs](/images/windows/windows-start-add-or-remove-programs.png)
+
+- In the "Apps & Features" Search box:
+  - Enter: `docker`
+  - Click `Uninstall`
+
+![windows-add-or-remove-programs-docker](/images/windows/windows-add-or-remove-programs-docker.png)
+
+
+### Delete leftover Docker and Kubernetes state
+
+```
+# Windows Powershell on Host machine
+del -r ~/.docker ~/.kube
+```

@@ -162,3 +162,33 @@ ls /keybase
 ## Post-Install
 
 {{% readfile file="/content/getting-started/readfiles/post-install.md" markdown="true" %}}
+
+
+## Uninstall & Cleanup
+
+{{% note %}}
+{{% readfile file="/content/getting-started/readfiles/uninstall-cleanup-note.md" markdown="true" %}}
+{{% /note %}}
+
+{{% readfile file="/content/getting-started/readfiles/uninstall-cleanup-main.md" markdown="true" %}}
+
+### Uninstall Docker for Mac
+
+- Open the Docker menu by clicking: ![docker-tray-icon](/images/mac/docker-tray-icon.png)
+
+- Open Docker Preferences.
+
+![docker-tray-menu-preferences](/images/mac/docker-tray-menu-preferences.png)
+
+- On the `Reset` tab:
+  - Click `Uninstall`
+
+![docker-preferences-reset](/images/mac/docker-preferences-reset.png)
+
+
+### Delete leftover Docker and Kubernetes state
+
+```
+# From host machine shell
+rm -rf ~/.docker ~/.kube
+```
