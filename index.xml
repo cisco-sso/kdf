@@ -111,6 +111,25 @@ Add content of ssh public key ~/.kdk/ssh/id_rsa.pub
     </item>
     
     <item>
+      <title></title>
+      <link>https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-main/</guid>
+      <description> Delete all Kubernetes Resources This will delete all running pods and persistent volume state
+# From within the KDK: `kdk ssh` cd framework-deploy/clusters/docker-for-desktop.example.org ## direnv: error .envrc is blocked. Run `direnv allow` to approve its content. direnv allow ## ... helm delete --purge $(helm ls| cut -d &#39; &#39; -f 1| grep -v NAME) ## release &amp;quot;chaoskube&amp;quot; deleted ## release &amp;quot;elasticsearch&amp;quot; deleted ## release &amp;quot;elasticsearch-exporter&amp;quot; deleted ## release &amp;quot;filebeat&amp;quot; deleted ## release &amp;quot;grafana&amp;quot; deleted ## release &amp;quot;kibana&amp;quot; deleted ## release &amp;quot;nginx-ingress-external&amp;quot; deleted ## release &amp;quot;prometheus&amp;quot; deleted ## // A shortcut command `mh destroy` is equivalent to the above kubectl delete pvc $(kubectl get pvc| cut -d &#39; &#39; -f 1| grep -v NAME) ## persistentvolumeclaim &amp;quot;data-elasticsearch-data-0&amp;quot; deleted ## persistentvolumeclaim &amp;quot;data-elasticsearch-master-0&amp;quot; deleted ## persistentvolumeclaim &amp;quot;data-elasticsearch-master-1&amp;quot; deleted ## persistentvolumeclaim &amp;quot;data-test-mariadb-mariadb-master-0&amp;quot; deleted ## persistentvolumeclaim &amp;quot;data-test-mariadb-mariadb-slave-0&amp;quot; deleted  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-note/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-note/</guid>
+      <description>This section documents a graceful deletion of resources. Quicker shortcuts do exist.</description>
+    </item>
+    
+    <item>
       <title>Backlog</title>
       <link>https://kdf.csco.cloud/backlog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Backlog - KDF</title>
+    <title> - KDF</title>
     <meta name="generator" content="Hugo 0.48" />
 
     
     <meta name="description" content="Kubernetes Development Framework (KDF)">
     
-    <link rel="canonical" href="https://kdf.csco.cloud/backlog/">
+    <link rel="canonical" href="https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-main/">
     
     <meta name="author" content="SSO Arch Team">
     
 
-    <meta property="og:url" content="https://kdf.csco.cloud/backlog/">
+    <meta property="og:url" content="https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-main/">
     <meta property="og:title" content="KDF">
     <meta property="og:image" content="https://kdf.csco.cloud/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="KDF">
@@ -99,7 +99,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Backlog
+        
       </div>
     </div>
 
@@ -340,14 +340,11 @@
 
 
 
-<a class="current" title="Backlog" href="https://kdf.csco.cloud/backlog/">
+<a  title="Backlog" href="https://kdf.csco.cloud/backlog/">
 	
 	Backlog
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -402,58 +399,38 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Backlog </h1>
+			<h1> </h1>
 
 			
 
-<h2 id="roadmap-priorities">Roadmap Priorities</h2>
+<h3 id="delete-all-kubernetes-resources">Delete all Kubernetes Resources</h3>
 
-<ol>
-<li>Dockerized KDK</li>
-<li>Multi-cluster <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> Configuration
+<p>This will delete all running pods and persistent volume state</p>
 
-<ul>
-<li>e.g. How to manage highly redundant <a href="https://docs.helm.sh/developing_charts#complex-charts-with-many-dependencies">umbrella charts</a> or <a href="https://github.com/cisco-sso/mh">mh</a> configs across many kubernetes clusters.</li>
-<li>Next generation of mh technology, could be something else</li>
-</ul></li>
-<li>Kubernetes Individual Identity (Security)
+<pre><code class="language-bash"># From within the KDK: `kdk ssh`
+cd framework-deploy/clusters/docker-for-desktop.example.org
+## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
+direnv allow
+## ...
 
-<ul>
-<li>OIDC Provider Integration</li>
-</ul></li>
-<li>Kubernetes RBAC (Security)</li>
-<li>Kubernetes Audit logging (Security)</li>
-<li>Multi-tenant Kubernetes Clusters
+helm delete --purge $(helm ls| cut -d ' ' -f 1| grep -v NAME)
+## release &quot;chaoskube&quot; deleted
+## release &quot;elasticsearch&quot; deleted
+## release &quot;elasticsearch-exporter&quot; deleted
+## release &quot;filebeat&quot; deleted
+## release &quot;grafana&quot; deleted
+## release &quot;kibana&quot; deleted
+## release &quot;nginx-ingress-external&quot; deleted
+## release &quot;prometheus&quot; deleted
+## // A shortcut command `mh destroy` is equivalent to the above
 
-<ul>
-<li>Per-region Kubernetes clusters</li>
-<li>Individual Namespaces per project.</li>
-</ul></li>
-<li>Service Mesh
-
-<ul>
-<li>East/West (intra-cluster)
-
-<ul>
-<li>e.g. pod in one cluster can talk to service in another cluster.</li>
-</ul></li>
-<li>North/South (cross-cluster / external-to-cluster)</li>
-</ul></li>
-<li>Backups/Snapshots</li>
-<li>Secrets Management</li>
-<li>Blue/Green deployments</li>
-<li>Distributed network tracing (Open-Tracing + Istio)</li>
-</ol>
-
-<h2 id="to-be-discussed-prioritized">To be discussed/prioritized:</h2>
-
-<ol>
-<li>Openstack Autoscale</li>
-<li>Kubernetes IDS (Falco/Abnormal Auth network traffic/etc&hellip;)</li>
-<li>Hardening around LoadBalancer/NodePort service creation.</li>
-<li>Dynamic Security Group creation for K8s service neutron ports. (bug in kube-controller-manager)</li>
-<li>Support for Node-Pools</li>
-</ol>
+kubectl delete pvc $(kubectl get pvc| cut -d ' ' -f 1| grep -v NAME)
+## persistentvolumeclaim &quot;data-elasticsearch-data-0&quot; deleted
+## persistentvolumeclaim &quot;data-elasticsearch-master-0&quot; deleted
+## persistentvolumeclaim &quot;data-elasticsearch-master-1&quot; deleted
+## persistentvolumeclaim &quot;data-test-mariadb-mariadb-master-0&quot; deleted
+## persistentvolumeclaim &quot;data-test-mariadb-mariadb-slave-0&quot; deleted
+</code></pre>
 
 
 			<aside class="copyright" role="note">
@@ -472,7 +449,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-note/" title="">
+      <a href="https://kdf.csco.cloud/getting-started/readfiles/post-install/" title="">
         <span class="direction">
           Previous
         </span>
@@ -492,14 +469,14 @@
 
   <div class="next">
   
-      <a href="https://kdf.csco.cloud/deployment-packages/" title="Deployment Packages">
+      <a href="https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-note/" title="">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Deployment Packages
+              
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">

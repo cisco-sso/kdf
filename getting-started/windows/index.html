@@ -1182,6 +1182,65 @@ the <code>.bash_profile_private</code> file from keybase, if it exists.</p>
 <a href="https://github.com/cisco-sso/yadm-dotfiles.git">yadm-dotfiles</a>.</p>
 
 
+<h2 id="uninstall-cleanup">Uninstall &amp; Cleanup</h2>
+
+<div class="admonition note">
+<p class="admonition-title"></p>
+<p>This section documents a graceful deletion of resources.  Quicker shortcuts do exist.</p>
+</div>
+
+<h3 id="delete-all-kubernetes-resources">Delete all Kubernetes Resources</h3>
+
+<p>This will delete all running pods and persistent volume state</p>
+
+<pre><code class="language-bash"># From within the KDK: `kdk ssh`
+cd framework-deploy/clusters/docker-for-desktop.example.org
+## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
+direnv allow
+## ...
+
+helm delete --purge $(helm ls| cut -d ' ' -f 1| grep -v NAME)
+## release &quot;chaoskube&quot; deleted
+## release &quot;elasticsearch&quot; deleted
+## release &quot;elasticsearch-exporter&quot; deleted
+## release &quot;filebeat&quot; deleted
+## release &quot;grafana&quot; deleted
+## release &quot;kibana&quot; deleted
+## release &quot;nginx-ingress-external&quot; deleted
+## release &quot;prometheus&quot; deleted
+## // A shortcut command `mh destroy` is equivalent to the above
+
+kubectl delete pvc $(kubectl get pvc| cut -d ' ' -f 1| grep -v NAME)
+## persistentvolumeclaim &quot;data-elasticsearch-data-0&quot; deleted
+## persistentvolumeclaim &quot;data-elasticsearch-master-0&quot; deleted
+## persistentvolumeclaim &quot;data-elasticsearch-master-1&quot; deleted
+## persistentvolumeclaim &quot;data-test-mariadb-mariadb-master-0&quot; deleted
+## persistentvolumeclaim &quot;data-test-mariadb-mariadb-slave-0&quot; deleted
+</code></pre>
+
+
+<h3 id="uninstall-docker-for-windows">Uninstall Docker for Windows</h3>
+
+<ul>
+<li><p>Open &ldquo;Add Or Remove Programs&rdquo; through the Windows start menu search:
+<img src="https://kdf.csco.cloud/images/windows/windows-start-add-or-remove-programs.png" alt="windows-start-add-or-remove-programs" /></p></li>
+
+<li><p>In the &ldquo;Apps &amp; Features&rdquo; Search box:</p>
+
+<ul>
+<li>Enter: <code>docker</code></li>
+<li>Click <code>Uninstall</code></li>
+</ul></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/windows/windows-add-or-remove-programs-docker.png" alt="windows-add-or-remove-programs-docker" /></p>
+
+<h3 id="delete-leftover-docker-and-kubernetes-state">Delete leftover Docker and Kubernetes state</h3>
+
+<pre><code># Windows Powershell on Host machine
+del -r ~/.docker ~/.kube
+</code></pre>
+
 
 			<aside class="copyright" role="note">
 				
