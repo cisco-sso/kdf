@@ -1025,7 +1025,6 @@ default instance.  Start the profile manager by adding the <code>-P</code> optio
 <ul>
 <li><a href="http://prometheus.docker-for-desktop.example.org">http://prometheus.docker-for-desktop.example.org</a></li>
 <li><a href="http://alertmanager.docker-for-desktop.example.org">http://alertmanager.docker-for-desktop.example.org</a></li>
-<li><a href="http://pushgateway.docker-for-desktop.example.org">http://pushgateway.docker-for-desktop.example.org</a></li>
 </ul>
 
 <h3 id="warning">Warning</h3>
@@ -1077,16 +1076,21 @@ reach the links mentioned prior.</p>
 <li>View the &ldquo;Elasticsearch&rdquo; Dashboard:
 
 <ul>
-<li>Select <code>Home</code> -&gt; <code>ElasticSearch</code>
-<img src="https://kdf.csco.cloud/images/admin-panel-grafana-elasticsearch.png" alt="admin-panel-grafana-elasticsearch" /></li>
+<li>Select <code>Home</code> -&gt; <code>ElasticSearch</code></li>
 </ul></li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/admin-panel-grafana-elasticsearch.png" alt="admin-panel-grafana-elasticsearch" /></p>
+
+<ul>
 <li>View the &ldquo;Kubernetes Cluster Monitoring&rdquo; Dashboard:
 
 <ul>
-<li>Select <code>Home</code> -&gt; <code>Kubernetes Cluster Monitoring</code>
-<img src="https://kdf.csco.cloud/images/admin-panel-grafana-kubernetes.png" alt="admin-panel-grafana-kubernetes" /></li>
+<li>Select <code>Home</code> -&gt; <code>Kubernetes Cluster Monitoring</code></li>
 </ul></li>
 </ul>
+
+<p><img src="https://kdf.csco.cloud/images/admin-panel-grafana-kubernetes.png" alt="admin-panel-grafana-kubernetes" /></p>
 
 <h3 id="explore-prometheus">Explore Prometheus</h3>
 
@@ -1096,7 +1100,31 @@ reach the links mentioned prior.</p>
 <ul>
 <li><a href="http://prometheus.docker-for-desktop.example.org">http://prometheus.docker-for-desktop.example.org</a></li>
 </ul></li>
+<li>Create a graph of pod memory usage
+
+<ul>
+<li>Click <code>Graph</code></li>
+<li>Enter Expression:</li>
+</ul></li>
 </ul>
+
+<pre><code>sum (container_memory_working_set_bytes{image!=&quot;&quot;,name=~&quot;^k8s_.*&quot;}) by (pod_name)
+</code></pre>
+
+<p><img src="https://kdf.csco.cloud/images/admin-panel-prometheus.png" alt="admin-panel-prometheus" /></p>
+
+<h3 id="explore-prometheus-alertmanager">Explore Prometheus Alertmanager</h3>
+
+<ul>
+<li>Go to the Prometheus Alertmanager admin panel:
+
+<ul>
+<li><a href="http://alertmanager.docker-for-desktop.example.org">http://alertmanager.docker-for-desktop.example.org</a></li>
+</ul></li>
+<li>From the default landing page you may view all currently firing alerts</li>
+</ul>
+
+<p><img src="https://kdf.csco.cloud/images/admin-panel-prometheus-alertmanager.png" alt="admin-panel-prometheus-alertmanager" /></p>
 
 
 <h2 id="post-install">Post-Install</h2>
