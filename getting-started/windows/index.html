@@ -584,17 +584,8 @@ choco install -y keybase
 <h3 id="verify-that-keybasefs-is-mounted-to-your-system">Verify that KeybaseFS is mounted to your system.</h3>
 
 <pre><code class="language-bash">dir k:
+## private  public  team
 </code></pre>
-
-<div class="admonition note">
-<p class="admonition-title"></p>
-<p><p>Success looks like&hellip;</p>
-
-<pre><code class="language-bash">$ dir k:
-private  public  team
-</code></pre>
-</p>
-</div>
 
 <h2 id="step-5-kdk">Step 5: KDK</h2>
 
@@ -635,6 +626,14 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 <pre><code class="language-bash">kdk init
 </code></pre>
 
+<h3 id="synchronize-kdk-with-docker-for-desktop-kubeconfig">Synchronize KDK with Docker for Desktop KUBECONFIG</h3>
+
+<p>This will copy your host&rsquo;s default KUBECONFIG into the KDK and modify the docker-for-desktop configuration context to
+work from within your kdk.</p>
+
+<pre><code class="language-bash">kdk kubesync
+</code></pre>
+
 <h3 id="run-the-kdk-container-and-log-into-it">Run the KDK container and log into it.</h3>
 
 <pre><code class="language-bash">kdk ssh
@@ -660,32 +659,19 @@ deploy <a href="https://docs.helm.sh/developing_charts">Helm Chart</a> values ov
 
 <h3 id="clone-the-framework-deploy-https-github-com-cisco-sso-framework-deploy-repo-using-git">Clone the <a href="https://github.com/cisco-sso/framework-deploy">framework-deploy</a> repo using git.</h3>
 
-<pre><code class="language-bash">#### Run this command if you have configured your GitHub account for public key SSH.
+<pre><code class="language-bash">
+#### Run this command if you have configured your GitHub account for public key SSH.
 git clone git@github.com:cisco-sso/framework-deploy.git
 
 #### (OR) Run this command if you have not configured GitHub for public key SSH.
 git clone https://github.com/cisco-sso/framework-deploy.git
 </code></pre>
 
-<h3 id="get-your-kube-config-into-the-kdk">Get your <code>~/kube/config</code> into the KDK</h3>
-
-<p>TODO(jmdots): Fill in this section</p>
-
-<p>This will copy your kube config into the KDK and modify the docker-for-desktop configuration context to work from within
-your kdk.</p>
-
-<pre><code>kdk kubesync
-</code></pre>
-
 <h3 id="change-to-the-framework-deploy-directory-and-take-a-look-around">Change to the <code>framework-deploy</code> directory and take a look around.</h3>
 
 <pre><code class="language-bash">cd framework-deploy/
 ls -a
-</code></pre>
-
-<p>You should see:</p>
-
-<pre><code class="language-bash">.  ..  .envrc  .git  .gitignore  LICENSE  README.md  apps  bin  clusters  ensure-env.sh
+## .  ..  .envrc  .git  .gitignore  LICENSE  README.md  apps  bin  clusters  ensure-env.sh
 </code></pre>
 
 <ul>
@@ -745,7 +731,7 @@ secret as installed by framework-deploy.</p>
 </ul>
 
 <p>The <code>clusters</code> directory contains a directory for each Kubernetes cluster you manage with framework-deploy. The
-framework-deploy repo contains boilerplate for the <code>docker-for-desktop</code> Kubernetes cluster which was spun up earlier
+framework-deploy repo contains boilerplate for the <code>docker-for-desktop.example.org</code> Kubernetes cluster which was spun up earlier
 in this tutorial.</p>
 
 <p>In an internal and private fork of framework-deploy, you can make cluster directories for your own Kubernetes clusters
@@ -768,16 +754,12 @@ normally <code>source</code>&lsquo;ed by <code>.envrc</code> files.</p>
 <pre><code class="language-bash">direnv allow
 </code></pre>
 
-<h3 id="change-to-the-clusters-docker-for-desktop-directory-and-take-a-look-around">Change to the <code>clusters/docker-for-desktop</code> directory and take a look around.</h3>
+<h3 id="change-to-the-clusters-docker-for-desktop-example-org-directory-and-take-a-look-around">Change to the <code>clusters/docker-for-desktop.example.org</code> directory and take a look around.</h3>
 
-<pre><code class="language-bash">cd clusters/docker-for-desktop
+<pre><code class="language-bash">cd clusters/docker-for-desktop.example.org
 ls -a
-</code></pre>
-
-<p>You should see:</p>
-
-<pre><code class="language-bash">.  ..  .envrc  README.md  mh  vars.yaml
-direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
+## .  ..  .envrc  README.md  mh  vars.yaml
+## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 </code></pre>
 
 <ul>
@@ -785,13 +767,13 @@ direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 </ul>
 
 <p>The <code>.envrc</code> file in this directory is a symlink to <code>../common/dot.envrc</code>. The <code>dot.envrc</code> file behind the symlink
-configures your shell for the current cluster directory name. In this case, that means <code>docker-for-desktop</code></p>
+configures your shell for the current cluster directory name. In this case, that means <code>docker-for-desktop.example.org</code></p>
 
 <ul>
 <li><code>README.md</code></li>
 </ul>
 
-<p>The <code>README.md</code> in this directory contains guidance specific to the <code>docker-for-desktop</code> Kubernetes cluster.</p>
+<p>The <code>README.md</code> in this directory contains guidance specific to the <code>docker-for-desktop.example.org</code> Kubernetes cluster.</p>
 
 <ul>
 <li><code>mh/main.yaml</code></li>
@@ -801,7 +783,7 @@ configures your shell for the current cluster directory name. In this case, that
 many Kubernetes namespaces in a single <code>MH_CONFIG</code>.</p>
 
 <p>The <code>mh/main.yaml</code> file inside the <code>mh</code> directory is the <a href="https://github.com/cisco-sso/mh#select-a-mh-config">MH_CONFIG</a>
-file for the <code>docker-for-desktop</code> Kubernetes cluster.</p>
+file for the <code>docker-for-desktop.example.org</code> Kubernetes cluster.</p>
 
 <p>This file declares the cluster&rsquo;s Helm Chart releases, <code>mh</code> apps (Helm Chart override templates), and base truth.
 Secret base truth is one exception. Secrets should never be committed to framework-deploy nor any fork of it. Any
@@ -829,11 +811,11 @@ which <a href="http://keybase.io">keybase.io</a> team manages each cluster.</p>
 <h3 id="interact-with-kubernetes-using-kubectl-https-kubernetes-io-docs-reference-kubectl-overview">Interact with Kubernetes using <a href="https://kubernetes.io/docs/reference/kubectl/overview/">kubectl</a>.</h3>
 
 <pre><code class="language-bash">kubectl config get-contexts
-## CURRENT   NAME                 CLUSTER                      AUTHINFO             NAMESPACE
-## *         docker-for-desktop   docker-for-desktop-cluster   docker-for-desktop
+## CURRENT  NAME                            CLUSTER                         AUTHINFO                        NAMESPACE
+## *        docker-for-desktop.example.org  docker-for-desktop.example.org  docker-for-desktop.example.org
 
 kubectl config current-context
-## docker-for-desktop
+## docker-for-desktop.example.org
 
 kubectl version
 ## Client Version: version.Info{Major:&quot;1&quot;, Minor:&quot;11&quot;, GitVersion:&quot;v1.11.1&quot;, GitCommit:&quot;b1b29978270dc22fecc592ac55d903350454310a&quot;, GitTreeState:&quot;clean&quot;, BuildDate:&quot;2018-07-18T11:36:43Z&quot;, GoVersion:&quot;go1.10.3&quot;, Compiler:&quot;gc&quot;, Platform:&quot;darwin/amd64&quot;}
@@ -1028,7 +1010,7 @@ default instance.  Start the profile manager by adding the <code>-P</code> optio
 <li>Enter SOCKS Port value &ldquo;8000&rdquo;</li>
 <li>Toggle on <code>SOCKS v5</code></li>
 <li>Toggle on <code>Proxy DNS when using SOCKS v5</code></li>
-<li>Click <code>Ok</code></li>
+<li>Click <code>OK</code></li>
 </ul></li>
 </ul>
 
