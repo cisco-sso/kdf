@@ -64,7 +64,7 @@ secret as installed by framework-deploy.
 - `clusters`
 
 The `clusters` directory contains a directory for each Kubernetes cluster you manage with framework-deploy. The
-framework-deploy repo contains boilerplate for the `docker-for-desktop` Kubernetes cluster which was spun up earlier
+framework-deploy repo contains boilerplate for the `docker-for-desktop.example.org` Kubernetes cluster which was spun up earlier
 in this tutorial.
 
 In an internal and private fork of framework-deploy, you can make cluster directories for your own Kubernetes clusters
@@ -86,10 +86,10 @@ normally `source`'ed by `.envrc` files.
 direnv allow
 ```
 
-### Change to the `clusters/docker-for-desktop` directory and take a look around.
+### Change to the `clusters/docker-for-desktop.example.org` directory and take a look around.
 
 ```bash
-cd clusters/docker-for-desktop
+cd clusters/docker-for-desktop.example.org
 ls -a
 ## .  ..  .envrc  README.md  mh  vars.yaml
 ## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
@@ -98,11 +98,11 @@ ls -a
 - `.envrc`
 
 The `.envrc` file in this directory is a symlink to `../common/dot.envrc`. The `dot.envrc` file behind the symlink
-configures your shell for the current cluster directory name. In this case, that means `docker-for-desktop`
+configures your shell for the current cluster directory name. In this case, that means `docker-for-desktop.example.org`
 
 - `README.md`
 
-The `README.md` in this directory contains guidance specific to the `docker-for-desktop` Kubernetes cluster.
+The `README.md` in this directory contains guidance specific to the `docker-for-desktop.example.org` Kubernetes cluster.
 
 - `mh/main.yaml`
 
@@ -110,7 +110,7 @@ The [mh](https://github.com/cisco-sso/mh) tool which ships with the KDK containe
 many Kubernetes namespaces in a single `MH_CONFIG`.
 
 The `mh/main.yaml` file inside the `mh` directory is the [MH_CONFIG](https://github.com/cisco-sso/mh#select-a-mh-config)
-file for the `docker-for-desktop` Kubernetes cluster.
+file for the `docker-for-desktop.example.org` Kubernetes cluster.
 
 This file declares the cluster's Helm Chart releases, `mh` apps (Helm Chart override templates), and base truth.
 Secret base truth is one exception. Secrets should never be committed to framework-deploy nor any fork of it. Any
@@ -138,11 +138,11 @@ direnv allow
 
 ```bash
 kubectl config get-contexts
-## CURRENT   NAME                 CLUSTER                      AUTHINFO             NAMESPACE
-## *         docker-for-desktop   docker-for-desktop-cluster   docker-for-desktop
+## CURRENT  NAME                            CLUSTER                         AUTHINFO                        NAMESPACE
+## *        docker-for-desktop.example.org  docker-for-desktop.example.org  docker-for-desktop.example.org
 
 kubectl config current-context
-## docker-for-desktop
+## docker-for-desktop.example.org
 
 kubectl version
 ## Client Version: version.Info{Major:"1", Minor:"11", GitVersion:"v1.11.1", GitCommit:"b1b29978270dc22fecc592ac55d903350454310a", GitTreeState:"clean", BuildDate:"2018-07-18T11:36:43Z", GoVersion:"go1.10.3", Compiler:"gc", Platform:"darwin/amd64"}
