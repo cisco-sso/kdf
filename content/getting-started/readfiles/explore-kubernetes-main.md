@@ -48,7 +48,6 @@ Prometheus
 
 * http://prometheus.docker-for-desktop.example.org
 * http://alertmanager.docker-for-desktop.example.org
-* http://pushgateway.docker-for-desktop.example.org
 
 
 ### Warning
@@ -85,9 +84,12 @@ Kibana is a view into Elasticsearch, where all logs in the Kubernetes system are
   * http://grafana.docker-for-desktop.example.org
 * View the "Elasticsearch" Dashboard:
   * Select `Home` -> `ElasticSearch`
+
 ![admin-panel-grafana-elasticsearch](/images/admin-panel-grafana-elasticsearch.png)
+
 * View the "Kubernetes Cluster Monitoring" Dashboard:
   * Select `Home` -> `Kubernetes Cluster Monitoring`
+
 ![admin-panel-grafana-kubernetes](/images/admin-panel-grafana-kubernetes.png)
 
 
@@ -95,3 +97,20 @@ Kibana is a view into Elasticsearch, where all logs in the Kubernetes system are
 
 * Go to the Prometheus admin panel:
   * http://prometheus.docker-for-desktop.example.org
+* Create a graph of pod memory usage
+  * Click `Graph`
+  * Enter Expression:
+
+```
+sum (container_memory_working_set_bytes{image!="",name=~"^k8s_.*"}) by (pod_name)
+```
+![admin-panel-prometheus](/images/admin-panel-prometheus.png)
+
+
+### Explore Prometheus Alertmanager
+
+* Go to the Prometheus Alertmanager admin panel:
+  * http://alertmanager.docker-for-desktop.example.org
+* From the default landing page you may view all currently firing alerts
+
+![admin-panel-prometheus-alertmanager](/images/admin-panel-prometheus-alertmanager.png)
