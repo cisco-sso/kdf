@@ -1,8 +1,10 @@
+
 (inside your KDK container)
 
 ### Clone the [framework-deploy](https://github.com/cisco-sso/framework-deploy) repo using git.
 
 ```bash
+
 #### Run this command if you have configured your GitHub account for public key SSH.
 git clone git@github.com:cisco-sso/framework-deploy.git
 
@@ -10,28 +12,12 @@ git clone git@github.com:cisco-sso/framework-deploy.git
 git clone https://github.com/cisco-sso/framework-deploy.git
 ```
 
-### Get your `~/kube/config` into the KDK
-
-TODO(jmdots): Fill in this section
-
-This will copy your kube config into the KDK and modify the docker-for-desktop configuration context to work from within
-your kdk.
-
-```
-kdk kubesync
-```
-
-
 ### Change to the `framework-deploy` directory and take a look around.
 
 ```bash
 cd framework-deploy/
 ls -a
-```
-
-You should see:
-```bash
-.  ..  .envrc  .git  .gitignore  LICENSE  README.md  apps  bin  clusters  ensure-env.sh
+## .  ..  .envrc  .git  .gitignore  LICENSE  README.md  apps  bin  clusters  ensure-env.sh
 ```
 
 - `.envrc`
@@ -105,12 +91,8 @@ direnv allow
 ```bash
 cd clusters/docker-for-desktop
 ls -a
-```
-
-You should see:
-```bash
-.  ..  .envrc  README.md  mh  vars.yaml
-direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
+## .  ..  .envrc  README.md  mh  vars.yaml
+## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 ```
 
 - `.envrc`
