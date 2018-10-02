@@ -135,15 +135,8 @@ choco install -y keybase
 
 ```bash
 dir k:
+## private  public  team
 ```
-
-{{% note %}}
-Success looks like...
-```bash
-$ dir k:
-private  public  team
-```
-{{% /note %}}
 
 
 ## Step 5: KDK
@@ -164,6 +157,7 @@ private  public  team
 
 {{% readfile file="/content/getting-started/readfiles/framework-deploy-main.md" markdown="true" %}}
 
+
 ## Step 7: Explore Kubernetes
 
 {{% note %}}
@@ -171,6 +165,7 @@ private  public  team
 {{% /note %}}
 
 {{% readfile file="/content/getting-started/readfiles/explore-kubernetes-main.md" markdown="true" %}}
+
 
 ## Post-Install
 

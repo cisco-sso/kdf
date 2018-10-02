@@ -127,15 +127,8 @@ brew cask install keybase
 
 ```bash
 ls /keybase
+## private  public  team
 ```
-
-{{% note %}}
-Success looks like...
-```bash
-$ ls /keybase
-private  public  team
-```
-{{% /note %}}
 
 
 ## Step 5: KDK
@@ -155,6 +148,7 @@ private  public  team
 {{% /note %}}
 
 {{% readfile file="/content/getting-started/readfiles/framework-deploy-main.md" markdown="true" %}}
+
 
 ## Step 7: Explore Kubernetes
 

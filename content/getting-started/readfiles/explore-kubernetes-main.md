@@ -12,7 +12,6 @@ system.
 Download Firefox [here](https://www.mozilla.org/en-US/firefox/new/) or install it through a prior-installed package
 manager as prior steps have used.
 
-
 ### Configure your web browser to connect via the KDK SOCKS proxy
 
 It may be beneficial to start Firefox with the profile manager so that you can keep these settings separate from the
@@ -27,7 +26,7 @@ Firefox -> `General` -> `Network Proxy` -> Click `Settings`
   - Enter SOCKS Port value "8000"
   - Toggle on `SOCKS v5`
   - Toggle on `Proxy DNS when using SOCKS v5`
-  - Click `Ok`
+  - Click `OK`
 
 ![docker-preferences-kubernetes](/images/firefox-settings-socks.png)
 
