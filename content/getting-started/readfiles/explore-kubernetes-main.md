@@ -28,7 +28,7 @@ Firefox -> `General` -> `Network Proxy` -> Click `Settings`
   - Toggle on `Proxy DNS when using SOCKS v5`
   - Click `OK`
 
-![docker-preferences-kubernetes](/images/firefox-settings-socks.png)
+![firefox-settings-socks](/images/firefox-settings-socks.png)
 
 ### Once Firefox has been started, you may access all of the admin panels
 
@@ -49,3 +49,49 @@ Prometheus
 * http://prometheus.docker-for-desktop.example.org
 * http://alertmanager.docker-for-desktop.example.org
 * http://pushgateway.docker-for-desktop.example.org
+
+
+### Warning
+
+The rest of this section assumes that you have successfully properly setup your SOCKS proxy and web browser, and can
+reach the links mentioned prior.
+
+### Explore Kibana
+
+Kibana is a view into Elasticsearch, where all logs in the Kubernetes system are forwarded.
+
+* Go to the Kibana admin panel:
+  * http://kibana.docker-for-desktop.example.org
+* Configure Kibana with some trivial configuration so it will show you logs.
+  * Click the `Management` tab
+  * Under Step 1 of 2: Define index pattern
+    * Set Index pattern to be: `filebeat-*`
+    * A message with "Success!  Your index pattern matches" should appear
+    * Click `Next Step`
+  * Under Step 2 of 2: Configure Settings
+    * Set the Time Filter field name to be: `@timestamp`
+    * Click `Create index pattern`
+* View some system logs
+  * Click the `Discover` tab
+  * Now you should see system logs.
+  * For more information on Kibana searches, see the [official documentation](https://www.elastic.co/guide/en/kibana/current/search.html)
+
+![admin-panel-kibana](/images/admin-panel-kibana.png)
+
+
+### Explore Grafana
+
+* Go to the Grafana admin panel:
+  * http://grafana.docker-for-desktop.example.org
+* View the "Elasticsearch" Dashboard:
+  * Select `Home` -> `ElasticSearch`
+![admin-panel-grafana-elasticsearch](/images/admin-panel-grafana-elasticsearch.png)
+* View the "Kubernetes Cluster Monitoring" Dashboard:
+  * Select `Home` -> `Kubernetes Cluster Monitoring`
+![admin-panel-grafana-kubernetes](/images/admin-panel-grafana-kubernetes.png)
+
+
+### Explore Prometheus
+
+* Go to the Prometheus admin panel:
+  * http://prometheus.docker-for-desktop.example.org
