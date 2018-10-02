@@ -606,7 +606,12 @@ and publishing at least one verification.</p>
 <pre><code class="language-bash">kdk init
 </code></pre>
 
-<h3 id="synchronize-kdk-with-docker-for-desktop-kubeconfig">Synchronize KDK with Docker for Desktop KUBECONFIG</h3>
+<h3 id="bring-up-the-kdk-container">Bring up the KDK container.</h3>
+
+<pre><code class="language-bash">kdk up
+</code></pre>
+
+<h3 id="synchronize-kdk-container-with-docker-for-desktop-kubeconfig">Synchronize KDK container with Docker for Desktop KUBECONFIG.</h3>
 
 <p>This will copy your host&rsquo;s default KUBECONFIG into the KDK and modify the docker-for-desktop configuration context to
 work from within your kdk.</p>
@@ -639,18 +644,27 @@ deploy <a href="https://docs.helm.sh/developing_charts">Helm Chart</a> values ov
 
 <h3 id="clone-the-framework-deploy-https-github-com-cisco-sso-framework-deploy-repo-using-git">Clone the <a href="https://github.com/cisco-sso/framework-deploy">framework-deploy</a> repo using git.</h3>
 
-<pre><code class="language-bash">
-#### Run this command if you have configured your GitHub account for public key SSH.
+<pre><code class="language-bash">#### Run this command if you have configured your GitHub account for public key SSH.
 git clone git@github.com:cisco-sso/framework-deploy.git
 
 #### (OR) Run this command if you have not configured GitHub for public key SSH.
 git clone https://github.com/cisco-sso/framework-deploy.git
 </code></pre>
 
-<h3 id="change-to-the-framework-deploy-directory-and-take-a-look-around">Change to the <code>framework-deploy</code> directory and take a look around.</h3>
+<h3 id="change-to-the-framework-deploy-directory">Change to the <code>framework-deploy</code> directory.</h3>
 
 <pre><code class="language-bash">cd framework-deploy/
-ls -a
+## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
+</code></pre>
+
+<h3 id="allow-direnv-https-direnv-net-to-source-the-envrc-https-github-com-cisco-sso-framework-deploy-blob-master-envrc-file">Allow <a href="https://direnv.net/">direnv</a> to source the <a href="https://github.com/cisco-sso/framework-deploy/blob/master/.envrc">.envrc</a> file.</h3>
+
+<pre><code class="language-bash">direnv allow
+</code></pre>
+
+<h3 id="take-a-look-around-framework-deploy">Take a look around framework-deploy.</h3>
+
+<pre><code class="language-bash">ls -a
 ## .  ..  .envrc  .git  .gitignore  LICENSE  README.md  apps  bin  clusters  ensure-env.sh
 </code></pre>
 
@@ -729,17 +743,14 @@ simplify interactive cluster usage.</p>
 <p>The <code>ensure-env.sh</code> script ensures presence of all prerequisite shell environment variables and tools. The script is
 normally <code>source</code>&lsquo;ed by <code>.envrc</code> files.</p>
 
-<h3 id="allow-direnv-https-direnv-net-to-source-the-envrc-https-github-com-cisco-sso-framework-deploy-blob-master-envrc-file">Allow <a href="https://direnv.net/">direnv</a> to source the <a href="https://github.com/cisco-sso/framework-deploy/blob/master/.envrc">.envrc</a> file.</h3>
-
-<pre><code class="language-bash">direnv allow
-</code></pre>
-
 <h3 id="change-to-the-clusters-docker-for-desktop-example-org-directory-and-take-a-look-around">Change to the <code>clusters/docker-for-desktop.example.org</code> directory and take a look around.</h3>
 
 <pre><code class="language-bash">cd clusters/docker-for-desktop.example.org
+## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
+direnv allow
+## ...
 ls -a
 ## .  ..  .envrc  README.md  mh  vars.yaml
-## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 </code></pre>
 
 <ul>
@@ -1037,19 +1048,19 @@ reach the links mentioned prior.</p>
 <ul>
 <li><a href="http://kibana.docker-for-desktop.example.org">http://kibana.docker-for-desktop.example.org</a></li>
 </ul></li>
-<li>Configure Kibana with some trivial configuration so it will show you logs.
+<li>Configure Kibana so it will show you logs:
 
 <ul>
 <li>Click the <code>Management</code> tab</li>
 <li>Under Step 1 of 2: Define index pattern</li>
-<li>Set Index pattern to be: <code>filebeat-*</code></li>
+<li>Set Index pattern: <code>filebeat-*</code></li>
 <li>A message with &ldquo;Success!  Your index pattern matches&rdquo; should appear</li>
 <li>Click <code>Next Step</code></li>
 <li>Under Step 2 of 2: Configure Settings</li>
-<li>Set the Time Filter field name to be: <code>@timestamp</code></li>
+<li>Set the Time Filter field name: <code>@timestamp</code></li>
 <li>Click <code>Create index pattern</code></li>
 </ul></li>
-<li>View some system logs
+<li>View system logs:
 
 <ul>
 <li>Click the <code>Discover</code> tab</li>

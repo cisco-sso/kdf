@@ -37,7 +37,7 @@ Configure your web browser to connect via the KDK SOCKS proxy It may be benefici
       
       <guid>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-main/</guid>
       <description>(inside your KDK container)
-Clone the framework-deploy repo using git. #### Run this command if you have configured your GitHub account for public key SSH. git clone git@github.com:cisco-sso/framework-deploy.git #### (OR) Run this command if you have not configured GitHub for public key SSH. git clone https://github.com/cisco-sso/framework-deploy.git  Change to the framework-deploy directory and take a look around. cd framework-deploy/ ls -a ## . .. .envrc .git .gitignore LICENSE README.md apps bin clusters ensure-env.</description>
+Clone the framework-deploy repo using git. #### Run this command if you have configured your GitHub account for public key SSH. git clone git@github.com:cisco-sso/framework-deploy.git #### (OR) Run this command if you have not configured GitHub for public key SSH. git clone https://github.com/cisco-sso/framework-deploy.git  Change to the framework-deploy directory. cd framework-deploy/ ## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.  Allow direnv to source the .</description>
     </item>
     
     <item>
@@ -85,8 +85,7 @@ Create a private fork of framework-deploy and use it to hold non-secret Kubernet
       <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-usage/</guid>
       <description>Print KDK usage information. kdk  Configure KDK. When running kdk init, please accept when prompted
 Please respond affirmatively when prompted for:
- Keybase directory mounting Enabling the SOCKS proxy at default port 8000  kdk init  Synchronize KDK with Docker for Desktop KUBECONFIG This will copy your host&amp;rsquo;s default KUBECONFIG into the KDK and modify the docker-for-desktop configuration context to work from within your kdk.
-kdk kubesync  Run the KDK container and log into it.</description>
+ Keybase directory mounting Enabling the SOCKS proxy at default port 8000  kdk init  Bring up the KDK container. kdk up  Synchronize KDK container with Docker for Desktop KUBECONFIG. This will copy your host&amp;rsquo;s default KUBECONFIG into the KDK and modify the docker-for-desktop configuration context to work from within your kdk.</description>
     </item>
     
     <item>
