@@ -73,6 +73,9 @@ Linux
 
 * [Minikube](https://kubernetes.io/docs/setup/minikube/)
   * We've had success with [Minikube](https://kubernetes.io/docs/setup/minikube/) on linux.
+* [Kubeadm](https://kubernetes.io/docs/setup/independent/install-kubeadm/)
+  * The Kubeadm project has made a lot of progress recently.  It is the core installer technology used by other
+    installers such as Kubespray.  We haven't tried it in a while, but would revisit it.
 * [Microk8s](https://microk8s.io/)
   * Microk8s is a newcomer.  We haven't tried it yet, but it is definitely worth considering.
 
