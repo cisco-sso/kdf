@@ -7,6 +7,8 @@ canonifyurls = true
 # Enable Google Analytics by entering your tracking id
 googleAnalytics = ""
 
+enableGitInfo = "true"
+
 [params]
         # General information
         author = "SSO Arch Team"
@@ -79,13 +81,38 @@ googleAnalytics = ""
         weight = 40
 
 [[menu.main]]
-        name   = "Deployment Packages"
-        url    = "deployment-packages/"
-        weight = 50
-
-[[menu.main]]
         name   = "Kubernetes"
         url    = "kubernetes/"
+        weight = 50
+        identifier = "kubernetes"
+
+[[menu.main]]
+        name       = "Deploying"
+        url        = "kubernetes/deploying/"
+        parent     = "kubernetes"
+        weight = 51
+
+[[menu.main]]
+        name       = "Best Practices"
+        url        = "kubernetes/best-practices/"
+        parent     = "kubernetes"
+        weight = 52
+
+[[menu.main]]
+        name       = "Testing"
+        url        = "kubernetes/testing/"
+        parent     = "kubernetes"
+        weight = 53
+
+[[menu.main]]
+        name       = "Helm Charts"
+        url        = "kubernetes/helm-charts/"
+        parent     = "kubernetes"
+        weight = 54
+
+[[menu.main]]
+        name   = "Deployment Packages"
+        url    = "deployment-packages/"
         weight = 60
 
 [[menu.main]]
