@@ -4,54 +4,72 @@
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-main/</loc>
+    <lastmod>2018-10-02T20:53:35+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-note/</loc>
+    <lastmod>2018-10-01T22:26:01+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-main/</loc>
+    <lastmod>2018-10-02T16:06:00-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-note/</loc>
+    <lastmod>2018-10-01T22:26:01+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-maclinux/</loc>
+    <lastmod>2018-09-26T21:34:42+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-windows/</loc>
+    <lastmod>2018-09-27T19:38:54+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/kdk-note/</loc>
+    <lastmod>2018-09-21T21:48:50-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/kdk-usage/</loc>
+    <lastmod>2018-10-02T16:32:01-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/keybase-note/</loc>
+    <lastmod>2018-09-19T15:24:36-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/post-install/</loc>
+    <lastmod>2018-09-27T19:38:54+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-main/</loc>
+    <lastmod>2018-10-02T22:02:58+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-note/</loc>
+    <lastmod>2018-10-02T22:02:58+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/backlog/</loc>
+    <lastmod>2018-09-18T00:05:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/kubernetes/best-practices/</loc>
+    <lastmod>2018-10-03T17:04:32+00:00</lastmod>
   </url>
   
   <url>
@@ -60,40 +78,60 @@
   </url>
   
   <url>
+    <loc>https://kdf.csco.cloud/kubernetes/deploying/</loc>
+    <lastmod>2018-10-03T17:04:32+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kdf.csco.cloud/deployment-packages/</loc>
+    <lastmod>2018-09-18T00:05:13+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/linux/</loc>
+    <lastmod>2018-09-18T23:12:22-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/mac/</loc>
+    <lastmod>2018-10-02T22:02:58+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/windows/</loc>
+    <lastmod>2018-10-02T22:02:58+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/getting-started/</loc>
+    <lastmod>2018-10-02T22:02:58+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>https://kdf.csco.cloud/kubernetes/helm-charts/</loc>
+    <lastmod>2018-10-03T17:04:32+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kdf.csco.cloud/kubernetes/</loc>
+    <lastmod>2018-10-03T17:04:32+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/</loc>
+    <lastmod>2018-09-17T21:42:58-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/training/</loc>
+    <lastmod>2018-09-18T00:05:13+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/patterns/</loc>
+    <lastmod>2018-09-18T00:05:13+00:00</lastmod>
   </url>
   
   <url>
@@ -103,10 +141,17 @@
   
   <url>
     <loc>https://kdf.csco.cloud/team/</loc>
+    <lastmod>2018-09-18T00:05:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kdf.csco.cloud/kubernetes/testing/</loc>
+    <lastmod>2018-10-03T17:04:32+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://kdf.csco.cloud/tools/</loc>
+    <lastmod>2018-09-18T00:05:13+00:00</lastmod>
   </url>
   
 </urlset>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on KDF</title>
+    <link>https://kdf.csco.cloud/kubernetes/</link>
+    <description>Recent content in Kubernetes on KDF</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://kdf.csco.cloud/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Best Practices</title>
+      <link>https://kdf.csco.cloud/kubernetes/best-practices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/kubernetes/best-practices/</guid>
+      <description> Always Set Limits Use Pod PriorityClasses </description>
+    </item>
+    
+    <item>
+      <title>Deploying</title>
+      <link>https://kdf.csco.cloud/kubernetes/deploying/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/kubernetes/deploying/</guid>
+      <description>Intro If you want to install kubernetes on anything but your local machine, but have never used kubernetes&amp;hellip; stop. There are countless technologies which may be used to deploy Kubernetes in all sorts of clouds and on-premise setups. People get stuck on the installation, and the resulting kubernetes clusters are often divergent from what kubernetes was meant to be. Worse yet, a novice may not notice. For example, on-premise deployments of kubernetes, given the constraints of a corporate datacenter, may be missing persistent storage and loadbalancers which most applications built for kubernetes typically depend on.</description>
+    </item>
+    
+    <item>
+      <title>Helm Charts</title>
+      <link>https://kdf.csco.cloud/kubernetes/helm-charts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/kubernetes/helm-charts/</guid>
+      <description> Selecting a Helm Chart Helm Chart Code Review Upstream Your Changes </description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://kdf.csco.cloud/kubernetes/testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/kubernetes/testing/</guid>
+      <description>Chaoskube Litmus Test Delete all nodes</description>
+    </item>
+    
+  </channel>
+</rss>

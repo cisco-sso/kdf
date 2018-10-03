@@ -6,6 +6,7 @@
     <description>Recent content in Kubernetes Development Framework (KDF) on KDF</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 17 Sep 2018 21:42:58 -0400</lastBuildDate>
     
 	<atom:link href="https://kdf.csco.cloud/index.xml" rel="self" type="application/rss+xml" />
     
@@ -139,6 +140,24 @@ Add content of ssh public key ~/.kdk/ssh/id_rsa.pub
     </item>
     
     <item>
+      <title>Best Practices</title>
+      <link>https://kdf.csco.cloud/kubernetes/best-practices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/kubernetes/best-practices/</guid>
+      <description> Always Set Limits Use Pod PriorityClasses </description>
+    </item>
+    
+    <item>
+      <title>Deploying</title>
+      <link>https://kdf.csco.cloud/kubernetes/deploying/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/kubernetes/deploying/</guid>
+      <description>Intro If you want to install kubernetes on anything but your local machine, but have never used kubernetes&amp;hellip; stop. There are countless technologies which may be used to deploy Kubernetes in all sorts of clouds and on-premise setups. People get stuck on the installation, and the resulting kubernetes clusters are often divergent from what kubernetes was meant to be. Worse yet, a novice may not notice. For example, on-premise deployments of kubernetes, given the constraints of a corporate datacenter, may be missing persistent storage and loadbalancers which most applications built for kubernetes typically depend on.</description>
+    </item>
+    
+    <item>
       <title>Deployment Packages</title>
       <link>https://kdf.csco.cloud/deployment-packages/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -179,13 +198,12 @@ However, the Mac instructions may help you get KDF running on Linux.
     </item>
     
     <item>
-      <title>Kubernetes</title>
-      <link>https://kdf.csco.cloud/kubernetes/</link>
+      <title>Helm Charts</title>
+      <link>https://kdf.csco.cloud/kubernetes/helm-charts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kdf.csco.cloud/kubernetes/</guid>
-      <description> Testing Chaoskube Litmus Test Delete all nodes
-Helm Chart Practices Selecting a Helm Chart Helm Chart Code Review Cluster Deployments Local Machine AWS Vsphere Openstack </description>
+      <guid>https://kdf.csco.cloud/kubernetes/helm-charts/</guid>
+      <description> Selecting a Helm Chart Helm Chart Code Review Upstream Your Changes </description>
     </item>
     
     <item>
@@ -213,6 +231,15 @@ Helm Chart Practices Selecting a Helm Chart Helm Chart Code Review Cluster Deplo
       
       <guid>https://kdf.csco.cloud/team/</guid>
       <description> Agreements Code Reviews Upstreaming People </description>
+    </item>
+    
+    <item>
+      <title>Testing</title>
+      <link>https://kdf.csco.cloud/kubernetes/testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/kubernetes/testing/</guid>
+      <description>Chaoskube Litmus Test Delete all nodes</description>
     </item>
     
     <item>

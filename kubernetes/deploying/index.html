@@ -9,18 +9,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <title>Kubernetes Training Resources - KDF</title>
+    <title>Deploying - KDF</title>
     <meta name="generator" content="Hugo 0.48" />
 
     
     <meta name="description" content="Kubernetes Development Framework (KDF)">
     
-    <link rel="canonical" href="https://kdf.csco.cloud/training/">
+    <link rel="canonical" href="https://kdf.csco.cloud/kubernetes/deploying/">
     
     <meta name="author" content="SSO Arch Team">
     
 
-    <meta property="og:url" content="https://kdf.csco.cloud/training/">
+    <meta property="og:url" content="https://kdf.csco.cloud/kubernetes/deploying/">
     <meta property="og:title" content="KDF">
     <meta property="og:image" content="https://kdf.csco.cloud/images/logo.png">
     <meta name="apple-mobile-web-app-title" content="KDF">
@@ -99,7 +99,7 @@
     </div>
     <div class="stretch">
       <div class="title">
-        Kubernetes Training Resources
+        Deploying
       </div>
     </div>
 
@@ -290,11 +290,14 @@
 
 
 
-<a  title="Deploying" href="https://kdf.csco.cloud/kubernetes/deploying/">
+<a class="current" title="Deploying" href="https://kdf.csco.cloud/kubernetes/deploying/">
 	
 	Deploying
 </a>
 
+
+<ul id="scrollspy">
+</ul>
 
 
       
@@ -367,14 +370,11 @@
 
 
 
-<a class="current" title="Training" href="https://kdf.csco.cloud/training/">
+<a  title="Training" href="https://kdf.csco.cloud/training/">
 	
 	Training
 </a>
 
-
-<ul id="scrollspy">
-</ul>
 
 
   
@@ -447,48 +447,207 @@
 
 	<article class="article">
 		<div class="wrapper">
-			<h1>Kubernetes Training Resources </h1>
+			<h1>Deploying </h1>
 
 			
 
-<h2 id="docker">Docker</h2>
+<h2 id="intro">Intro</h2>
+
+<p>If you want to install kubernetes on anything but your local machine, but have never used kubernetes&hellip; <strong>stop</strong>.  There
+are countless technologies which may be used to deploy Kubernetes in all sorts of clouds and on-premise setups.  People
+get stuck on the installation, and the resulting kubernetes clusters are often divergent from what kubernetes was meant
+to be.  Worse yet, a novice may not notice.  For example, on-premise deployments of kubernetes, given the constraints of
+a corporate datacenter, may be missing persistent storage and loadbalancers which most applications built for kubernetes
+typically depend on.</p>
+
+<h2 id="progression">Progression</h2>
+
+<p>Expect to crawl before walking.  If you&rsquo;re new to kubernetes, get familiar with kubernetes on your local machine, and
+deploy a few applications on it.  Once you&rsquo;ve learned from that, use a kubernetes cluster on <a href="https://cloud.google.com/kubernetes-engine/">Google Kubernetes Engine
+(GKE)</a>, which is the Gold Standard.  Afterwards, any attempts to deploy
+Kubernetes in the cloud or on-premise will be better understood given the environmental constraints.</p>
+
+<h2 id="deployment-considerations">Deployment Considerations</h2>
+
+<p>On-premise, bare-metal, and single node kubernetes deployments are often missing the following infrastructure, which
+decrease the benefits of Kubernetes and make it difficult for most applications which expect this basic Kubernetes
+functionality.</p>
 
 <ul>
-<li>Getting Started:
+<li>Persistent network storage and storage class provisioners
 
 <ul>
-<li><a href="https://docs.docker.com/get-started/">https://docs.docker.com/get-started/</a></li>
+<li>Without this, pods which rely on persistent storage are stuck on a single worker node and cannot migrate to another
+worker node.  Its persistent volume is local to a node and cannot be network mounted on a different worker node.
+This drastically decreases the resilience of any stateful application in Kubernetes upon node failures.</li>
+</ul></li>
+<li>Load-balancer integration
+
+<ul>
+<li>Without this, applications within kubernetes will not be auto-wired to be reachable from outside of kuberentes.</li>
 </ul></li>
 </ul>
 
-<h2 id="kubernetes">Kubernetes</h2>
+<p>There are less resilient and unpalatable workarounds for the above, for example:</p>
 
 <ul>
-<li>A Comic-Book Intro to Kubernetes
+<li><p>As a workaround for the lack of persistent network storage, we have run <a href="https://www.openebs.io/">OpenEBS</a>, but found
+them difficult due to skillset requirements and operational efforts.  We created proof-of-concepts with
+<a href="https://ceph.com/">CephRBD</a>, but found you really need a dedicated team to operate it.</p></li>
+
+<li><p>As a workaround for the lack of load-balancer integration, we have run Ingress as a Nodeport Dameonset, and added all
+node records to an DNS A-record.  This works, but does not auto-wire upon node failures or additions such as during
+autoscale events.</p></li>
+</ul>
+
+<h2 id="local-devenv">Local Devenv</h2>
+
+<p>Kubernetes deployments on your development machine can be made to feel very much like a Gold Standard Kubernetes
+cluster, if you jump through a few hoops.  We&rsquo;ve created tools and a turnkey set of instructions to help you get this
+going with good practices and patterns.  Documentation may be found in our <a href="https://kdf.csco.cloud/getting-started">KDF Getting
+Started</a> documentation.</p>
+
+<p><strong>Recommendations</strong></p>
+
+<p>Mac</p>
 
 <ul>
-<li><a href="https://cloud.google.com/kubernetes-engine/kubernetes-comic/">https://cloud.google.com/kubernetes-engine/kubernetes-comic/</a></li>
+<li><a href="https://www.docker.com/products/docker-desktop">Docker for Mac</a> (includes Kubernetes)
+
+<ul>
+<li>Turnkey instructions which get you going with good practices and patterns</li>
+<li><a href="https://kdf.csco.cloud/getting-started/mac/">https://kdf.csco.cloud/getting-started/mac/</a></li>
 </ul></li>
-<li>Official Kubernetes Tutorials
+<li><a href="https://kubernetes.io/docs/setup/minikube/">Minikube</a>
 
 <ul>
-<li><a href="https://kubernetes.io/docs/tutorials/">https://kubernetes.io/docs/tutorials/</a></li>
-</ul></li>
-<li>Kubernetes Concepts
-
-<ul>
-<li><a href="https://kubernetes.io/docs/concepts/">https://kubernetes.io/docs/concepts/</a></li>
+<li>We prefer Docker for Desktop over Minikube, because its single-click install, defaults, integration, and UI are all
+better for novices.</li>
 </ul></li>
 </ul>
 
-<h2 id="helm">Helm</h2>
+<p>Windows</p>
 
 <ul>
-<li>Quickstart
+<li><a href="https://www.docker.com/products/docker-desktop">Docker for Windows</a> (includes Kubernetes)
 
 <ul>
-<li><a href="https://docs.helm.sh/using_helm/#quickstart">https://docs.helm.sh/using_helm/#quickstart</a></li>
+<li>Turnkey instructions which get you going with good practices and patterns</li>
+<li><a href="https://kdf.csco.cloud/getting-started/windows/">https://kdf.csco.cloud/getting-started/windows/</a></li>
 </ul></li>
+<li><a href="https://kubernetes.io/docs/setup/minikube/">Minikube</a>
+
+<ul>
+<li>We prefer Docker for Desktop over Minikube, because its single-click install, defaults, integration, and UI are all
+better for novices.</li>
+</ul></li>
+</ul>
+
+<p>Linux</p>
+
+<ul>
+<li><a href="https://kubernetes.io/docs/setup/minikube/">Minikube</a>
+
+<ul>
+<li>We&rsquo;ve had success with <a href="https://kubernetes.io/docs/setup/minikube/">Minikube</a> on linux.</li>
+</ul></li>
+<li><a href="https://microk8s.io/">Microk8s</a>
+
+<ul>
+<li>Microk8s is a newcomer.  We haven&rsquo;t tried it yet, but it is definitely worth considering.</li>
+</ul></li>
+</ul>
+
+<h2 id="single-node-cluster">Single Node Cluster</h2>
+
+<p>There are quite a few technologies for setting up a single node kubernetes cluster for production.</p>
+
+<p><strong>Recommendations</strong></p>
+
+<ul>
+<li><p><a href="https://github.com/kubernetes-incubator/kubespray">Kubespray</a></p>
+
+<ul>
+<li>Kubespray is an Ansible-based installer, which may be directed at a single node or multiple nodes.  It takes care of
+OS level configurations, and will eventually be default-configured to drive Kubeadm for the actual installing of
+kubernetes services.</li>
+</ul></li>
+
+<li><p><a href="https://kubernetes.io/docs/setup/independent/create-cluster-kubeadm/">Kubeadm</a></p>
+
+<ul>
+<li>Seems to be where the momentum is for kubernetes core installation functionality.</li>
+</ul></li>
+
+<li><p><a href="https://kubernetes.io/docs/setup/minikube/">Minikube</a> is <em>NOT</em> recommended.
+The project is targeted only for development, and by default will not persist state between reboots.</p></li>
+</ul>
+
+<h2 id="google-gke">Google GKE</h2>
+
+<p>This is our #1 choice for Kubernetes in the cloud.</p>
+
+<ul>
+<li><a href="https://cloud.google.com/kubernetes-engine/">Google Kubernetes Engine (GKE)</a></li>
+</ul>
+
+<h2 id="aws">AWS</h2>
+
+<p>AWS with Kops is our #2 choice for Kubernetes in the cloud.</p>
+
+<ul>
+<li><a href="https://github.com/kubernetes/kops">Kops</a>
+
+<ul>
+<li>We have years of experience deploying with Kops.  Kops has been around for quite a while as the only option for AWS,
+and it has functioned solidly.  It&rsquo;s a highly-recommended open-source project.</li>
+</ul></li>
+<li><a href="https://aws.amazon.com/eks">Amazon Elastic Container Service (EKS)</a>
+
+<ul>
+<li>Amazon EKS is a newcomer.  We haven&rsquo;t tried it yet, but it is definitely worth considering.</li>
+</ul></li>
+</ul>
+
+<h2 id="bare-metal-pre-provisioned">Bare Metal / Pre-Provisioned</h2>
+
+<p>Bare Metal and other Pre-Provisioned machines can be installed with Kubespray.</p>
+
+<ul>
+<li><a href="https://github.com/kubernetes-incubator/kubespray">Kubespray</a>
+
+<ul>
+<li>Kubespray is an Ansible-based installer, which may be directed at a single node or multiple nodes.</li>
+</ul></li>
+</ul>
+
+<h2 id="openstack">Openstack</h2>
+
+<p>This installation process is the same as Bare Metal, however first the machines must be pre-provisioned using Terraform</p>
+
+<ul>
+<li><a href="https://github.com/kubernetes-incubator/kubespray/tree/master/contrib/terraform/openstack">Kubespray Contrib Openstack Terraform Code</a>
+
+<ul>
+<li>This section of the Kubespray repository contains terraform which can create pre-provisioned machines in an Openstack VPC.</li>
+</ul></li>
+<li>Once the machines are provisioned, follow the recommendation in the <a href="#bare-metal-pre-provisioned">Bare Metal / Pre-Provisioned
+machines</a> section above.</li>
+</ul>
+
+<h2 id="vsphere">Vsphere</h2>
+
+<p>This installation process is the same as Bare Metal, however first the machines must be pre-provisioned using Terraform</p>
+
+<ul>
+<li><a href="https://www.terraform.io/docs/providers/vsphere/index.html">Vshpere Terraform Provider</a>
+
+<ul>
+<li>Here&rsquo;s a guide for writing Vsphere Terraform code:
+<a href="https://www.hashicorp.com/blog/a-re-introduction-to-the-terraform-vsphere-provider">https://www.hashicorp.com/blog/a-re-introduction-to-the-terraform-vsphere-provider</a></li>
+</ul></li>
+<li>Once the machines are provisioned, follow the recommendation in the <a href="#bare-metal-pre-provisioned">Bare Metal / Pre-Provisioned
+machines</a> section above.</li>
 </ul>
 
 
@@ -508,7 +667,7 @@
 <nav class="pagination" aria-label="Footer">
   <div class="previous">
   
-      <a href="https://kdf.csco.cloud/kubernetes/helm-charts/" title="Helm Charts">
+      <a href="https://kdf.csco.cloud/kubernetes/best-practices/" title="Best Practices">
         <span class="direction">
           Previous
         </span>
@@ -518,7 +677,7 @@
           </div>
           <div class="stretch">
             <div class="title">
-              Helm Charts
+              Best Practices
             </div>
           </div>
         </div>
@@ -528,14 +687,14 @@
 
   <div class="next">
   
-      <a href="https://kdf.csco.cloud/patterns/" title="Patterns">
+      <a href="https://kdf.csco.cloud/deployment-packages/" title="Deployment Packages">
         <span class="direction">
           Next
         </span>
         <div class="page">
           <div class="stretch">
             <div class="title">
-              Patterns
+              Deployment Packages
             </div>
           </div>
           <div class="button button-next" role="button" aria-label="Next">
