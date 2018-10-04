@@ -1,13 +1,21 @@
+<br/>
+<b>
+<lu>
+<li> Installation of Keybase is optional, and not necessary in order to complete the tutorial.</li>
+<li> Installing Keybase is highly recommended, especially if you are working with a team that needs to share secrets (i.e. ssh keys required to access the bastion jumphost of the kubernetes cluster)</li>
+</lu>
+</b>
+
 [Keybase](https://keybase.io/) makes sharing secrets with your team **much** easier. A Keybase user may be added to one
 or more [Keybase Teams](https://keybase.io/docs/teams/index), at which point the team's secret files are accessible
 under your local filesystem at `[[ MOUNTPOINT ]]`. Scripts and automation may then locate secrets
 within the Keybase filesystem at common paths.
 
-Later in this guide (upon `kdk init`), the `kdk` command will ask to mount the host's Keybase filesytem to the KDK
-container at `/keybase`.
+Later in this guide (upon `kdk init`), the kdk command will detect if keybase is present and then prompt the user to
+mount the host's Keybase filesytem to the KDK container at `/keybase`.
 
-Be a good Keybase citizen and ensure you are registered on [keybase.io](https://keybase.io/) displaying your full name
-and publishing at least one verification.
+Register a userid at [keybase.io](https://keybase.io/) displaying your full name.  Be a good Keybase citizen and ensure
+you are publish at least one verification.
 
 Ask your team lead to add you to relevant Keybase teams. This will allow you to access team files at
 `[[ MOUNTPOINT ]]/team/<team-name>`.
