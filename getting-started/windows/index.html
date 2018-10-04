@@ -591,16 +591,24 @@ for Windows again by following the prior step.</li>
 
 <div class="admonition note">
 <p class="admonition-title"></p>
-<p><p><a href="https://keybase.io/">Keybase</a> makes sharing secrets with your team <strong>much</strong> easier. A Keybase user may be added to one
+<p><p><br/>
+<b>
+<lu>
+<li> Installation of Keybase is optional, and not necessary in order to complete the tutorial.</li>
+<li> Installing Keybase is highly recommended, especially if you are working with a team that needs to share secrets (i.e. ssh keys required to access the bastion jumphost of the kubernetes cluster)</li>
+</lu>
+</b></p>
+
+<p><a href="https://keybase.io/">Keybase</a> makes sharing secrets with your team <strong>much</strong> easier. A Keybase user may be added to one
 or more <a href="https://keybase.io/docs/teams/index">Keybase Teams</a>, at which point the team&rsquo;s secret files are accessible
 under your local filesystem at <code>k:</code>. Scripts and automation may then locate secrets
 within the Keybase filesystem at common paths.</p>
 
-<p>Later in this guide (upon <code>kdk init</code>), the <code>kdk</code> command will ask to mount the host&rsquo;s Keybase filesytem to the KDK
-container at <code>/keybase</code>.</p>
+<p>Later in this guide (upon <code>kdk init</code>), the kdk command will detect if keybase is present and then prompt the user to
+mount the host&rsquo;s Keybase filesytem to the KDK container at <code>/keybase</code>.</p>
 
-<p>Be a good Keybase citizen and ensure you are registered on <a href="https://keybase.io/">keybase.io</a> displaying your full name
-and publishing at least one verification.</p>
+<p>Register a userid at <a href="https://keybase.io/">keybase.io</a> displaying your full name.  Be a good Keybase citizen and ensure
+you are publish at least one verification.</p>
 
 <p>Ask your team lead to add you to relevant Keybase teams. This will allow you to access team files at
 <code>k:/team/&lt;team-name&gt;</code>.</p>
@@ -628,7 +636,8 @@ choco install -y keybase
 
 <h3 id="verify-that-keybasefs-is-mounted-to-your-system">Verify that KeybaseFS is mounted to your system.</h3>
 
-<pre><code class="language-bash">dir k:
+<pre><code class="language-bash"># Windows Powershell
+dir k:
 ## private  public  team
 </code></pre>
 
@@ -647,7 +656,7 @@ choco install openssh
 
 <h3 id="install-the-kubernetes-development-kit-kdk-https-github-com-cisco-sso-kdk">Install the <a href="https://github.com/cisco-sso/kdk">Kubernetes Development Kit (KDK)</a>.</h3>
 
-<pre><code class="language-bash"># Windows Powershell - NOT AS ADMINSTRATOR
+<pre><code class="language-bash"># Windows Powershell - NOT AS ADMINISTRATOR
 Set-ExecutionPolicy Bypass -Scope Process -Force
 iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1'))
 </code></pre>
@@ -673,8 +682,10 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://raw.githubusercon
 
 <h3 id="synchronize-kdk-container-with-docker-for-desktop-kubeconfig">Synchronize KDK container with Docker for Desktop KUBECONFIG.</h3>
 
-<p>This will start the KDK and copy your host&rsquo;s default KUBECONFIG into the KDK and modify the docker-for-desktop
-configuration context to work from within your kdk.</p>
+<p>The prior install of Kubernetes on the local host machine create a KUBECONFIG file at <code>~/.kube/config</code> which contains
+the auth credenials for accessing the local kubernetes cluster.  Since we want to do all operations from within the KDK,
+we must copy the host&rsquo;s default KUBECONFIG into the KDK, and modify the docker-for-desktop configuration to work from
+within the kdk.</p>
 
 <pre><code class="language-bash">kdk kubesync
 </code></pre>
@@ -689,22 +700,16 @@ configuration context to work from within your kdk.</p>
 
 <div class="admonition note">
 <p class="admonition-title"></p>
-<p><p><a href="https://github.com/cisco-sso/framework-deploy">Framework-deploy</a> is a git repo which implments the KDF deployment
+<p><a href="https://github.com/cisco-sso/framework-deploy">Framework-deploy</a> is a git repo which implments the KDF deployment
 pattern. The boilerplate structure in framework-deploy is made to fit perfectly with the tools available in the KDK
-container.</p>
-
-<p>Create a private fork of framework-deploy and use it to hold non-secret Kubernetes-related application configuration
-files and templates. In the KDF pattern, templates and configuration files for tools like
-<a href="https://github.com/cisco-sso/mh">mh</a> are hosted in a private fork of framework-deploy. <code>mh</code> allows you to template and
-deploy <a href="https://docs.helm.sh/developing_charts">Helm Chart</a> values overrides.</p>
-</p>
+container.  One may fork this repo as a basis for implementing the framework-deploy pattern for private kubernetes
+clusters.</p>
 </div>
-
-<p>(inside your KDK container)</p>
 
 <h3 id="clone-the-framework-deploy-https-github-com-cisco-sso-framework-deploy-repo-using-git">Clone the <a href="https://github.com/cisco-sso/framework-deploy">framework-deploy</a> repo using git.</h3>
 
-<pre><code class="language-bash">#### Run this command if you have configured your GitHub account for public key SSH.
+<pre><code class="language-bash"># Within your KDK container via `kdk ssh`
+#### Run this command if you have configured your GitHub account for public key SSH.
 git clone git@github.com:cisco-sso/framework-deploy.git
 
 #### (OR) Run this command if you have not configured GitHub for public key SSH.
@@ -713,64 +718,41 @@ git clone https://github.com/cisco-sso/framework-deploy.git
 
 <h3 id="change-to-the-framework-deploy-directory">Change to the <code>framework-deploy</code> directory.</h3>
 
-<pre><code class="language-bash">cd framework-deploy/
+<pre><code class="language-bash"># Within your KDK container via `kdk ssh`
+cd framework-deploy/
 ## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
-</code></pre>
-
-<h3 id="allow-direnv-https-direnv-net-to-source-the-envrc-https-github-com-cisco-sso-framework-deploy-blob-master-envrc-file">Allow <a href="https://direnv.net/">direnv</a> to source the <a href="https://github.com/cisco-sso/framework-deploy/blob/master/.envrc">.envrc</a> file.</h3>
-
-<pre><code class="language-bash">direnv allow
+direnv allow
 </code></pre>
 
 <h3 id="take-a-look-around-framework-deploy">Take a look around framework-deploy.</h3>
 
-<pre><code class="language-bash">ls -a
-## .  ..  .envrc  .git  .gitignore  LICENSE  README.md  apps  bin  clusters  ensure-env.sh
+<pre><code class="language-bash"># Important Files
+.
+├── apps
+├── bin
+├── clusters
+└── .envrc
 </code></pre>
 
 <ul>
-<li><code>.envrc</code></li>
+<li><code>clusters</code></li>
 </ul>
 
-<p>Upon entering a directory that contains an <code>.envrc</code> file, the <code>direnv</code> tool installed within the KDK container will
-automatically source the <code>./.envrc</code> file if it is present.</p>
+<p>The <code>clusters</code> directory contains a directory for each Kubernetes cluster managed with framework-deploy. By entering the
+<code>clusters/docker-for-desktop.example.org</code> directory, the system automatically configures all tools to operate on the
+<code>docker-for-desktop.example.org</code> Kubernetes cluster that was spun up earlier in this tutorial.</p>
 
-<p>In the framework-deploy pattern, <code>direnv</code> sets your shell&rsquo;s environment variables for each cluster directory into which
-you change (<code>cd</code>). It is through these environment variables that all of the tools are configured (e.g. <code>kubectl</code>,
-<code>docker</code>, <code>helm</code>, etc).</p>
-
-<p>If <code>direnv</code> encounters an <code>.envrc</code> file it has not previously processed, or one that has changed since last seen,
-<code>direnv</code> will prompt you to approve the processing of its content.</p>
-
-<pre><code>direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
-</code></pre>
-
-<p>At prompts like this, if you&rsquo;re confident that the <code>.envrc</code> file is safe for <code>direnv</code> to process, run <code>direnv allow</code>.</p>
-
-<ul>
-<li><code>.git</code></li>
-</ul>
-
-<p>The <code>.git</code> directory holds files that <code>git</code> uses. You will likely never need to interact directly with this directory.</p>
-
-<ul>
-<li><code>.gitignore</code></li>
-</ul>
-
-<p>The <code>.gitignore</code> file tracks which file names <code>git</code> should ignore when doing <code>git add</code> commands.</p>
-
-<ul>
-<li><code>LICENSE</code> and <code>README.md</code></li>
-</ul>
-
-<p>These are standard fare license and high level documentation for the framework-deploy project.</p>
+<p>In the framework-deploy pattern, the cluster directory, kubernetes context, and KUBECONFIG filename are all set to match
+the cluster&rsquo;s external FQDN (e.g. <code>myorg1-dev.example.org</code>). This naming convention enables framework-deploy automation
+to simplify interactive cluster usage.</p>
 
 <ul>
 <li><code>apps</code></li>
 </ul>
 
-<p>The <code>apps</code> directory contains template files for the <a href="https://github.com/cisco-sso/mh">mh</a> command. Each &ldquo;app&rdquo; is a
-template which produces and overrides for a particular Helm chart.</p>
+<p>The <code>apps</code> directory contains template files for the <a href="https://github.com/cisco-sso/mh">mh</a> command. The values from the
+<code>mh/main.yaml</code> inside of a cluster directory are applied to an &ldquo;app&rdquo; template file, producing custom configuration
+overrides for a particular Helm chart.</p>
 
 <ul>
 <li><code>bin</code></li>
@@ -781,87 +763,56 @@ helper script that retrieves the auto-generated admin password for <a href="http
 secret as installed by framework-deploy.</p>
 
 <ul>
-<li><code>clusters</code></li>
-</ul>
-
-<p>The <code>clusters</code> directory contains a directory for each Kubernetes cluster you manage with framework-deploy. The
-framework-deploy repo contains boilerplate for the <code>docker-for-desktop.example.org</code> Kubernetes cluster which was spun up earlier
-in this tutorial.</p>
-
-<p>In an internal and private fork of framework-deploy, you can make cluster directories for your own Kubernetes clusters
-(e.g. <code>myorg1-dev.example.org</code>). Each cluster directory contains an <code>.envrc</code> (via symlink) that automatically
-configures your shell environment (e.g. the <code>KUBECONFIG</code> environment variable).</p>
-
-<p>In the framework-deploy pattern, Kubernetes cluster context name and KUBECONFIG filename are both set to match the
-cluster&rsquo;s external FQDN (e.g. <code>myorg1-dev.example.org</code>). This naming convention enables framework-deploy automation to
-simplify interactive cluster usage.</p>
-
-<ul>
-<li><code>ensure-env.sh</code></li>
-</ul>
-
-<p>The <code>ensure-env.sh</code> script ensures presence of all prerequisite shell environment variables and tools. The script is
-normally <code>source</code>&lsquo;ed by <code>.envrc</code> files.</p>
-
-<h3 id="change-to-the-clusters-docker-for-desktop-example-org-directory-and-take-a-look-around">Change to the <code>clusters/docker-for-desktop.example.org</code> directory and take a look around.</h3>
-
-<pre><code class="language-bash">cd clusters/docker-for-desktop.example.org
-## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
-direnv allow
-## ...
-ls -a
-## .  ..  .envrc  README.md  mh  vars.yaml
-</code></pre>
-
-<ul>
 <li><code>.envrc</code></li>
 </ul>
 
-<p>The <code>.envrc</code> file in this directory is a symlink to <code>../common/dot.envrc</code>. The <code>dot.envrc</code> file behind the symlink
-configures your shell for the current cluster directory name. In this case, that means <code>docker-for-desktop.example.org</code></p>
+<p>Upon entering a directory that contains an <code>.envrc</code> file, the <code>direnv</code> tool installed within the KDK container will
+automatically source the <code>.envrc</code> file if it is present.</p>
 
-<ul>
-<li><code>README.md</code></li>
-</ul>
+<p>If <code>direnv</code> encounters an <code>.envrc</code> file it has not previously processed, or one that has changed since last seen,
+<code>direnv</code> will prompt you to approve the processing of its content.  If you approve, run <code>direnv allow</code>.</p>
 
-<p>The <code>README.md</code> in this directory contains guidance specific to the <code>docker-for-desktop.example.org</code> Kubernetes cluster.</p>
+<h3 id="change-to-the-clusters-docker-for-desktop-example-org">Change to the <code>clusters/docker-for-desktop.example.org</code></h3>
+
+<pre><code class="language-bash"># Within your KDK container via `kdk ssh`
+cd clusters/docker-for-desktop.example.org
+## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
+direnv allow
+</code></pre>
+
+<h3 id="take-a-look-around-the-clusters-docker-for-desktop-example-org-directory">Take a look around the <code>clusters/docker-for-desktop.example.org</code> directory.</h3>
+
+<pre><code class="language-bash"># Important Files
+.
+├── .envrc
+├── mh
+│   └── main.yaml
+└── vars.yaml
+</code></pre>
 
 <ul>
 <li><code>mh/main.yaml</code></li>
 </ul>
 
-<p>The <a href="https://github.com/cisco-sso/mh">mh</a> tool which ships with the KDK container image is capable of managing one or
-many Kubernetes namespaces in a single <code>MH_CONFIG</code>.</p>
-
-<p>The <code>mh/main.yaml</code> file inside the <code>mh</code> directory is the <a href="https://github.com/cisco-sso/mh#select-a-mh-config">MH_CONFIG</a>
-file for the <code>docker-for-desktop.example.org</code> Kubernetes cluster.</p>
-
-<p>This file declares the cluster&rsquo;s Helm Chart releases, <code>mh</code> apps (Helm Chart override templates), and base truth.
-Secret base truth is one exception. Secrets should never be committed to framework-deploy nor any fork of it. Any
-secrets seen in this boilerplate version of the repo are for illustrative purposes.</p>
-
-<p>Instead of writing secrets into your <code>mh/main.yaml</code>, you may pre-load them as Kubernetes Secrets and make your Helm
-Charts use those out of band secrets directly. Another way to manage secrets is to use Helm Charts that generate
-secrets into Kubernetes and use them there as needed. Once generated, your Kubernetes user should be able to read them
-back out using <code>kubectl</code>.</p>
+<p>Inside of a cluster directory, the values from the <code>mh/main.yaml</code> file are applied to an &ldquo;app&rdquo; template file, producing
+custom configuration overrides for a particular Helm chart.  The <a href="https://github.com/cisco-sso/mh">mh</a> tool, which ships
+with the KDK container image, applies the template transformations to produce helm chart overrides, piping the result to
+helm which then produces resource definitions which are loaded into kubernetes.  The <code>mh</code> tool is a variation of <a href="https://docs.helm.sh/developing_charts/#complex-charts-with-many-dependencies">helm
+umbrella charts</a>, explained
+<a href="https://kdf.csco.cloud/tools/#mh">here</a></p>
 
 <ul>
 <li><code>vars.yaml</code></li>
 </ul>
 
-<p>The <code>vars.yaml</code> file stores some very basic key values for tools like
-<a href="https://github.com/cisco-sso/kdk/blob/master/files/usr/local/bin/awake">awake</a> and
-<a href="https://yq.readthedocs.io/en/latest/">yq</a> to draw upon. In the framework-deploy pattern, we use <code>vars.yaml</code> to declare
-which <a href="http://keybase.io">keybase.io</a> team manages each cluster.</p>
-
-<h3 id="allow-direnv-https-direnv-net-to-source-the-envrc-https-github-com-cisco-sso-framework-deploy-blob-master-clusters-common-dot-envrc-file">Allow <a href="https://direnv.net/">direnv</a> to source the <a href="https://github.com/cisco-sso/framework-deploy/blob/master/clusters/common/dot.envrc">.envrc</a> file.</h3>
-
-<pre><code class="language-bash">direnv allow
-</code></pre>
+<p>In the framework-deploy pattern, upon entering this directory, the direnv tool sources the <code>.envrc</code> file which then
+reads configuration settings out of <code>vars.yaml</code>, ultimately setting enviroment variables to configure tools.</p>
 
 <h3 id="interact-with-kubernetes-using-kubectl-https-kubernetes-io-docs-reference-kubectl-overview">Interact with Kubernetes using <a href="https://kubernetes.io/docs/reference/kubectl/overview/">kubectl</a>.</h3>
 
-<pre><code class="language-bash">kubectl config get-contexts
+<pre><code class="language-bash"># Within your KDK container via `kdk ssh`
+
+kubectl config get-contexts
 ## CURRENT  NAME                            CLUSTER                         AUTHINFO                        NAMESPACE
 ## *        docker-for-desktop.example.org  docker-for-desktop.example.org  docker-for-desktop.example.org
 
@@ -899,7 +850,9 @@ kubectl get pod --all-namespaces
 
 <h3 id="initialize-helm-tiller-https-docs-helm-sh-glossary-tiller-into-your-local-kubernetes-cluster">Initialize <a href="https://docs.helm.sh/glossary/#tiller">Helm Tiller</a> into your local Kubernetes cluster.</h3>
 
-<pre><code class="language-bash">helm version
+<pre><code class="language-bash"># Within your KDK container via `kdk ssh`
+
+helm version
 ## Client: &amp;version.Version{SemVer:&quot;v2.10.0&quot;, GitCommit:&quot;9ad53aac42165a5fadc6c87be0dea6b115f93090&quot;, GitTreeState:&quot;clean&quot;}
 ## Error: could not find tiller
 
@@ -920,19 +873,23 @@ helm version
 
 <h3 id="simulate-https-github-com-cisco-sso-mh-simulate-app-upgrades-or-simulate-install-of-apps-as-needed-the-deployment-of-kdf-apps-using-mh"><a href="https://github.com/cisco-sso/mh#simulate-app-upgrades-or-simulate-install-of-apps-as-needed">Simulate</a> the deployment of KDF apps using mh.</h3>
 
-<pre><code class="language-bash">mh simulate --printRendered
+<pre><code class="language-bash"># Within your KDK container via `kdk ssh`
+mh simulate --printRendered
 ## ...
 </code></pre>
 
 <h3 id="apply-https-github-com-cisco-sso-mh-apply-app-upgrades-or-install-apps-as-needed-the-deployment-of-kdf-apps-using-mh"><a href="https://github.com/cisco-sso/mh#apply-app-upgrades-or-install-apps-as-needed">Apply</a> the deployment of KDF apps using mh.</h3>
 
-<pre><code class="language-bash">mh apply
+<pre><code class="language-bash"># Within your KDK container via `kdk ssh`
+mh apply
 ## ...
 </code></pre>
 
 <h3 id="inspect-the-resulting-helm-releases">Inspect the resulting Helm releases.</h3>
 
-<pre><code class="language-bash">helm ls
+<pre><code class="language-bash"># Within your KDK container via `kdk ssh`
+
+helm ls
 ## NAME                   REVISION UPDATED                  STATUS   CHART                        APP VERSION NAMESPACE
 ## chaoskube              1        Thu Sep 27 15:37:53 2018 DEPLOYED chaoskube-0.8.0              0.8.0       default
 ## elasticsearch          1        Thu Sep 27 15:37:40 2018 DEPLOYED elasticsearch-1.4.0          6.3.1       default
@@ -948,7 +905,9 @@ helm version
 
 <p>(Use <code>CTRL + c</code> to exit the watch command loop.)</p>
 
-<pre><code class="language-bash">watch -n1 'kubectl get pod'
+<pre><code class="language-bash"># Within your KDK container via `kdk ssh`
+
+watch -n1 'kubectl get pod'
 ## Every 1.0s: kubectl get pod
 ##
 ## NAME                                                            READY     STATUS              RESTARTS   AGE
@@ -994,7 +953,9 @@ helm version
 
 <h3 id="get-a-list-of-kubernetes-ingress-https-kubernetes-io-docs-concepts-services-networking-ingress-resources">Get a list of <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/">Kubernetes Ingress</a> resources.</h3>
 
-<pre><code class="language-bash">kubectl get ingress
+<pre><code class="language-bash"># Within your KDK container via `kdk ssh`
+
+kubectl get ingress
 ## NAME                      HOSTS                                         ADDRESS     PORTS     AGE
 ## grafana                   grafana.docker-for-desktop.example.org        localhost   80        21m
 ## kibana                    kibana.docker-for-desktop.example.org         localhost   80        21m
@@ -1007,7 +968,9 @@ helm version
 
 <p>This <a href="https://curl.haxx.se/">curl</a> command performs an HTTP GET against the <a href="https://prometheus.io/docs/prometheus/latest/querying/api/">Prometheus API</a> which is exposed by the <a href="https://github.com/kubernetes/ingress-nginx">nginx-ingess</a>. Note how the host header is used for ingress routing.</p>
 
-<pre><code class="language-bash">curl -fsSL \
+<pre><code class="language-bash"># Within your KDK container via `kdk ssh`
+
+curl -fsSL \
   --header 'Host: prometheus.docker-for-desktop.example.org' \
   http://host.docker.internal/api/v1/label/__name__/values \
   | jq '.status'
@@ -1033,7 +996,8 @@ to the internal ingress, so that one may access the dashboards using the configu
 
 <h3 id="open-up-a-socks-connection-by-connecting-to-your-kdk">Open up a SOCKS connection by connecting to your KDK</h3>
 
-<pre><code>kdk ssh
+<pre><code># Host machine shell
+kdk ssh
 </code></pre>
 
 <h3 id="install-firefox">Install Firefox</h3>
@@ -1042,7 +1006,7 @@ to the internal ingress, so that one may access the dashboards using the configu
 system.</p>
 
 <p>Download Firefox <a href="https://www.mozilla.org/en-US/firefox/new/">here</a> or install it through a prior-installed package
-manager as prior steps have used.</p>
+manager as prior steps have demonstrated.</p>
 
 <h3 id="configure-your-web-browser-to-connect-via-the-kdk-socks-proxy">Configure your web browser to connect via the KDK SOCKS proxy</h3>
 

@@ -1,0 +1,35 @@
+### Print KDK usage information.
+
+```bash
+kdk
+```
+
+### Configure KDK.
+
+When running `kdk init`, please accept when prompted
+
+Please respond affirmatively when prompted for:
+
+- Keybase directory mounting
+- Enabling the SOCKS proxy at default port 8000
+
+```bash
+kdk init
+```
+
+### Synchronize KDK container with Docker for Desktop KUBECONFIG.
+
+The prior install of Kubernetes on the local host machine create a KUBECONFIG file at `~/.kube/config` which contains
+the auth credenials for accessing the local kubernetes cluster.  Since we want to do all operations from within the KDK,
+we must copy the host's default KUBECONFIG into the KDK, and modify the docker-for-desktop configuration to work from
+within the kdk.
+
+```bash
+kdk kubesync
+```
+
+### Run the KDK container and log into it.
+
+```bash
+kdk ssh
+```

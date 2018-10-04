@@ -11,125 +11,6 @@
     
     
     <item>
-      <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-main/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-main/</guid>
-      <description>Open up a SOCKS connection by connecting to your KDK kdk ssh  Install Firefox We prefer Firefox because it allows one to manage network proxy configurations independently of the host operating system.
-Download Firefox here or install it through a prior-installed package manager as prior steps have used.
-Configure your web browser to connect via the KDK SOCKS proxy It may be beneficial to start Firefox with the profile manager so that you can keep these settings separate from the default instance.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-note/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/explore-kubernetes-note/</guid>
-      <description>In this section, explore your newly provisioned Kubernetes cluster along with all of the basic services you have deployed via the framework-deploy code repository. You will connect to the admin panels of the services you have deployed. Connecting to these admin panels requires a web browser which is configured to use the KDK as a SOCKS proxy. The KDK will proxy all web requests to the internal ingress, so that one may access the dashboards using the configured cluster DNS name (*.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-main/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-main/</guid>
-      <description>(inside your KDK container)
-Clone the framework-deploy repo using git. #### Run this command if you have configured your GitHub account for public key SSH. git clone git@github.com:cisco-sso/framework-deploy.git #### (OR) Run this command if you have not configured GitHub for public key SSH. git clone https://github.com/cisco-sso/framework-deploy.git  Change to the framework-deploy directory. cd framework-deploy/ ## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.  Allow direnv to source the .</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-note/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/framework-deploy-note/</guid>
-      <description>Framework-deploy is a git repo which implments the KDF deployment pattern. The boilerplate structure in framework-deploy is made to fit perfectly with the tools available in the KDK container.
-Create a private fork of framework-deploy and use it to hold non-secret Kubernetes-related application configuration files and templates. In the KDF pattern, templates and configuration files for tools like mh are hosted in a private fork of framework-deploy. mh allows you to template and deploy Helm Chart values overrides.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-maclinux/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-maclinux/</guid>
-      <description> Install the Kubernetes Development Kit (KDK). curl -sSL https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install | bash  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-windows/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-install-windows/</guid>
-      <description> Install Prerequisites # Windows Powershell as Administrator choco install openssh  Install the Kubernetes Development Kit (KDK). # Windows Powershell - NOT AS ADMINSTRATOR Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://raw.githubusercontent.com/cisco-sso/kdk/master/files/install.ps1&#39;))  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/kdk-note/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-note/</guid>
-      <description>The KDK CLI creates a Docker container with many tools already installed and ready for you to develop with Kubernetes.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/kdk-usage/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/kdk-usage/</guid>
-      <description>Print KDK usage information. kdk  Configure KDK. When running kdk init, please accept when prompted
-Please respond affirmatively when prompted for:
- Keybase directory mounting Enabling the SOCKS proxy at default port 8000  kdk init  Synchronize KDK container with Docker for Desktop KUBECONFIG. This will start the KDK and copy your host&amp;rsquo;s default KUBECONFIG into the KDK and modify the docker-for-desktop configuration context to work from within your kdk.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/keybase-note/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/keybase-note/</guid>
-      <description>Keybase makes sharing secrets with your team much easier. A Keybase user may be added to one or more Keybase Teams, at which point the team&amp;rsquo;s secret files are accessible under your local filesystem at [[ MOUNTPOINT ]]. Scripts and automation may then locate secrets within the Keybase filesystem at common paths.
-Later in this guide (upon kdk init), the kdk command will ask to mount the host&amp;rsquo;s Keybase filesytem to the KDK container at /keybase.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/post-install/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/post-install/</guid>
-      <description>(optional)
-Add your public SSH key to source control systems. This is optional if you are using ssh-agent, which the KDK automatically forwards. Otherwise, you may directly configure the pre-generated ssh key which is used to connect to the KDK, within each source control provider.
-Add content of ssh public key ~/.kdk/ssh/id_rsa.pub
- To your Github Account Keys To your Bitbucket Server https://&amp;lt;BITBUCKET-SERVER&amp;gt;/bitbucket/plugins/servlet/ssh/account/keys  Customing your .bash_profile If you have installed Keybase, you may customize your bash profile by creating the file /keybase/private/&amp;lt;user-keybase-id&amp;gt;/.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-main/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-main/</guid>
-      <description> Delete all Kubernetes Resources This will delete all running pods and persistent volume state
-# From within the KDK: `kdk ssh` cd framework-deploy/clusters/docker-for-desktop.example.org ## direnv: error .envrc is blocked. Run `direnv allow` to approve its content. direnv allow ## ... helm delete --purge $(helm ls| cut -d &#39; &#39; -f 1| grep -v NAME) ## release &amp;quot;chaoskube&amp;quot; deleted ## release &amp;quot;elasticsearch&amp;quot; deleted ## release &amp;quot;elasticsearch-exporter&amp;quot; deleted ## release &amp;quot;filebeat&amp;quot; deleted ## release &amp;quot;grafana&amp;quot; deleted ## release &amp;quot;kibana&amp;quot; deleted ## release &amp;quot;nginx-ingress-external&amp;quot; deleted ## release &amp;quot;prometheus&amp;quot; deleted ## // A shortcut command `mh destroy` is equivalent to the above kubectl delete pvc $(kubectl get pvc| cut -d &#39; &#39; -f 1| grep -v NAME) ## persistentvolumeclaim &amp;quot;data-elasticsearch-data-0&amp;quot; deleted ## persistentvolumeclaim &amp;quot;data-elasticsearch-master-0&amp;quot; deleted ## persistentvolumeclaim &amp;quot;data-elasticsearch-master-1&amp;quot; deleted ## persistentvolumeclaim &amp;quot;data-test-mariadb-mariadb-master-0&amp;quot; deleted ## persistentvolumeclaim &amp;quot;data-test-mariadb-mariadb-slave-0&amp;quot; deleted  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-note/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://kdf.csco.cloud/getting-started/readfiles/uninstall-cleanup-note/</guid>
-      <description>This section documents a graceful deletion of resources. Quicker shortcuts do exist.</description>
-    </item>
-    
-    <item>
       <title>Getting Started &gt; Linux</title>
       <link>https://kdf.csco.cloud/getting-started/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -146,7 +27,7 @@ However, the Mac instructions may help you get KDF running on Linux.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/mac/</guid>
-      <description>Requirements  macOS High Sierra (10.13) or later is required. You must execute all commands as an administrative (sudo-allowed) user. 8 GB RAM 2 CPU cores  Step 1: Homebrew Open a Terminal.  Spotlight Search ( Command[⌘] + Space[&amp;quot; &amp;quot;] ) -&amp;gt; Terminal  Install Homebrew. /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  Step 2: Docker Install Docker for Mac. brew cask install docker  Start Docker.  Spotlight Search ( Command[⌘] + Space[&amp;quot; &amp;quot;] ) -&amp;gt; Docker -&amp;gt; ( Enter)   At the Are you sure you want to open it?</description>
+      <description>Requirements  macOS High Sierra (10.13) or later is required. You must execute all commands as an administrative (sudo-allowed) user. 8 GB RAM 2 CPU cores  Step 1: Homebrew Open a Terminal.  Spotlight Search ( Command[⌘] + Space[&amp;quot; &amp;quot;] ) -&amp;gt; Terminal  Install Homebrew. # Host machine shell /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  Step 2: Docker Install Docker for Mac. # Host machine shell brew cask install docker  Start Docker.</description>
     </item>
     
     <item>

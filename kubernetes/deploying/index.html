@@ -460,12 +460,29 @@ to be.  Worse yet, a novice may not notice.  For example, on-premise deployments
 a corporate datacenter, may be missing persistent storage and loadbalancers which most applications built for kubernetes
 typically depend on.</p>
 
-<h2 id="progression">Progression</h2>
+<h2 id="learn-via-progression">Learn via Progression</h2>
 
-<p>Expect to crawl before walking.  If you&rsquo;re new to kubernetes, get familiar with kubernetes on your local machine, and
-deploy a few applications on it.  Once you&rsquo;ve learned from that, use a kubernetes cluster on <a href="https://cloud.google.com/kubernetes-engine/">Google Kubernetes Engine
-(GKE)</a>, which is the Gold Standard.  Afterwards, any attempts to deploy
-Kubernetes in the cloud or on-premise will be better understood given the environmental constraints.</p>
+<p>Expect to crawl before you walk.  Do not skip steps!  Learning Kubernetes is a progression, and we have curated the
+steps, documentation, and tools to get you up to speed quickly with good practices.</p>
+
+<p>If you are new to Kubernetes:</p>
+
+<ul>
+<li>Do not try to install kubernetes from scratch on your own.  Here&rsquo;s <a href="https://kdf.csco.cloud/kubernetes/deploying/#intro">why</a>.</li>
+<li>Install kubernetes on your local machine by following the KDF Getting Started guide for <a href="https://kdf.csco.cloud/getting-started/mac/">Mac</a>
+or <a href="https://kdf.csco.cloud/getting-started/windows/">Windows</a>.  This will create a healthy kubernetes cluster for development.</li>
+<li>The Getting Started guides will also step you through deploying a few basic services such as logging, monitoring, and
+dashboards within Kubernetes, and then introduce you to their usage.</li>
+<li>On your own, proceed to deploy a few applications beyond the tutorial using <a href="https://github.com/helm/charts">helm charts</a>.</li>
+<li>Once you&rsquo;ve learned from a cluster on your local machine, use a kubernetes cluster in the cloud on <a href="https://cloud.google.com/kubernetes-engine/">Google
+Kubernetes Engine (GKE)</a>, which is the Gold Standard.</li>
+<li>Once you understand basic <a href="https://kubernetes.io/docs/concepts/">kubernetes concepts</a> and have experienced working on
+a healthy cluster, you may attempt to <a href="https://kdf.csco.cloud/kubernetes/deploying/">deploy your own kubernetes cluster</a></li>
+</ul>
+
+
+<p>Afterwards, any attempts to deploy Kubernetes in the cloud or on-premise will be better understood given the
+environmental constraints.</p>
 
 <h2 id="deployment-considerations">Deployment Considerations</h2>
 

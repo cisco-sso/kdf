@@ -1,0 +1,117 @@
+### Open up a SOCKS connection by connecting to your KDK
+
+```
+# Host machine shell
+kdk ssh
+```
+
+### Install Firefox
+
+We prefer Firefox because it allows one to manage network proxy configurations independently of the host operating
+system.
+
+Download Firefox [here](https://www.mozilla.org/en-US/firefox/new/) or install it through a prior-installed package
+manager as prior steps have demonstrated.
+
+### Configure your web browser to connect via the KDK SOCKS proxy
+
+It may be beneficial to start Firefox with the profile manager so that you can keep these settings separate from the
+default instance.  Start the profile manager by adding the `-P` option on the command line.  See this
+[link](https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-firefox-profiles) for instructions.
+
+Firefox -> `General` -> `Network Proxy` -> Click `Settings`
+
+- In the Settings window:
+  - Toggle on `Manual proxy configuration`
+  - Enter SOCKS Host value "127.0.0.1"
+  - Enter SOCKS Port value "8000"
+  - Toggle on `SOCKS v5`
+  - Toggle on `Proxy DNS when using SOCKS v5`
+  - Click `OK`
+
+![firefox-settings-socks](/images/firefox-settings-socks.png)
+
+### Once Firefox has been started, you may access all of the admin panels
+
+The following links will work if you have successfully setup the KDK SOCKS proxy with Firefox.
+
+<div hidden comment>$ kubectl get ing| grep -v HOSTS| awk '{print "http://" $2}'</div>
+
+Kibana
+
+* http://kibana.docker-for-desktop.example.org
+
+Grafana
+
+* http://grafana.docker-for-desktop.example.org
+
+Prometheus
+
+* http://prometheus.docker-for-desktop.example.org
+* http://alertmanager.docker-for-desktop.example.org
+
+
+### Warning
+
+The rest of this section assumes that you have successfully properly setup your SOCKS proxy and web browser, and can
+reach the links mentioned prior.
+
+### Explore Kibana
+
+Kibana is a view into Elasticsearch, where all logs in the Kubernetes system are forwarded.
+
+* Go to the Kibana admin panel:
+  * http://kibana.docker-for-desktop.example.org
+* Configure Kibana so it will show you logs:
+  * Click the `Management` tab
+  * Under Step 1 of 2: Define index pattern
+    * Set Index pattern: `filebeat-*`
+    * A message with "Success!  Your index pattern matches" should appear
+    * Click `Next Step`
+  * Under Step 2 of 2: Configure Settings
+    * Set the Time Filter field name: `@timestamp`
+    * Click `Create index pattern`
+* View system logs:
+  * Click the `Discover` tab
+  * Now you should see system logs.
+  * For more information on Kibana searches, see the [official documentation](https://www.elastic.co/guide/en/kibana/current/search.html)
+
+![admin-panel-kibana](/images/admin-panel-kibana.png)
+
+
+### Explore Grafana
+
+* Go to the Grafana admin panel:
+  * http://grafana.docker-for-desktop.example.org
+* View the "Elasticsearch" Dashboard:
+  * Select `Home` -> `ElasticSearch`
+
+![admin-panel-grafana-elasticsearch](/images/admin-panel-grafana-elasticsearch.png)
+
+* View the "Kubernetes Cluster Monitoring" Dashboard:
+  * Select `Home` -> `Kubernetes Cluster Monitoring`
+
+![admin-panel-grafana-kubernetes](/images/admin-panel-grafana-kubernetes.png)
+
+
+### Explore Prometheus
+
+* Go to the Prometheus admin panel:
+  * http://prometheus.docker-for-desktop.example.org
+* Create a graph of pod memory usage
+  * Click `Graph`
+  * Enter Expression:
+
+```
+sum (container_memory_working_set_bytes{image!="",name=~"^k8s_.*"}) by (pod_name)
+```
+![admin-panel-prometheus](/images/admin-panel-prometheus.png)
+
+
+### Explore Prometheus Alertmanager
+
+* Go to the Prometheus Alertmanager admin panel:
+  * http://alertmanager.docker-for-desktop.example.org
+* From the default landing page you may view all currently firing alerts
+
+![admin-panel-prometheus-alertmanager](/images/admin-panel-prometheus-alertmanager.png)
