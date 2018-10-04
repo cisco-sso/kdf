@@ -11,12 +11,14 @@ to be.  Worse yet, a novice may not notice.  For example, on-premise deployments
 a corporate datacenter, may be missing persistent storage and loadbalancers which most applications built for kubernetes
 typically depend on.
 
-## Progression
 
-Expect to crawl before walking.  If you're new to kubernetes, get familiar with kubernetes on your local machine, and
-deploy a few applications on it.  Once you've learned from that, use a kubernetes cluster on [Google Kubernetes Engine
-(GKE)](https://cloud.google.com/kubernetes-engine/), which is the Gold Standard.  Afterwards, any attempts to deploy
-Kubernetes in the cloud or on-premise will be better understood given the environmental constraints.
+## Learn via Progression
+
+{{% readfile file="/content/readfiles/learn-progression.md_" markdown="true" %}}
+
+Afterwards, any attempts to deploy Kubernetes in the cloud or on-premise will be better understood given the
+environmental constraints.
+
 
 ## Deployment Considerations
 
