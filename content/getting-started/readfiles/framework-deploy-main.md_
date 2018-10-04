@@ -2,7 +2,6 @@
 
 ```bash
 # Within your KDK container via `kdk ssh`
-
 #### Run this command if you have configured your GitHub account for public key SSH.
 git clone git@github.com:cisco-sso/framework-deploy.git
 
@@ -13,6 +12,7 @@ git clone https://github.com/cisco-sso/framework-deploy.git
 ### Change to the `framework-deploy` directory.
 
 ```bash
+# Within your KDK container via `kdk ssh`
 cd framework-deploy/
 ## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 direnv allow
@@ -62,6 +62,7 @@ If `direnv` encounters an `.envrc` file it has not previously processed, or one 
 ### Change to the `clusters/docker-for-desktop.example.org`
 
 ```bash
+# Within your KDK container via `kdk ssh`
 cd clusters/docker-for-desktop.example.org
 ## direnv: error .envrc is blocked. Run `direnv allow` to approve its content.
 direnv allow
@@ -97,6 +98,8 @@ reads configuration settings out of `vars.yaml`, ultimately setting enviroment v
 ### Interact with Kubernetes using [kubectl](https://kubernetes.io/docs/reference/kubectl/overview/).
 
 ```bash
+# Within your KDK container via `kdk ssh`
+
 kubectl config get-contexts
 ## CURRENT  NAME                            CLUSTER                         AUTHINFO                        NAMESPACE
 ## *        docker-for-desktop.example.org  docker-for-desktop.example.org  docker-for-desktop.example.org
@@ -136,6 +139,8 @@ kubectl get pod --all-namespaces
 ### Initialize [Helm Tiller](https://docs.helm.sh/glossary/#tiller) into your local Kubernetes cluster.
 
 ```bash
+# Within your KDK container via `kdk ssh`
+
 helm version
 ## Client: &version.Version{SemVer:"v2.10.0", GitCommit:"9ad53aac42165a5fadc6c87be0dea6b115f93090", GitTreeState:"clean"}
 ## Error: could not find tiller
@@ -158,6 +163,7 @@ helm version
 ### [Simulate](https://github.com/cisco-sso/mh#simulate-app-upgrades-or-simulate-install-of-apps-as-needed) the deployment of KDF apps using mh.
 
 ```bash
+# Within your KDK container via `kdk ssh`
 mh simulate --printRendered
 ## ...
 ```
@@ -165,6 +171,7 @@ mh simulate --printRendered
 ### [Apply](https://github.com/cisco-sso/mh#apply-app-upgrades-or-install-apps-as-needed) the deployment of KDF apps using mh.
 
 ```bash
+# Within your KDK container via `kdk ssh`
 mh apply
 ## ...
 ```
@@ -172,6 +179,8 @@ mh apply
 ### Inspect the resulting Helm releases.
 
 ```bash
+# Within your KDK container via `kdk ssh`
+
 helm ls
 ## NAME                   REVISION UPDATED                  STATUS   CHART                        APP VERSION NAMESPACE
 ## chaoskube              1        Thu Sep 27 15:37:53 2018 DEPLOYED chaoskube-0.8.0              0.8.0       default
@@ -189,6 +198,8 @@ helm ls
 (Use `CTRL + c` to exit the watch command loop.)
 
 ```bash
+# Within your KDK container via `kdk ssh`
+
 watch -n1 'kubectl get pod'
 ## Every 1.0s: kubectl get pod
 ##
@@ -237,6 +248,8 @@ watch -n1 'kubectl get pod'
 ### Get a list of [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/) resources.
 
 ```bash
+# Within your KDK container via `kdk ssh`
+
 kubectl get ingress
 ## NAME                      HOSTS                                         ADDRESS     PORTS     AGE
 ## grafana                   grafana.docker-for-desktop.example.org        localhost   80        21m
@@ -251,6 +264,8 @@ kubectl get ingress
 This [curl](https://curl.haxx.se/) command performs an HTTP GET against the [Prometheus API](https://prometheus.io/docs/prometheus/latest/querying/api/) which is exposed by the [nginx-ingess](https://github.com/kubernetes/ingress-nginx). Note how the host header is used for ingress routing.
 
 ```bash
+# Within your KDK container via `kdk ssh`
+
 curl -fsSL \
   --header 'Host: prometheus.docker-for-desktop.example.org' \
   http://host.docker.internal/api/v1/label/__name__/values \

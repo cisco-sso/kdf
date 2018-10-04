@@ -19,6 +19,7 @@ title: Getting Started > Mac
 ### Install [Homebrew](https://brew.sh/).
 
 ```bash
+# Host machine shell
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
@@ -28,6 +29,7 @@ title: Getting Started > Mac
 ### Install [Docker for Mac](https://docs.docker.com/docker-for-mac/release-notes/).
 
 ```bash
+# Host machine shell
 brew cask install docker
 ```
 
@@ -111,6 +113,7 @@ We'll explore Kubernetes more later in this guide from inside of a
 ### Install Keybase.
 
 ```bash
+# Host machine shell
 brew cask install keybase
 ```
 
@@ -126,6 +129,7 @@ brew cask install keybase
 ### Verify that KeybaseFS is mounted to your system.
 
 ```bash
+# Host machine shell
 ls /keybase
 ## private  public  team
 ```

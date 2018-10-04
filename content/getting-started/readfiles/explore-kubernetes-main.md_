@@ -1,6 +1,7 @@
 ### Open up a SOCKS connection by connecting to your KDK
 
 ```
+# Host machine shell
 kdk ssh
 ```
 
@@ -10,7 +11,7 @@ We prefer Firefox because it allows one to manage network proxy configurations i
 system.
 
 Download Firefox [here](https://www.mozilla.org/en-US/firefox/new/) or install it through a prior-installed package
-manager as prior steps have used.
+manager as prior steps have demonstrated.
 
 ### Configure your web browser to connect via the KDK SOCKS proxy
 
