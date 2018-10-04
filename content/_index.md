@@ -3,9 +3,13 @@ title: Kubernetes Development Framework (KDF)
 type: index
 ---
 
-## What is it?
+## Attention Kubernetes Novices
 
-KDF is a...
+{{% readfile file="/content/readfiles/learn-progression.md_" markdown="true" %}}
+
+## What is the KDF?
+
+The KDF is a...
 
 - lightweight set of *patterns*, *tools*, and *deployment packages*
 - **toolkit**
@@ -13,7 +17,7 @@ KDF is a...
 
 ## What is it not?
 
-KDF is _not_ a...
+The KDF is _not_ a...
 
 - **platform**
 - **cloud service**

@@ -1,0 +1,16 @@
+
+Expect to crawl before you walk.  Do not skip steps!  Learning Kubernetes is a progression, and we have curated the
+steps, documentation, and tools to get you up to speed quickly with good practices.
+
+If you are new to Kubernetes:
+
+* Do not try to install kubernetes from scratch on your own.  Here's [why](/kubernetes/deploying/#intro).
+* Install kubernetes on your local machine by following the KDF Getting Started guide for [Mac](/getting-started/mac/)
+  or [Windows](/getting-started/windows/).  This will create a healthy kubernetes cluster for development.
+* The Getting Started guides will also step you through deploying a few basic services such as logging, monitoring, and
+  dashboards within Kubernetes, and then introduce you to their usage.
+* On your own, proceed to deploy a few applications beyond the tutorial using [helm charts](https://github.com/helm/charts).
+* Once you've learned from a cluster on your local machine, use a kubernetes cluster in the cloud on [Google
+  Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine/), which is the Gold Standard.
+* Once you understand basic [kubernetes concepts](https://kubernetes.io/docs/concepts/) and have experienced working on
+  a healthy cluster, you may attempt to [deploy your own kubernetes cluster](/kubernetes/deploying/)
