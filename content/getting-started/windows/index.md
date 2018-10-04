@@ -134,6 +134,7 @@ choco install -y keybase
 ### Verify that KeybaseFS is mounted to your system.
 
 ```bash
+# Windows Powershell
 dir k:
 ## private  public  team
 ```
