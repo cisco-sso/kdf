@@ -111,7 +111,7 @@ We'll explore Kubernetes more later in this guide from inside of a
 
 {{% note %}}
 {{% markdownReplace old="[[ MOUNTPOINT ]]" new="k:" %}}
-{{% readfile file="/content/getting-started/readfiles/keybase-note.md" %}}
+{{% readfile file="/content/getting-started/readfiles/keybase-note.md_" %}}
 {{% /markdownReplace %}}
 {{% /note %}}
 
@@ -142,43 +142,43 @@ dir k:
 ## Step 5: KDK
 
 {{% note %}}
-{{% readfile file="/content/getting-started/readfiles/kdk-note.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/kdk-note.md_" markdown="true" %}}
 {{% /note %}}
 
-{{% readfile file="/content/getting-started/readfiles/kdk-install-windows.md" markdown="true" %}}
-{{% readfile file="/content/getting-started/readfiles/kdk-usage.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/kdk-install-windows.md_" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/kdk-usage.md_" markdown="true" %}}
 
 
 ## Step 6: Framework Deploy
 
 {{% note %}}
-{{% readfile file="/content/getting-started/readfiles/framework-deploy-note.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/framework-deploy-note.md_" markdown="true" %}}
 {{% /note %}}
 
-{{% readfile file="/content/getting-started/readfiles/framework-deploy-main.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/framework-deploy-main.md_" markdown="true" %}}
 
 
 ## Step 7: Explore Kubernetes
 
 {{% note %}}
-{{% readfile file="/content/getting-started/readfiles/explore-kubernetes-note.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/explore-kubernetes-note.md_" markdown="true" %}}
 {{% /note %}}
 
-{{% readfile file="/content/getting-started/readfiles/explore-kubernetes-main.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/explore-kubernetes-main.md_" markdown="true" %}}
 
 
 ## Post-Install
 
-{{% readfile file="/content/getting-started/readfiles/post-install.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/post-install.md_" markdown="true" %}}
 
 
 ## Uninstall & Cleanup
 
 {{% note %}}
-{{% readfile file="/content/getting-started/readfiles/uninstall-cleanup-note.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/uninstall-cleanup-note.md_" markdown="true" %}}
 {{% /note %}}
 
-{{% readfile file="/content/getting-started/readfiles/uninstall-cleanup-main.md" markdown="true" %}}
+{{% readfile file="/content/getting-started/readfiles/uninstall-cleanup-main.md_" markdown="true" %}}
 
 ### Uninstall Docker for Windows
 
