@@ -2,6 +2,10 @@
 title: Getting Started > Windows
 ---
 
+## Intro
+
+{{% readfile file="/content/getting-started/readfiles/getting-started-intro.md_" markdown="true" %}}
+
 ## Requirements
 
 - **Windows 10 Pro** or **Windows 10 Enterprise** is required.
