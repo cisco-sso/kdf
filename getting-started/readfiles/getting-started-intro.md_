@@ -1,0 +1,13 @@
+
+This getting started guide will walk you through:
+
+* Installing Docker and Kubernetes on your local machine.
+
+* Running a pre-configured Kubernetes development/operations environment which standardizes a team on a common toolset.
+
+* Introducing the "framework-deploy" pattern which enables teams to easily manage and operate multiple clusters and configurations.
+
+* Deploying a few basic services in Kubernetes such as logging, monitoring, and dashboards.
+
+* Accessing the newly deployed basic service dashboards and introducing introduce their usage.
+

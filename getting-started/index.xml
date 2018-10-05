@@ -16,8 +16,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/linux/</guid>
-      <description>Linux is not currently supported.
-However, the Mac instructions may help you get KDF running on Linux.
+      <description> Linux is not currently supported.
+However, it should work. We just haven&amp;rsquo;t worked out the documentation for it.
+The Mac instructions may help you get KDF running on Linux.
  </description>
     </item>
     
@@ -27,7 +28,12 @@ However, the Mac instructions may help you get KDF running on Linux.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/mac/</guid>
-      <description>Requirements  macOS High Sierra (10.13) or later is required. You must execute all commands as an administrative (sudo-allowed) user. 8 GB RAM 2 CPU cores  Step 1: Homebrew Open a Terminal.  Spotlight Search ( Command[⌘] + Space[&amp;quot; &amp;quot;] ) -&amp;gt; Terminal  Install Homebrew. # Host machine shell /usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;  Step 2: Docker Install Docker for Mac. # Host machine shell brew cask install docker  Start Docker.</description>
+      <description>Intro This getting started guide will walk you through:
+ Installing Docker and Kubernetes on your local machine.
+ Running a pre-configured Kubernetes development/operations environment which standardizes a team on a common toolset.
+ Introducing the &amp;ldquo;framework-deploy&amp;rdquo; pattern which enables teams to easily manage and operate multiple clusters and configurations.
+ Deploying a few basic services in Kubernetes such as logging, monitoring, and dashboards.
+ Accessing the newly deployed basic service dashboards and introducing introduce their usage.</description>
     </item>
     
     <item>
@@ -36,7 +42,12 @@ However, the Mac instructions may help you get KDF running on Linux.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/getting-started/windows/</guid>
-      <description>Requirements  Windows 10 Pro or Windows 10 Enterprise is required. You must execute all PowerShell commands as an administrative user. 8 GB RAM 2 CPU cores BIOS Settings with Hardware Virtualization Enabled (VTx and VT-d)  Step 1: Chocolatey Open a Powershell terminal as Administrator.  Windows Search -&amp;gt; Windows PowerShell -&amp;gt; right click Run as Administrator  Install Chocolatey. # Windows Powershell as Administrator Set-ExecutionPolicy Bypass -Scope Process -Force iex ((New-Object System.</description>
+      <description>Intro This getting started guide will walk you through:
+ Installing Docker and Kubernetes on your local machine.
+ Running a pre-configured Kubernetes development/operations environment which standardizes a team on a common toolset.
+ Introducing the &amp;ldquo;framework-deploy&amp;rdquo; pattern which enables teams to easily manage and operate multiple clusters and configurations.
+ Deploying a few basic services in Kubernetes such as logging, monitoring, and dashboards.
+ Accessing the newly deployed basic service dashboards and introducing introduce their usage.</description>
     </item>
     
   </channel>
