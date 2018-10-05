@@ -2,6 +2,10 @@
 title: Getting Started > Mac
 ---
 
+## Intro
+
+{{% readfile file="/content/getting-started/readfiles/getting-started-intro.md_" markdown="true" %}}
+
 ## Requirements
 
 - **macOS High Sierra (10.13) or later** is required.

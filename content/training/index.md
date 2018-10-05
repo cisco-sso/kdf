@@ -15,7 +15,8 @@ title: Kubernetes Training Resources
   * https://kubernetes.io/docs/tutorials/
 * Kubernetes Concepts
   * https://kubernetes.io/docs/concepts/
-
+* (Free!) Classes
+  * https://www.cncf.io/certification/training/
 ## Helm
 
 * Quickstart
