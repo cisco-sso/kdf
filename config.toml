@@ -99,16 +99,22 @@ enableGitInfo = "true"
         weight = 52
 
 [[menu.main]]
+        name       = "Monitoring"
+        url        = "kubernetes/monitoring/"
+        parent     = "kubernetes"
+        weight = 53
+
+[[menu.main]]
         name       = "Testing"
         url        = "kubernetes/testing/"
         parent     = "kubernetes"
-        weight = 53
+        weight = 54
 
 [[menu.main]]
         name       = "Helm Charts"
         url        = "kubernetes/helm-charts/"
         parent     = "kubernetes"
-        weight = 54
+        weight = 55
 
 [[menu.main]]
         name   = "Deployment Packages"
