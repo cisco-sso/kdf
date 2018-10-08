@@ -316,6 +316,19 @@
 
 
 
+<a  title="Monitoring" href="https://kdf.csco.cloud/kubernetes/monitoring/">
+	
+	Monitoring
+</a>
+
+
+
+      
+        
+        
+
+
+
 <a  title="Testing" href="https://kdf.csco.cloud/kubernetes/testing/">
 	
 	Testing
@@ -451,13 +464,83 @@
 
 			
 
-<h2 id="agreements">Agreements</h2>
+<div hidden>
+TODO
+
+## Agreements
+
+https://rfc.zeromq.org/spec:22/C4/
+</div>
+
+<h2 id="branch-merge-strategy">Branch/Merge Strategy</h2>
+
+<h3 id="github-flow-fork-pull-recommended">Github Flow / Fork &amp; Pull (RECOMMENDED)</h3>
+
+<p>Modern software development keeps a stable <code>master</code> branch.  Releases are tagged directly off of the master branch.
+This requires a solid automated test suite and enables quick release cycles.  If your project matches these
+characteristics use <a href="https://guides.github.com/introduction/flow/">Github Flow</a>.</p>
+
+<h3 id="gitflow">Gitflow</h3>
+
+<p>Legacy software development typically uses <code>release</code> branches, which take time to stabilize, typically due to
+significant manual test bottlenecks.  If your project matches these characteristics use
+<a href="https://nvie.com/posts/a-successful-git-branching-model/">GitFlow</a>.</p>
+
+<h2 id="pull-requests">Pull Requests</h2>
+
+<p>There are simple things you can do to get your PRs through the process quickly.</p>
+
+<ul>
+<li>Don&rsquo;t make GIANT PRs.</li>
+<li>Address one feature at a time.
+
+<ul>
+<li>Any single blocker can hold up the entire PR.</li>
+</ul></li>
+<li>Make your PR address only related items.</li>
+<li>Address PR comments quickly</li>
+<li>Acknowledge every single comment in the PR.</li>
+<li>Fix your merge conflicts quickly</li>
+<li>Review other people&rsquo;s PRs.
+
+<ul>
+<li>The more people reviewing, the sooner you can get a &ldquo;+1- yourself.</li>
+</ul></li>
+</ul>
 
 <h2 id="code-reviews">Code Reviews</h2>
 
+<p>At minimum:</p>
+
+<ul>
+<li>Be civil</li>
+<li>Prefix your code comments with: MUST, SHOULD, MAY, or NIT
+
+<ul>
+<li>This informs the committer what needs to get fixed, and what is optional.</li>
+</ul></li>
+</ul>
+
 <h2 id="upstreaming">Upstreaming</h2>
 
+<p>If you modify an open-source project, make the effort to submit an upsteam PR and get your code merged.</p>
+
+<p>This eliminates the long term burden of maintaining forked code, thus reducing costs for your business.  It also is important to contribute to the open-source community.</p>
+
+<h2 id="versioning">Versioning</h2>
+
+<p>Please version all software using <a href="https://semver.org/">Semantic Versioning</a></p>
+
 <h2 id="people">People</h2>
+
+<p>We are part of an architecture team at <a href="https://www.cisco.com/">Cisco</a>.  This site is a brain-dump of open-source
+learnings, particularly around Docker and Kubernetes.</p>
+
+<ul>
+<li>David Wang: <a href="https://github.com/dcwangmit01">https://github.com/dcwangmit01</a></li>
+<li>Josh Dotson: <a href="https://github.com/josdotso">https://github.com/josdotso</a></li>
+<li>Ryan Luckie: <a href="https://github.com/rtluckie">https://github.com/rtluckie</a></li>
+</ul>
 
 
 			<aside class="copyright" role="note">

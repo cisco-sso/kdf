@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/kubernetes/best-practices/</guid>
-      <description> Always Set Limits Use Pod PriorityClasses </description>
+      <description>Always Set Pod Memory/Cpu Limits and Requests The kubernetes scheduler is responsible for scheduling pods across the cluster of worker machines. The scheduler relies on every pod having mem/cpu limits set, so that it can calculate if a node is too full to schedule more pods on, or yet has enough spare capacity to assign a particular pod. If a pod has no mem/cpu limits set, then the pod is infinitesimally small according to the scheduler and thus can fit on any worker node.</description>
     </item>
     
     <item>
@@ -35,6 +35,17 @@
       
       <guid>https://kdf.csco.cloud/kubernetes/helm-charts/</guid>
       <description> Selecting a Helm Chart Helm Chart Code Review Upstream Your Changes </description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>https://kdf.csco.cloud/kubernetes/monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/kubernetes/monitoring/</guid>
+      <description>Monitoring Prometheus
+Alerting AlertManager
+Dashboards Grafana</description>
     </item>
     
     <item>

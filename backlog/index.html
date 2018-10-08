@@ -316,6 +316,19 @@
 
 
 
+<a  title="Monitoring" href="https://kdf.csco.cloud/kubernetes/monitoring/">
+	
+	Monitoring
+</a>
+
+
+
+      
+        
+        
+
+
+
 <a  title="Testing" href="https://kdf.csco.cloud/kubernetes/testing/">
 	
 	Testing
@@ -454,8 +467,9 @@
 <h2 id="roadmap-priorities">Roadmap Priorities</h2>
 
 <ol>
-<li>Dockerized KDK</li>
-<li>Multi-cluster <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> Configuration
+<li>[Done] Dockerized KDK</li>
+<li>[In Progress] KDF Docs</li>
+<li>[In Progress] Multi-cluster <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">DRY</a> Configuration
 
 <ul>
 <li>e.g. How to manage highly redundant <a href="https://docs.helm.sh/developing_charts#complex-charts-with-many-dependencies">umbrella charts</a> or <a href="https://github.com/cisco-sso/mh">mh</a> configs across many kubernetes clusters.</li>
@@ -474,7 +488,7 @@
 <li>Per-region Kubernetes clusters</li>
 <li>Individual Namespaces per project.</li>
 </ul></li>
-<li>Service Mesh
+<li>Service Mesh (Security)
 
 <ul>
 <li>East/West (intra-cluster)
@@ -482,12 +496,30 @@
 <ul>
 <li>e.g. pod in one cluster can talk to service in another cluster.</li>
 </ul></li>
-<li>North/South (cross-cluster / external-to-cluster)</li>
+<li>North/South (cross-cluster / external-to-cluster)
+
+<ul>
+<li>Traffic encryption and authorization at sidecar container pod level</li>
+</ul></li>
 </ul></li>
 <li>Backups/Snapshots</li>
-<li>Secrets Management</li>
-<li>Blue/Green deployments</li>
+<li>Secrets Management
+
+<ul>
+<li>Vault</li>
+</ul></li>
 <li>Distributed network tracing (Open-Tracing + Istio)</li>
+<li>Blue/Green deployments</li>
+<li>Kafka streaming platform
+
+<ul>
+<li>Accounting, cross-cluster mirroring, security, multi-tenancy, entitlement, etc.</li>
+</ul></li>
+<li>Kubernetes on Openstack encryption at rest
+
+<ul>
+<li>Node volumdes such as Etcd, and Kubernetes PVs</li>
+</ul></li>
 </ol>
 
 <h2 id="to-be-discussed-prioritized">To be discussed/prioritized:</h2>

@@ -319,6 +319,19 @@
 
 
 
+<a  title="Monitoring" href="https://kdf.csco.cloud/kubernetes/monitoring/">
+	
+	Monitoring
+</a>
+
+
+
+      
+        
+        
+
+
+
 <a  title="Testing" href="https://kdf.csco.cloud/kubernetes/testing/">
 	
 	Testing
@@ -451,9 +464,67 @@
 
 			
 
-<h3 id="always-set-limits">Always Set Limits</h3>
+<h3 id="always-set-pod-memory-cpu-limits-and-requests">Always Set Pod Memory/Cpu Limits and Requests</h3>
+
+<p>The kubernetes scheduler is responsible for scheduling pods across the cluster of worker machines.  The scheduler relies
+on every pod having <a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource">mem/cpu limits</a>
+set, so that it can calculate if a node is too full to schedule more pods on, or yet has enough spare capacity to assign
+a particular pod.  If a pod has no mem/cpu limits set, then the pod is infinitesimally small according to the scheduler
+and thus can fit on any worker node.  In addition, that pod is allowed to consume
+<a href="https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/#if-you-don-t-specify-a-memory-limit">infinite</a>
+resources, allowing the risk of out of memory issues on the worker node causing instability and having the Linux OOM
+killer trigger and kill processes at random.</p>
+
+<p>Guidlines for setting Pod Memory/Cpu Limits and Requests:</p>
+
+<ul>
+<li>Set memory and cpu limits and requests are set on every pod</li>
+<li>Set default memory and cpu limits on every namespace using
+<a href="https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/#create-a-limitrange-and-a-pod">LimitRange</a>
+
+<ul>
+<li>This allows pods without limits set to inherit a default setting.</li>
+<li>Set it to something low such as 100m cpu and 256Mi memory</li>
+</ul></li>
+<li>Always set &ldquo;memory request&rdquo; == &ldquo;memory limit&rdquo;
+
+<ul>
+<li>This prevents oversubscription of memory on a node</li>
+<li>Out of memory conditions on a node creates unpredictable behavior (i.e. Kernel OOM Killer)</li>
+</ul></li>
+<li>Setting &ldquo;cpu request&rdquo; != &ldquo;cpu limit&rdquo; is generally okay.
+
+<ul>
+<li>This allows cpu bursting, which is the nature of CPUs.</li>
+</ul></li>
+<li>For Java only:
+
+<ul>
+<li>Always set &ldquo;-Xmx&rdquo;
+
+<ul>
+<li>Java defaults to 25% of the available memory on the kube machines or 4GB depending on the size of machine.</li>
+</ul></li>
+<li>Always set &ldquo;-Xmx&rdquo; and &ldquo;-Xms&rdquo;, ensure they are the <a href="https://developer.jboss.org/thread/149559">same</a></li>
+<li>Ensure &ldquo;pod memory limit&rdquo; is greater than &ldquo;-Xmx&rdquo; + &ldquo;some headroom for OS caches and JVM (384MB)&rdquo;</li>
+</ul></li>
+</ul>
 
 <h3 id="use-pod-priorityclasses">Use Pod PriorityClasses</h3>
+
+<p><a href="https://kubernetes.io/docs/concepts/configuration/pod-priority-preemption/#priorityclass">Priority Classes</a> allow for
+more important pods to preempt (evict) lower priority pods.  There are race conditions in the Kubernetes multi-replica
+scheduler which sometimes cause nodes to be overbooked when they are first added to the cluster.  Using PriorityClasses
+ensures that critical pods are always scheduled.</p>
+
+<p>Example PriorityClass levels in priority order:</p>
+
+<ol>
+<li>&ldquo;kube-system&rdquo; pods (e.g. Kubelet)</li>
+<li>Monitoring and dashboards (e.g. Prometheus)</li>
+<li>Data stores (e.g. postgres)</li>
+<li>Application</li>
+</ol>
 
 
 			<aside class="copyright" role="note">

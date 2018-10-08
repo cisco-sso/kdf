@@ -17,7 +17,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/backlog/</guid>
-      <description>Roadmap Priorities  Dockerized KDK Multi-cluster DRY Configuration  e.g. How to manage highly redundant umbrella charts or mh configs across many kubernetes clusters. Next generation of mh technology, could be something else  Kubernetes Individual Identity (Security)  OIDC Provider Integration  Kubernetes RBAC (Security) Kubernetes Audit logging (Security) Multi-tenant Kubernetes Clusters  Per-region Kubernetes clusters Individual Namespaces per project.  Service Mesh  East/West (intra-cluster)  e.g. pod in one cluster can talk to service in another cluster.</description>
+      <description>Roadmap Priorities  [Done] Dockerized KDK [In Progress] KDF Docs [In Progress] Multi-cluster DRY Configuration  e.g. How to manage highly redundant umbrella charts or mh configs across many kubernetes clusters. Next generation of mh technology, could be something else  Kubernetes Individual Identity (Security)  OIDC Provider Integration  Kubernetes RBAC (Security) Kubernetes Audit logging (Security) Multi-tenant Kubernetes Clusters  Per-region Kubernetes clusters Individual Namespaces per project.  Service Mesh (Security)  East/West (intra-cluster)  e.</description>
     </item>
     
     <item>
@@ -26,7 +26,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/kubernetes/best-practices/</guid>
-      <description> Always Set Limits Use Pod PriorityClasses </description>
+      <description>Always Set Pod Memory/Cpu Limits and Requests The kubernetes scheduler is responsible for scheduling pods across the cluster of worker machines. The scheduler relies on every pod having mem/cpu limits set, so that it can calculate if a node is too full to schedule more pods on, or yet has enough spare capacity to assign a particular pod. If a pod has no mem/cpu limits set, then the pod is infinitesimally small according to the scheduler and thus can fit on any worker node.</description>
     </item>
     
     <item>
@@ -104,10 +104,18 @@ The Mac instructions may help you get KDF running on Linux.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/training/</guid>
-      <description> Docker  Getting Started:  https://docs.docker.com/get-started/   Kubernetes  A Comic-Book Intro to Kubernetes  https://cloud.google.com/kubernetes-engine/kubernetes-comic/  Official Kubernetes Tutorials  https://kubernetes.io/docs/tutorials/  Kubernetes Concepts  https://kubernetes.io/docs/concepts/  (Free!) Classes
- https://www.cncf.io/certification/training/
-Helm  Quickstart
- https://docs.helm.sh/using_helm/#quickstart   </description>
+      <description> Docker  Getting Started:  https://docs.docker.com/get-started/  Official Training Link  https://training.docker.com/  Official Docker Self-Paced Training and Videos  https://training.play-with-docker.com/   Kubernetes  A Comic-Book Intro to Kubernetes  https://cloud.google.com/kubernetes-engine/kubernetes-comic/  Official Kubernetes Tutorials  https://kubernetes.io/docs/tutorials/  Kubernetes Concepts  https://kubernetes.io/docs/concepts/  (Free!) Classes  https://www.cncf.io/certification/training/   Helm  Quickstart  https://docs.helm.sh/using_helm/#quickstart   </description>
+    </item>
+    
+    <item>
+      <title>Monitoring</title>
+      <link>https://kdf.csco.cloud/kubernetes/monitoring/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://kdf.csco.cloud/kubernetes/monitoring/</guid>
+      <description>Monitoring Prometheus
+Alerting AlertManager
+Dashboards Grafana</description>
     </item>
     
     <item>
@@ -125,7 +133,8 @@ Helm  Quickstart
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kdf.csco.cloud/team/</guid>
-      <description> Agreements Code Reviews Upstreaming People </description>
+      <description>TODO ## Agreements https://rfc.zeromq.org/spec:22/C4/  Branch/Merge Strategy Github Flow / Fork &amp;amp; Pull (RECOMMENDED) Modern software development keeps a stable master branch. Releases are tagged directly off of the master branch. This requires a solid automated test suite and enables quick release cycles. If your project matches these characteristics use Github Flow.
+Gitflow Legacy software development typically uses release branches, which take time to stabilize, typically due to significant manual test bottlenecks.</description>
     </item>
     
     <item>
