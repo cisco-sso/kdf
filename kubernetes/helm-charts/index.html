@@ -466,9 +466,56 @@
 
 <h2 id="selecting-a-helm-chart">Selecting a Helm Chart</h2>
 
+<ul>
+<li>Search for your component using google (e.g. &ldquo;helm chart elasticsearch&rdquo;)</li>
+<li>Often you will find many charts in for a component.  For example, elasticsearch can be found in 3 popular helm chart
+repositories.
+
+<ul>
+<li><a href="https://github.com/helm/charts/tree/master/incubator/elasticsearch">Official Kubernetes Charts</a></li>
+<li><a href="https://github.com/bitnami/charts/tree/master/bitnami/elasticsearch">Bitnami</a></li>
+<li><a href="https://github.com/clockworksoul/helm-elasticsearch">Clockworksoul</a></li>
+</ul></li>
+<li>Read through the values and templates of each chart, and understand how they differ.</li>
+<li>Test the most promising charts
+
+<ul>
+<li>In general, favor the charts in the <a href="https://github.com/helm/charts/tree/master/incubator/elasticsearch">Official Kubernetes
+Charts</a> because they are the most actively
+contributed to.</li>
+</ul></li>
+<li>Run <a href="https://github.com/helm/charts/tree/master/stable/chaoskube">Chaoskube</a> against the deployed chart resources and
+ensure the resources always recover.
+
+<ul>
+<li>For example, once chaoskube killed the <a href="https://github.com/helm/charts/tree/master/stable/consul">consul chart</a>
+deployment over 1000 times overnight, and the service always recovered, we considered it stable
+enough to deploy in our system.</li>
+<li>If a chart deployment does not survive repeated chaoskube kills, then submit <a href="https://kdf.csco.cloud/team/#upstreaming">upstream</a> bugfixes
+to make the chart better before using it in the system.</li>
+</ul></li>
+</ul>
+
 <h2 id="helm-chart-code-review">Helm Chart Code Review</h2>
 
-<h2 id="upstream-your-changes">Upstream Your Changes</h2>
+<p>Generic considerations may include:</p>
+
+<ul>
+<li>Ensure anything that should be configurable is parameterized (e.g. replicas, image, version)</li>
+<li>Ensure a statefulset is used if a PVC is referenced</li>
+<li>Ensure container memory limits and cpu limits are set to recommendations but commented out.
+
+<ul>
+<li>A default chart must not have these set because it decreases the chances the chart will work as default.</li>
+<li>In a real deployment, these settings <strong>must</strong> be defined via overrides.</li>
+</ul></li>
+<li>Ensure priorityclass is set.</li>
+<li>Ensure RBAC service accounts, roles, and rolebindings are configured by the chart</li>
+<li>If the service is Java, ensure Xmx and Xms are set to be the same</li>
+</ul>
+
+<p>TIP: When creating a helm chart from scratch, use the helm command itself, which will auto-create a generic boilerplate
+for you <code>helm create &lt;my-new-chart&gt;</code></p>
 
 
 			<aside class="copyright" role="note">
@@ -482,53 +529,11 @@
 			</aside>
 
 			<footer class="footer">
-				
-
-<nav class="pagination" aria-label="Footer">
-  <div class="previous">
-  
-      <a href="https://kdf.csco.cloud/getting-started/windows/" title="Getting Started &gt; Windows">
-        <span class="direction">
-          Previous
-        </span>
-        <div class="page">
-          <div class="button button-previous" role="button" aria-label="Previous">
-            <i class="icon icon-back"></i>
-          </div>
-          <div class="stretch">
-            <div class="title">
-              Getting Started &gt; Windows
-            </div>
-          </div>
-        </div>
-      </a>
-  
-  </div>
-
-  <div class="next">
-  
-      <a href="https://kdf.csco.cloud/training/" title="Kubernetes Training Resources">
-        <span class="direction">
-          Next
-        </span>
-        <div class="page">
-          <div class="stretch">
-            <div class="title">
-              Kubernetes Training Resources
-            </div>
-          </div>
-          <div class="button button-next" role="button" aria-label="Next">
-            <i class="icon icon-forward"></i>
-          </div>
-        </div>
-      </a>
-  
-  </div>
-</nav>
-
-
-
-
+				<div>
+<div hidden>This footer is intentially disabled</div>
+<br/>
+<br/>
+</div>
 
 			</footer>
 		</div>
