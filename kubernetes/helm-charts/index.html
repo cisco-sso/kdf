@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <title>Helm Charts - KDF</title>
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.49.2" />
 
     
     <meta name="description" content="Kubernetes Development Framework (KDF)">
@@ -466,56 +466,9 @@
 
 <h2 id="selecting-a-helm-chart">Selecting a Helm Chart</h2>
 
-<ul>
-<li>Search for your component using google (e.g. &ldquo;helm chart elasticsearch&rdquo;)</li>
-<li>Often you will find many charts in for a component.  For example, elasticsearch can be found in 3 popular helm chart
-repositories.
-
-<ul>
-<li><a href="https://github.com/helm/charts/tree/master/incubator/elasticsearch">Official Kubernetes Charts</a></li>
-<li><a href="https://github.com/bitnami/charts/tree/master/bitnami/elasticsearch">Bitnami</a></li>
-<li><a href="https://github.com/clockworksoul/helm-elasticsearch">Clockworksoul</a></li>
-</ul></li>
-<li>Read through the values and templates of each chart, and understand how they differ.</li>
-<li>Test the most promising charts
-
-<ul>
-<li>In general, favor the charts in the <a href="https://github.com/helm/charts/tree/master/incubator/elasticsearch">Official Kubernetes
-Charts</a> because they are the most actively
-contributed to.</li>
-</ul></li>
-<li>Run <a href="https://github.com/helm/charts/tree/master/stable/chaoskube">Chaoskube</a> against the deployed chart resources and
-ensure the resources always recover.
-
-<ul>
-<li>For example, once chaoskube killed the <a href="https://github.com/helm/charts/tree/master/stable/consul">consul chart</a>
-deployment over 1000 times overnight, and the service always recovered, we considered it stable
-enough to deploy in our system.</li>
-<li>If a chart deployment does not survive repeated chaoskube kills, then submit <a href="https://kdf.csco.cloud/team/#upstreaming">upstream</a> bugfixes
-to make the chart better before using it in the system.</li>
-</ul></li>
-</ul>
-
 <h2 id="helm-chart-code-review">Helm Chart Code Review</h2>
 
-<p>Generic considerations may include:</p>
-
-<ul>
-<li>Ensure anything that should be configurable is parameterized (e.g. replicas, image, version)</li>
-<li>Ensure a statefulset is used if a PVC is referenced</li>
-<li>Ensure container memory limits and cpu limits are set to recommendations but commented out.
-
-<ul>
-<li>A default chart must not have these set because it decreases the chances the chart will work as default.</li>
-<li>In a real deployment, these settings <strong>must</strong> be defined via overrides.</li>
-</ul></li>
-<li>Ensure priorityclass is set.</li>
-<li>Ensure RBAC service accounts, roles, and rolebindings are configured by the chart</li>
-<li>If the service is Java, ensure Xmx and Xms are set to be the same</li>
-</ul>
-
-<p>TIP: When creating a helm chart from scratch, use the helm command itself, which will auto-create a generic boilerplate
-for you <code>helm create &lt;my-new-chart&gt;</code></p>
+<h2 id="upstream-your-changes">Upstream Your Changes</h2>
 
 
 			<aside class="copyright" role="note">
@@ -529,11 +482,53 @@ for you <code>helm create &lt;my-new-chart&gt;</code></p>
 			</aside>
 
 			<footer class="footer">
-				<div>
-<div hidden>This footer is intentially disabled</div>
-<br/>
-<br/>
-</div>
+				
+
+<nav class="pagination" aria-label="Footer">
+  <div class="previous">
+  
+      <a href="https://kdf.csco.cloud/getting-started/windows/" title="Getting Started &gt; Windows">
+        <span class="direction">
+          Previous
+        </span>
+        <div class="page">
+          <div class="button button-previous" role="button" aria-label="Previous">
+            <i class="icon icon-back"></i>
+          </div>
+          <div class="stretch">
+            <div class="title">
+              Getting Started &gt; Windows
+            </div>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+
+  <div class="next">
+  
+      <a href="https://kdf.csco.cloud/training/" title="Kubernetes Training Resources">
+        <span class="direction">
+          Next
+        </span>
+        <div class="page">
+          <div class="stretch">
+            <div class="title">
+              Kubernetes Training Resources
+            </div>
+          </div>
+          <div class="button button-next" role="button" aria-label="Next">
+            <i class="icon icon-forward"></i>
+          </div>
+        </div>
+      </a>
+  
+  </div>
+</nav>
+
+
+
+
 
 			</footer>
 		</div>
@@ -597,6 +592,38 @@ for you <code>helm create &lt;my-new-chart&gt;</code></p>
       }
     </script>
 
+    
+      <script>
+        (function(i,s,o,g,r,a,m){
+          i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||
+          []).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;
+          m.parentNode.insertBefore(a,m)
+        })(window, document,
+          'script', '//www.google-analytics.com/analytics.js', 'ga');
+         
+        ga('create', 'UA-129018255-1', 'auto');
+        ga('set', 'anonymizeIp', true);
+        ga('send', 'pageview');
+         
+        var buttons = document.querySelectorAll('a');
+        Array.prototype.map.call(buttons, function(item) {
+          if (item.host != document.location.host) {
+            item.addEventListener('click', function() {
+              var action = item.getAttribute('data-action') || 'follow';
+              ga('send', 'event', 'outbound', action, item.href);
+            });
+          }
+        });
+         
+        var query = document.querySelector('.query');
+        query.addEventListener('blur', function() {
+          if (this.value) {
+            var path = document.location.pathname;
+            ga('send', 'pageview', path + '?q=' + this.value);
+          }
+        });
+      </script>
     
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
