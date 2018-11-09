@@ -27,3 +27,9 @@ title: Kubernetes Training Resources
 
 * Quickstart
   * https://docs.helm.sh/using_helm/#quickstart
+
+
+## OpenID Connect (OIDC) / Oauth2
+
+* Youtube video
+  * https://www.youtube.com/watch?v=996OiexHze0
