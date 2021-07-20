@@ -1,4 +1,4 @@
-[Framework-deploy](https://github.com/cisco-sso/framework-deploy) is a git repo which implments the KDF deployment
+[Framework-deploy](https://github.com/cisco-sso/framework-deploy) is a git repo which implements the KDF deployment
 pattern. The boilerplate structure in framework-deploy is made to fit perfectly with the tools available in the KDK
 container.  One may fork this repo as a basis for implementing the framework-deploy pattern for private kubernetes
 clusters.
