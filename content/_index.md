@@ -48,7 +48,7 @@ lives easier and work more efficiently.  For example:
 
   * The [platform-deploy](https://github.com/cisco-sso/k8s-deploy) code pattern
     allows a user to enter a "cluster" directory and automatically have all
-    tools pre-configured for that specific enviroment.  Thus, by opening
+    tools pre-configured for that specific environment.  Thus, by opening
     multiple shells to different "cluster" directories the user may be
     configured to operate on several clusters simultaneously.  This sounds
     simple, however it is not possible with "kubectl" today because only a
@@ -57,6 +57,6 @@ lives easier and work more efficiently.  For example:
     "platform-deploy" code pattern relies on
     [direnv](https://github.com/direnv/direnv) which is pre-configured in the
     [Kubernetes Development Kit (KDK)](https://github.com/cisco-sso/kdk), to
-    auto-magically set enviroment variables upon entering a cluster directory
+    auto-magically set environment variables upon entering a cluster directory
     and pull secrets from a [keybase](https://keybase.io/) team to properly
     configure all of the cloud tools such as kubectl, helm, aws-cli, etc.

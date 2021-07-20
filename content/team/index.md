@@ -52,7 +52,7 @@ At minimum:
 
 ## Upstreaming
 
-If you modify an open-source project, make the effort to submit an upsteam PR and get your code merged.
+If you modify an open-source project, make the effort to submit an upstream PR and get your code merged.
 
 This eliminates the long term burden of maintaining forked code, thus reducing costs for your business.  It also is important to contribute to the open-source community.
 

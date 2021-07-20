@@ -13,7 +13,7 @@ and thus can fit on any worker node.  In addition, that pod is allowed to consum
 resources, allowing the risk of out of memory issues on the worker node causing instability and having the Linux OOM
 killer trigger and kill processes at random.
 
-Guidlines for setting Pod Memory/Cpu Limits and Requests:
+Guidelines for setting Pod Memory/Cpu Limits and Requests:
 
 * Set memory and cpu limits and requests are set on every pod
 * Set default memory and cpu limits on every namespace using

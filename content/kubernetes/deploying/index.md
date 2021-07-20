@@ -31,7 +31,7 @@ functionality.
     worker node.  Its persistent volume is local to a node and cannot be network mounted on a different worker node.
     This drastically decreases the resilience of any stateful application in Kubernetes upon node failures.
 * Load-balancer integration
-  * Without this, applications within kubernetes will not be auto-wired to be reachable from outside of kuberentes.
+  * Without this, applications within kubernetes will not be auto-wired to be reachable from outside of Kubernetes.
 
 There are less resilient and unpalatable workarounds for the above, for example:
 
